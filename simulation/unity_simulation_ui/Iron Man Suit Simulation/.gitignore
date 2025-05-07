@@ -1,0 +1,33 @@
+# === Unity Generated Folders (at ANY depth) ===
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild*/
+**/[Ll]ogs/
+**/[Mm]emoryCaptures/
+**/UserSettings/
+
+# === Unity Packages Lockfile ===
+**/Packages/packages-lock.json
+
+# === Unity Cache & Backup ===
+**/*.pidb
+**/*.suo
+**/*.userprefs
+**/*.booproj
+
+# === IDE / OS files ===
+**/.vscode/
+**/.vs/
+**/.idea/
+**/*.csproj
+**/*.sln
+**/*.user
+**/.DS_Store
+
+# === Auto-saves, backups, etc. ===
+**/[Aa]uto[Ss]ave/
+**/.~*
+**/*~ 
+**/*.bak
+**/*.tmp
