@@ -3,12 +3,19 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ThrusterController : MonoBehaviour
 {
-    [Tooltip("Upward acceleration in m/s² applied per input")]
-    public float thrustForce = 30f;  
-    [Tooltip("Maximum total speed in m/s")]
-    public float maxSpeed    = 20f;  
+    [Header("Thrust Settings")]
+    public float thrustForce = 30f;
+    public float maxSpeed    = 20f;
 
-    Rigidbody rb;
+    [Header("Aerodynamic Settings")]
+    public float Area       = 0.5f;   // reference area (m²)
+    public float DragCoeff = 0.03f;   // drag coefficient
+
+    private Rigidbody rb;
+
+    // Expose current speed so FlightManager can read it
+    public float CurrentSpeed => rb.linearVelocity.magnitude;
+
 
     void Awake()
     {
@@ -17,18 +24,25 @@ public class ThrusterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Read vertical input (W/S or Up/Down arrows)
         float input = Input.GetAxis("Vertical");
         if (input > 0f)
         {
-            // Apply thrust upward relative to the capsule's local up
-            Vector3 force = transform.up * input * thrustForce;
-            rb.AddForce(force, ForceMode.Acceleration);
+            // Apply thrust as acceleration (mass‐independent)
+            rb.AddForce(transform.up * input * thrustForce, ForceMode.Acceleration);
         }
 
-        // Clamp maximum speed using the new linearVelocity API
-        Vector3 lv = rb.linearVelocity;
-        if (lv.magnitude > maxSpeed)
-            rb.linearVelocity = lv.normalized * maxSpeed;
+        // Clamp top speed
+        if (rb.linearVelocity.magnitude > maxSpeed)
+            rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+    }
+
+    /// <summary>
+    /// Called by FlightManager to apply an external drag force.
+    /// </summary>
+    public void ApplyDrag(float drag)
+    {
+        // drag is a scalar magnitude; apply opposite to current velocity
+        if (rb.linearVelocity.sqrMagnitude > 0.001f)
+            rb.AddForce(-rb.linearVelocity.normalized * drag, ForceMode.Force);
     }
 }
