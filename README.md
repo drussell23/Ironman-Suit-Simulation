@@ -18,7 +18,7 @@ The **Iron Man Suit Simulation** is an advanced, comprehensive software platform
   * **Artificial Intelligence (AI) Assistance:** Development of a "J.A.R.V.I.S."-inspired intelligent assistant, enabling voice and gesture-controlled interfaces, real-time situational awareness, and adaptive responses. 
   * **Real-Time Sensor Simulation:** Implementation of radar, lidar, electro-optical targeting systems, and environmental awareness sensors, providing critical battlefield intelligence and decision support.
     
-**4. Military & Governmental Applications:**
+### **4. Military & Governmental Applications:**
   * **Future Warfare Innovation:** Providing federal governments and military institutions with a robust, safe, and adaptable simulation platform to explore the feasibility of advanced tactical armor and powered exoskeletons.
   * **Training & Tactical Deployment:** Realistic virtual scenarios and training modules designed to prepare military personnel for high-tech warfare environments, tactical decision-making, and exoskeleton operation.
 
