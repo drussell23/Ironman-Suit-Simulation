@@ -1,0 +1,10 @@
+{
+    "accessibility.signals.lineHasError": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.lineHasWarning": {
+        "sound": "off",
+        "announcement": "off"
+    }
+}
