@@ -8,9 +8,7 @@ Basic 3-DOF flight-dynamics model for the Iron Man suit:
 - Integrates motion in 6 states [x, y, z, vx, vy, vz] using RK4 for stability
 """
 import numpy as np
-from backend.aerodynamics.environmental_effects.atmospheric_density import (
-    density_at_altitude,
-)
+from aerodynamics.environmental_effects.atmospheric_density import density_at_altitude
 
 
 class FlightDynamics:
