@@ -1,6 +1,6 @@
 # Package initialization for environmental_effects
 
-"""_summary_
+"""
 Environmental effects package:
 - atmospheric_density for altitude-dependent air density
 - wind_interaction for position-based wind field simulation
