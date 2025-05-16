@@ -16,5 +16,9 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "cmake.sourceDirectory": "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin"
+    "cmake.sourceDirectory": "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "bindings.h": "c"
+    }
 }
