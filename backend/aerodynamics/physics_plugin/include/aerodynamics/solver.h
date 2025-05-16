@@ -62,7 +62,7 @@ extern "C"
      */
     void solver_apply_actuators(Solver *solver,
                                 const Actuator *acts,
-                                size_t act_count);
+                                size_t act_count, double dt);
 
     /**
      * @brief Advance the solution by one time step.
