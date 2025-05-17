@@ -73,7 +73,6 @@ int mesh_initialize(Mesh *mesh)
 
     size_t C = mesh->num_cells;      // Number of cells.
     size_t P = mesh->nodes_per_cell; // Number of nodes per cell.
-    size_t N = mesh->num_nodes;      // Number of nodes.
 
     // 1) Allocate memory for cell volumes.
     mesh->cell_volumes = (double *)malloc(sizeof(double) * C);

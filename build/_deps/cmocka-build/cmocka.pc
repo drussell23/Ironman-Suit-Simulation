@@ -1,0 +1,11 @@
+# cmocka pkg-config source file
+
+prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: cmocka
+Description: The cmocka unit testing library
+Version: 1.1.7
+Libs: -L${libdir} -lcmocka
+Cflags: -I${includedir}

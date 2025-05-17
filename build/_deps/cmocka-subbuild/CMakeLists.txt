@@ -27,7 +27,7 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(cmocka-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://gitlab.com/cmocka/cmocka.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v1.1.5"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://gitlab.com/cmocka/cmocka.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "cmocka-1.1.7"
                     SOURCE_DIR          "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src"
                     BINARY_DIR          "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build"
                     CONFIGURE_COMMAND   ""

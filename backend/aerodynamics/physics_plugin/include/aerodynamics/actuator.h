@@ -7,6 +7,10 @@ extern "C"
 #endif
 #include <stddef.h> // for size_t
 
+    // Forward declarations so parameter types are visible in the API.
+    struct Mesh;
+    struct FlowState;
+
     /**
      * Types of actuators supported:
      * - SURFACE: Modifies boundary node velocities (e.g., flaps, control surfaces).
@@ -60,10 +64,10 @@ extern "C"
 
     /**
      * @brief Set the actuator command for this time step.
-     * 
-     * For surface actuators, command is typically an angle (rad) or deflection fraction. 
+     *
+     * For surface actuators, command is typically an angle (rad) or deflection fraction.
      * For body-force actuators, command is typically a force magnitude (N).
-     * 
+     *
      * @param act Actuator instance to set. < Pointer to the Actuator object.
      * @param command New command value. < New command value for the actuator.
      */
@@ -71,14 +75,14 @@ extern "C"
 
     /**
      * @brief Apply this actuator's effect into the solver.
-     * 
+     *
      * - SURFACE:
      *      Modifies FlowState velocities at boundary nodes:
      *          u_node += gain * command * direction
      * - BODY_FORCE:
      *      Injects a body force proportional to command into FlowState nodal velocities:
      *         u_node += gain * command * dt * direction
-     * 
+     *
      * @param act Actuator instance to apply. < Pointer to the Actuator object.
      * @param mesh Mesh (to validate node indices).
      * @param state Flow state to modify (velocity field).
@@ -89,4 +93,4 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif // __cplusplus
-#endif // AERODYNAMICS_ACTUATOR_H
+#endif

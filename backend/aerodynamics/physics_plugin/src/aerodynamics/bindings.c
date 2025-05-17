@@ -4,8 +4,15 @@
 
 #include "aerodynamics/bindings.h"
 
-// Macros for informative logging and error checking
-#define LOG(msg, ...) fprintf(stderr, "[AeroBindings] " msg "\n", ##__VA_ARGS__)
+// C99-compliant variadic LOG macro (handles one or more args)
+#define LOG(...)                            \
+    do                                      \
+    {                                       \
+        fprintf(stderr, "[AeroBindings] "); \
+        fprintf(stderr, __VA_ARGS__);       \
+        fprintf(stderr, "\n");              \
+    } while (0)
+
 #define CHECK_ALLOC(ptr, msg)                      \
     if (!(ptr))                                    \
     {                                              \

@@ -1,28 +1,31 @@
 cmake_minimum_required(VERSION 3.18)
 
+# turn on compile_commands.json generation
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Project Setup (C-only)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 project(aerodynamics_physics_plugin
-    VERSION     1.0.0
-    DESCRIPTION "Aerodynamics physics plugin (CFD solver + turbulence models)"
-    LANGUAGES   C
+  VERSION 1.0.0
+  DESCRIPTION "Aerodynamics physics plugin (CFD solver + turbulence models)"
+  LANGUAGES C
 )
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # User Options
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-option(BUILD_SHARED_LIBS   "Build as a shared library (.so/.dll)" ON)
-option(ENABLE_TESTING      "Enable building and running unit tests" ON)
-option(ENABLE_EXAMPLES     "Enable building example executables" OFF)
-option(ENABLE_COVERAGE     "Enable code-coverage instrumentation" OFF)
+option(BUILD_SHARED_LIBS "Build as a shared library (.so/.dll)" ON)
+option(ENABLE_TESTING "Enable building and running unit tests" ON)
+option(ENABLE_EXAMPLES "Enable building example executables" OFF)
+option(ENABLE_COVERAGE "Enable code-coverage instrumentation" OFF)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Compiler Standards & Flags
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-set(CMAKE_C_STANDARD            11)
-set(CMAKE_C_STANDARD_REQUIRED   TRUE)
-set(CMAKE_C_EXTENSIONS          OFF)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED TRUE)
+set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 if(MSVC)
@@ -80,15 +83,16 @@ add_library(aerodynamics::physics_plugin ALIAS ${PROJECT_NAME})
 # Public headers (install and build)
 target_include_directories(${PROJECT_NAME}
   PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+  $<INSTALL_INTERFACE:include>
 )
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Optional C-API wrapper (src/c_api/*.c)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 file(GLOB_RECURSE C_API_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/c_api/*.c")
+
 if(C_API_SOURCES)
   add_library(aerodynamics_c_api STATIC ${C_API_SOURCES})
   target_include_directories(aerodynamics_c_api PUBLIC
@@ -106,6 +110,7 @@ endif()
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 if(ENABLE_EXAMPLES)
   file(GLOB_RECURSE EXAMPLE_SRC "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.c")
+
   foreach(example_file ${EXAMPLE_SRC})
     get_filename_component(example_name ${example_file} NAME_WE)
     add_executable(${example_name} ${example_file})
@@ -123,36 +128,49 @@ if(ENABLE_TESTING)
   FetchContent_Declare(
     cmocka
     GIT_REPOSITORY https://gitlab.com/cmocka/cmocka.git
-    GIT_TAG        v1.1.5
+    GIT_TAG cmocka-1.1.7
   )
   FetchContent_MakeAvailable(cmocka)
 
+  # Collect test sources
   file(GLOB_RECURSE TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.c")
+
   add_executable(${PROJECT_NAME}_tests ${TEST_SOURCES})
+
+  # <── Add these four include dirs ──>
+  target_include_directories(${PROJECT_NAME}_tests
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include # public headers
+    ${CMAKE_CURRENT_BINARY_DIR}/include # generated config.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests # so tests can #include "aerodynamics/…"
+    ${CMAKE_CURRENT_BINARY_DIR}/_deps/cmocka-src/include # CMocka’s headers
+  )
+
   target_link_libraries(${PROJECT_NAME}_tests
     PRIVATE
-      aerodynamics::physics_plugin
-      cmocka
+    aerodynamics::physics_plugin
+    cmocka-static
   )
-  add_test(NAME unit_tests COMMAND ${PROJECT_NAME}_tests)
+
+  add_test(NAME aerodynamics_unit_tests COMMAND ${PROJECT_NAME}_tests)
 endif()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Installation & Packaging
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 install(TARGETS ${PROJECT_NAME}
-  EXPORT   ${PROJECT_NAME}Targets
-  ARCHIVE  DESTINATION lib
-  LIBRARY  DESTINATION lib
-  RUNTIME  DESTINATION bin
+  EXPORT ${PROJECT_NAME}Targets
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
 )
 
 if(TARGET aerodynamics_c_api)
   install(TARGETS aerodynamics_c_api
-    EXPORT   ${PROJECT_NAME}Targets
-    ARCHIVE  DESTINATION lib
-    LIBRARY  DESTINATION lib
-    RUNTIME  DESTINATION bin
+    EXPORT ${PROJECT_NAME}Targets
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
   )
 endif()
 
@@ -169,7 +187,7 @@ install(FILES
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
   "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-  VERSION       ${PROJECT_VERSION}
+  VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
 configure_package_config_file(
@@ -179,17 +197,17 @@ configure_package_config_file(
 )
 
 install(
-  EXPORT  ${PROJECT_NAME}Targets
-  FILE    ${PROJECT_NAME}Config.cmake
+  EXPORT ${PROJECT_NAME}Targets
+  FILE ${PROJECT_NAME}Config.cmake
   NAMESPACE aerodynamics::
   DESTINATION lib/cmake/${PROJECT_NAME}
 )
 
 include(CPack)
-set(CPACK_PACKAGE_NAME        "${PROJECT_NAME}")
-set(CPACK_PACKAGE_VERSION     "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-set(CPACK_GENERATOR           "TGZ;ZIP")
+set(CPACK_GENERATOR "TGZ;ZIP")
 
 message(STATUS "Configuring ${PROJECT_NAME} v${PROJECT_VERSION}")
 message(STATUS "  Shared libs   : ${BUILD_SHARED_LIBS}")

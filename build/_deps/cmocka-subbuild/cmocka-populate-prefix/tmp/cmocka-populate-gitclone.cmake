@@ -52,13 +52,13 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git"
-          checkout "v1.1.5" --
+          checkout "cmocka-1.1.7" --
   WORKING_DIRECTORY "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: 'v1.1.5'")
+  message(FATAL_ERROR "Failed to checkout tag: 'cmocka-1.1.7'")
 endif()
 
 set(init_submodules TRUE)

@@ -2531,3 +2531,2637 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:10 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test REQUIRED_FLAGS_WERROR"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-g1zoNU"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-g1zoNU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "REQUIRED_FLAGS_WERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-g1zoNU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_99aa8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_99aa8.dir/build.make CMakeFiles/cmTC_99aa8.dir/build
+        Building C object CMakeFiles/cmTC_99aa8.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DREQUIRED_FLAGS_WERROR  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror -o CMakeFiles/cmTC_99aa8.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-g1zoNU/src.c
+        Linking C executable cmTC_99aa8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99aa8.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_99aa8.dir/src.c.o -o cmTC_99aa8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:19 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_STD_GNU99_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Py2OUw"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Py2OUw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_STD_GNU99_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Py2OUw'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_93d37/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_93d37.dir/build.make CMakeFiles/cmTC_93d37.dir/build
+        Building C object CMakeFiles/cmTC_93d37.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_STD_GNU99_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -std=gnu99 -o CMakeFiles/cmTC_93d37.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Py2OUw/src.c
+        Linking C executable cmTC_93d37
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93d37.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_93d37.dir/src.c.o -o cmTC_93d37
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:20 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WPEDANTIC_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QVqboU"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QVqboU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WPEDANTIC_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QVqboU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f8c9e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f8c9e.dir/build.make CMakeFiles/cmTC_f8c9e.dir/build
+        Building C object CMakeFiles/cmTC_f8c9e.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WPEDANTIC_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wpedantic -o CMakeFiles/cmTC_f8c9e.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QVqboU/src.c
+        Linking C executable cmTC_f8c9e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8c9e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f8c9e.dir/src.c.o -o cmTC_f8c9e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:21 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WALL_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-I9iLvK"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-I9iLvK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WALL_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-I9iLvK'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fb22f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fb22f.dir/build.make CMakeFiles/cmTC_fb22f.dir/build
+        Building C object CMakeFiles/cmTC_fb22f.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WALL_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wall -o CMakeFiles/cmTC_fb22f.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-I9iLvK/src.c
+        Linking C executable cmTC_fb22f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb22f.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fb22f.dir/src.c.o -o cmTC_fb22f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:22 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WSHADOW_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6AI9PA"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6AI9PA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WSHADOW_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6AI9PA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_90f52/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_90f52.dir/build.make CMakeFiles/cmTC_90f52.dir/build
+        Building C object CMakeFiles/cmTC_90f52.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WSHADOW_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wshadow -o CMakeFiles/cmTC_90f52.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6AI9PA/src.c
+        Linking C executable cmTC_90f52
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90f52.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_90f52.dir/src.c.o -o cmTC_90f52
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:23 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WMISSING_PROTOTYPES_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WzCVQR"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WzCVQR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WMISSING_PROTOTYPES_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WzCVQR'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0830e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0830e.dir/build.make CMakeFiles/cmTC_0830e.dir/build
+        Building C object CMakeFiles/cmTC_0830e.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WMISSING_PROTOTYPES_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wmissing-prototypes -o CMakeFiles/cmTC_0830e.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WzCVQR/src.c
+        Linking C executable cmTC_0830e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0830e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0830e.dir/src.c.o -o cmTC_0830e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:24 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WCAST_ALIGN_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-vATFNv"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-vATFNv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WCAST_ALIGN_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-vATFNv'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_76deb/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_76deb.dir/build.make CMakeFiles/cmTC_76deb.dir/build
+        Building C object CMakeFiles/cmTC_76deb.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WCAST_ALIGN_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wcast-align -o CMakeFiles/cmTC_76deb.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-vATFNv/src.c
+        Linking C executable cmTC_76deb
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76deb.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_76deb.dir/src.c.o -o cmTC_76deb
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:26 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_ADDRESS_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-yi1Ghw"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-yi1Ghw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_ADDRESS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-yi1Ghw'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a1d3e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a1d3e.dir/build.make CMakeFiles/cmTC_a1d3e.dir/build
+        Building C object CMakeFiles/cmTC_a1d3e.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_ADDRESS_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=address -o CMakeFiles/cmTC_a1d3e.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-yi1Ghw/src.c
+        Linking C executable cmTC_a1d3e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1d3e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a1d3e.dir/src.c.o -o cmTC_a1d3e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:27 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WSTRICT_PROTOTYPES_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-czrv60"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-czrv60"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WSTRICT_PROTOTYPES_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-czrv60'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e8944/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e8944.dir/build.make CMakeFiles/cmTC_e8944.dir/build
+        Building C object CMakeFiles/cmTC_e8944.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WSTRICT_PROTOTYPES_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wstrict-prototypes -o CMakeFiles/cmTC_e8944.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-czrv60/src.c
+        Linking C executable cmTC_e8944
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8944.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e8944.dir/src.c.o -o cmTC_e8944
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:28 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_STRICT_PROTOTYPES_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QeD6RG"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QeD6RG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_STRICT_PROTOTYPES_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QeD6RG'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f8578/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f8578.dir/build.make CMakeFiles/cmTC_f8578.dir/build
+        Building C object CMakeFiles/cmTC_f8578.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_STRICT_PROTOTYPES_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=strict-prototypes -o CMakeFiles/cmTC_f8578.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QeD6RG/src.c
+        Linking C executable cmTC_f8578
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8578.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f8578.dir/src.c.o -o cmTC_f8578
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:29 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WWRITE_STRINGS_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-aJgcko"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-aJgcko"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WWRITE_STRINGS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-aJgcko'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_10c67/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_10c67.dir/build.make CMakeFiles/cmTC_10c67.dir/build
+        Building C object CMakeFiles/cmTC_10c67.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WWRITE_STRINGS_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wwrite-strings -o CMakeFiles/cmTC_10c67.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-aJgcko/src.c
+        Linking C executable cmTC_10c67
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10c67.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_10c67.dir/src.c.o -o cmTC_10c67
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:30 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_WRITE_STRINGS_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-EOHgkg"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-EOHgkg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_WRITE_STRINGS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-EOHgkg'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1cfa8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1cfa8.dir/build.make CMakeFiles/cmTC_1cfa8.dir/build
+        Building C object CMakeFiles/cmTC_1cfa8.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_WRITE_STRINGS_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=write-strings -o CMakeFiles/cmTC_1cfa8.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-EOHgkg/src.c
+        Linking C executable cmTC_1cfa8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cfa8.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1cfa8.dir/src.c.o -o cmTC_1cfa8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:31 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_IMPLICIT_FUNCTION_DECLARATION_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wt0sBB"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wt0sBB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_IMPLICIT_FUNCTION_DECLARATION_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wt0sBB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b9d5a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b9d5a.dir/build.make CMakeFiles/cmTC_b9d5a.dir/build
+        Building C object CMakeFiles/cmTC_b9d5a.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_IMPLICIT_FUNCTION_DECLARATION_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror-implicit-function-declaration -o CMakeFiles/cmTC_b9d5a.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wt0sBB/src.c
+        Linking C executable cmTC_b9d5a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9d5a.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b9d5a.dir/src.c.o -o cmTC_b9d5a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:32 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WPOINTER_ARITH_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WrJBMr"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WrJBMr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WPOINTER_ARITH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WrJBMr'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8aa0b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8aa0b.dir/build.make CMakeFiles/cmTC_8aa0b.dir/build
+        Building C object CMakeFiles/cmTC_8aa0b.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WPOINTER_ARITH_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wpointer-arith -o CMakeFiles/cmTC_8aa0b.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-WrJBMr/src.c
+        Linking C executable cmTC_8aa0b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8aa0b.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8aa0b.dir/src.c.o -o cmTC_8aa0b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:33 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_POINTER_ARITH_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-qXk4hA"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-qXk4hA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_POINTER_ARITH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-qXk4hA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7965b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7965b.dir/build.make CMakeFiles/cmTC_7965b.dir/build
+        Building C object CMakeFiles/cmTC_7965b.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_POINTER_ARITH_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=pointer-arith -o CMakeFiles/cmTC_7965b.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-qXk4hA/src.c
+        Linking C executable cmTC_7965b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7965b.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7965b.dir/src.c.o -o cmTC_7965b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:34 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WDECLARATION_AFTER_STATEMENT_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4bqZOT"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4bqZOT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WDECLARATION_AFTER_STATEMENT_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4bqZOT'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_359b5/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_359b5.dir/build.make CMakeFiles/cmTC_359b5.dir/build
+        Building C object CMakeFiles/cmTC_359b5.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WDECLARATION_AFTER_STATEMENT_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wdeclaration-after-statement -o CMakeFiles/cmTC_359b5.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4bqZOT/src.c
+        Linking C executable cmTC_359b5
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_359b5.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_359b5.dir/src.c.o -o cmTC_359b5
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:35 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_DECLARATION_AFTER_STATEMENT_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-nWmJit"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-nWmJit"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_DECLARATION_AFTER_STATEMENT_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-nWmJit'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_27449/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_27449.dir/build.make CMakeFiles/cmTC_27449.dir/build
+        Building C object CMakeFiles/cmTC_27449.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_DECLARATION_AFTER_STATEMENT_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=declaration-after-statement -o CMakeFiles/cmTC_27449.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-nWmJit/src.c
+        Linking C executable cmTC_27449
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27449.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_27449.dir/src.c.o -o cmTC_27449
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:36 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WRETURN_TYPE_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-D6Y8jH"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-D6Y8jH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WRETURN_TYPE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-D6Y8jH'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_495e5/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_495e5.dir/build.make CMakeFiles/cmTC_495e5.dir/build
+        Building C object CMakeFiles/cmTC_495e5.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WRETURN_TYPE_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wreturn-type -o CMakeFiles/cmTC_495e5.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-D6Y8jH/src.c
+        Linking C executable cmTC_495e5
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_495e5.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_495e5.dir/src.c.o -o cmTC_495e5
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:37 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_RETURN_TYPE_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-GoMkxp"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-GoMkxp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_RETURN_TYPE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-GoMkxp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5cc9c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5cc9c.dir/build.make CMakeFiles/cmTC_5cc9c.dir/build
+        Building C object CMakeFiles/cmTC_5cc9c.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_RETURN_TYPE_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=return-type -o CMakeFiles/cmTC_5cc9c.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-GoMkxp/src.c
+        Linking C executable cmTC_5cc9c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5cc9c.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5cc9c.dir/src.c.o -o cmTC_5cc9c
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:38 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WUNINITIALIZED_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gwVOXw"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gwVOXw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WUNINITIALIZED_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gwVOXw'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f588f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f588f.dir/build.make CMakeFiles/cmTC_f588f.dir/build
+        Building C object CMakeFiles/cmTC_f588f.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WUNINITIALIZED_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wuninitialized -o CMakeFiles/cmTC_f588f.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gwVOXw/src.c
+        Linking C executable cmTC_f588f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f588f.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f588f.dir/src.c.o -o cmTC_f588f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:39 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_UNINITIALIZED_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-blLnkB"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-blLnkB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_UNINITIALIZED_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-blLnkB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e15b3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e15b3.dir/build.make CMakeFiles/cmTC_e15b3.dir/build
+        Building C object CMakeFiles/cmTC_e15b3.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_UNINITIALIZED_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=uninitialized -o CMakeFiles/cmTC_e15b3.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-blLnkB/src.c
+        Linking C executable cmTC_e15b3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e15b3.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e15b3.dir/src.c.o -o cmTC_e15b3
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:40 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WIMPLICIT_FALLTHROUGH_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-HoAbGO"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-HoAbGO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WIMPLICIT_FALLTHROUGH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-HoAbGO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ebf40/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ebf40.dir/build.make CMakeFiles/cmTC_ebf40.dir/build
+        Building C object CMakeFiles/cmTC_ebf40.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WIMPLICIT_FALLTHROUGH_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wimplicit-fallthrough -o CMakeFiles/cmTC_ebf40.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-HoAbGO/src.c
+        Linking C executable cmTC_ebf40
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebf40.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ebf40.dir/src.c.o -o cmTC_ebf40
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:41 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_STRICT_OVERFLOW_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-ZckOhM"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-ZckOhM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_STRICT_OVERFLOW_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-ZckOhM'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04e00/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_04e00.dir/build.make CMakeFiles/cmTC_04e00.dir/build
+        Building C object CMakeFiles/cmTC_04e00.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_STRICT_OVERFLOW_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=strict-overflow -o CMakeFiles/cmTC_04e00.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-ZckOhM/src.c
+        Linking C executable cmTC_04e00
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04e00.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_04e00.dir/src.c.o -o cmTC_04e00
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:42 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WSTRICT_OVERFLOW_2_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SmNiE2"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SmNiE2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WSTRICT_OVERFLOW_2_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SmNiE2'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_93835/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_93835.dir/build.make CMakeFiles/cmTC_93835.dir/build
+        Building C object CMakeFiles/cmTC_93835.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WSTRICT_OVERFLOW_2_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wstrict-overflow=2 -o CMakeFiles/cmTC_93835.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SmNiE2/src.c
+        Linking C executable cmTC_93835
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93835.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_93835.dir/src.c.o -o cmTC_93835
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:43 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WNO_FORMAT_ZERO_LENGTH_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6LbgJ0"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6LbgJ0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WNO_FORMAT_ZERO_LENGTH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6LbgJ0'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_59408/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_59408.dir/build.make CMakeFiles/cmTC_59408.dir/build
+        Building C object CMakeFiles/cmTC_59408.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WNO_FORMAT_ZERO_LENGTH_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wno-format-zero-length -o CMakeFiles/cmTC_59408.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6LbgJ0/src.c
+        Linking C executable cmTC_59408
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59408.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_59408.dir/src.c.o -o cmTC_59408
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:44 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WMISSING_FIELD_INITIALIZERS_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-OxYy5a"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-OxYy5a"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WMISSING_FIELD_INITIALIZERS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-OxYy5a'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8d721/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8d721.dir/build.make CMakeFiles/cmTC_8d721.dir/build
+        Building C object CMakeFiles/cmTC_8d721.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WMISSING_FIELD_INITIALIZERS_FLAG  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wmissing-field-initializers -o CMakeFiles/cmTC_8d721.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-OxYy5a/src.c
+        Linking C executable cmTC_8d721
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d721.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8d721.dir/src.c.o -o cmTC_8d721
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:46 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test REQUIRED_FLAGS_WFORMAT"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6BXkUz"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6BXkUz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "REQUIRED_FLAGS_WFORMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6BXkUz'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c5078/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c5078.dir/build.make CMakeFiles/cmTC_c5078.dir/build
+        Building C object CMakeFiles/cmTC_c5078.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DREQUIRED_FLAGS_WFORMAT  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wformat -o CMakeFiles/cmTC_c5078.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-6BXkUz/src.c
+        Linking C executable cmTC_c5078
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5078.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c5078.dir/src.c.o -o cmTC_c5078
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:51 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WFORMAT_SECURITY_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-zvmbfG"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-zvmbfG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WFORMAT_SECURITY_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-zvmbfG'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c7e84/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c7e84.dir/build.make CMakeFiles/cmTC_c7e84.dir/build
+        Building C object CMakeFiles/cmTC_c7e84.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WFORMAT_SECURITY_FLAG  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Wformat-security -o CMakeFiles/cmTC_c7e84.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-zvmbfG/src.c
+        Linking C executable cmTC_c7e84
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7e84.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c7e84.dir/src.c.o -o cmTC_c7e84
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:52 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_WERROR_FORMAT_SECURITY_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-3fwUdI"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-3fwUdI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_WERROR_FORMAT_SECURITY_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-3fwUdI'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_853c5/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_853c5.dir/build.make CMakeFiles/cmTC_853c5.dir/build
+        Building C object CMakeFiles/cmTC_853c5.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_WERROR_FORMAT_SECURITY_FLAG  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -Werror=format-security -o CMakeFiles/cmTC_853c5.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-3fwUdI/src.c
+        Linking C executable cmTC_853c5
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_853c5.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_853c5.dir/src.c.o -o cmTC_853c5
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/AddCCompilerFlag.cmake:16 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:60 (add_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_FNO_COMMON_FLAG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-KV066P"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-KV066P"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_FNO_COMMON_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-KV066P'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2abb6/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2abb6.dir/build.make CMakeFiles/cmTC_2abb6.dir/build
+        Building C object CMakeFiles/cmTC_2abb6.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_FNO_COMMON_FLAG  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -fno-common -o CMakeFiles/cmTC_2abb6.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-KV066P/src.c
+        Linking C executable cmTC_2abb6
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2abb6.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -Werror -Wformat -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2abb6.dir/src.c.o -o cmTC_2abb6
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/CheckCCompilerFlagSSP.cmake:35 (check_c_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:69 (check_c_compiler_flag_ssp)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_STACK_PROTECTOR_STRONG"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2fVDBn"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2fVDBn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_STACK_PROTECTOR_STRONG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2fVDBn'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b76a6/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b76a6.dir/build.make CMakeFiles/cmTC_b76a6.dir/build
+        Building C object CMakeFiles/cmTC_b76a6.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_STACK_PROTECTOR_STRONG  -fstack-protector-strong -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_b76a6.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2fVDBn/src.c
+        Linking C executable cmTC_b76a6
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b76a6.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -fstack-protector-strong -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b76a6.dir/src.c.o -o cmTC_b76a6
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules/CheckCCompilerFlagSSP.cmake:35 (check_c_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CompilerChecks.cmake:87 (check_c_compiler_flag_ssp)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:38 (include)"
+    checks:
+      - "Performing Test WITH_STACK_CLASH_PROTECTION"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0xglGP"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0xglGP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_STACK_CLASH_PROTECTION"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0xglGP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_92823/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_92823.dir/build.make CMakeFiles/cmTC_92823.dir/build
+        Building C object CMakeFiles/cmTC_92823.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_STACK_CLASH_PROTECTION  -fstack-clash-protection -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_92823.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0xglGP/src.c
+        Linking C executable cmTC_92823
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92823.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -fstack-clash-protection -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_92823.dir/src.c.o -o cmTC_92823
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:40 (check_c_compiler_flag)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Performing Test WITH_VISIBILITY_HIDDEN"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-G4bw0C"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-G4bw0C"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WITH_VISIBILITY_HIDDEN"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-G4bw0C'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d83d9/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d83d9.dir/build.make CMakeFiles/cmTC_d83d9.dir/build
+        Building C object CMakeFiles/cmTC_d83d9.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DWITH_VISIBILITY_HIDDEN  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE   -fvisibility=hidden -o CMakeFiles/cmTC_d83d9.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-G4bw0C/src.c
+        Linking C executable cmTC_d83d9
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d83d9.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d83d9.dir/src.c.o -o cmTC_d83d9
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:50 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for assert.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-n6qKW8"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-n6qKW8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ASSERT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-n6qKW8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4873e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4873e.dir/build.make CMakeFiles/cmTC_4873e.dir/build
+        Building C object CMakeFiles/cmTC_4873e.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_4873e.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-n6qKW8/CheckIncludeFile.c
+        Linking C executable cmTC_4873e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4873e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4873e.dir/CheckIncludeFile.c.o -o cmTC_4873e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:51 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for inttypes.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DycNVQ"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DycNVQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DycNVQ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_afb89/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_afb89.dir/build.make CMakeFiles/cmTC_afb89.dir/build
+        Building C object CMakeFiles/cmTC_afb89.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_afb89.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DycNVQ/CheckIncludeFile.c
+        Linking C executable cmTC_afb89
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afb89.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_afb89.dir/CheckIncludeFile.c.o -o cmTC_afb89
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:52 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for io.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-UUhSEh"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-UUhSEh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_IO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-UUhSEh'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_47755/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_47755.dir/build.make CMakeFiles/cmTC_47755.dir/build
+        Building C object CMakeFiles/cmTC_47755.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_47755.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-UUhSEh/CheckIncludeFile.c
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-UUhSEh/CheckIncludeFile.c:1:10: fatal error: io.h: No such file or directory
+            1 | #include <io.h>
+              |          ^~~~~~
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_47755.dir/CheckIncludeFile.c.o] Error 1
+        make: *** [cmTC_47755/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:53 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for malloc.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Ta9ZKQ"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Ta9ZKQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MALLOC_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Ta9ZKQ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f062a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f062a.dir/build.make CMakeFiles/cmTC_f062a.dir/build
+        Building C object CMakeFiles/cmTC_f062a.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_f062a.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Ta9ZKQ/CheckIncludeFile.c
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Ta9ZKQ/CheckIncludeFile.c:1:10: fatal error: malloc.h: No such file or directory
+            1 | #include <malloc.h>
+              |          ^~~~~~~~~~
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_f062a.dir/CheckIncludeFile.c.o] Error 1
+        make: *** [cmTC_f062a/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:54 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for memory.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0hR5vk"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0hR5vk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMORY_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0hR5vk'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c7f23/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c7f23.dir/build.make CMakeFiles/cmTC_c7f23.dir/build
+        Building C object CMakeFiles/cmTC_c7f23.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_c7f23.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-0hR5vk/CheckIncludeFile.c
+        Linking C executable cmTC_c7f23
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7f23.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c7f23.dir/CheckIncludeFile.c.o -o cmTC_c7f23
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:55 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for setjmp.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RlwOC2"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RlwOC2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SETJMP_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RlwOC2'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1cd11/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1cd11.dir/build.make CMakeFiles/cmTC_1cd11.dir/build
+        Building C object CMakeFiles/cmTC_1cd11.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_1cd11.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RlwOC2/CheckIncludeFile.c
+        Linking C executable cmTC_1cd11
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cd11.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1cd11.dir/CheckIncludeFile.c.o -o cmTC_1cd11
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:56 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for signal.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Vd36RO"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Vd36RO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIGNAL_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Vd36RO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1d629/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1d629.dir/build.make CMakeFiles/cmTC_1d629.dir/build
+        Building C object CMakeFiles/cmTC_1d629.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_1d629.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Vd36RO/CheckIncludeFile.c
+        Linking C executable cmTC_1d629
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d629.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1d629.dir/CheckIncludeFile.c.o -o cmTC_1d629
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:57 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for stdarg.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pdF0Ky"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pdF0Ky"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDARG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pdF0Ky'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0f6f1/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0f6f1.dir/build.make CMakeFiles/cmTC_0f6f1.dir/build
+        Building C object CMakeFiles/cmTC_0f6f1.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_0f6f1.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pdF0Ky/CheckIncludeFile.c
+        Linking C executable cmTC_0f6f1
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f6f1.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0f6f1.dir/CheckIncludeFile.c.o -o cmTC_0f6f1
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:58 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-80Y8Ev"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-80Y8Ev"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-80Y8Ev'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5c464/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5c464.dir/build.make CMakeFiles/cmTC_5c464.dir/build
+        Building C object CMakeFiles/cmTC_5c464.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_5c464.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-80Y8Ev/CheckIncludeFile.c
+        Linking C executable cmTC_5c464
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c464.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5c464.dir/CheckIncludeFile.c.o -o cmTC_5c464
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:59 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DU9L9T"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DU9L9T"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DU9L9T'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b1dda/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b1dda.dir/build.make CMakeFiles/cmTC_b1dda.dir/build
+        Building C object CMakeFiles/cmTC_b1dda.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_b1dda.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-DU9L9T/CheckIncludeFile.c
+        Linking C executable cmTC_b1dda
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1dda.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b1dda.dir/CheckIncludeFile.c.o -o cmTC_b1dda
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:60 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for stdio.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-1e6y40"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-1e6y40"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-1e6y40'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_05dae/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_05dae.dir/build.make CMakeFiles/cmTC_05dae.dir/build
+        Building C object CMakeFiles/cmTC_05dae.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_05dae.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-1e6y40/CheckIncludeFile.c
+        Linking C executable cmTC_05dae
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05dae.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_05dae.dir/CheckIncludeFile.c.o -o cmTC_05dae
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:61 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for stdlib.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-CyzKtR"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-CyzKtR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-CyzKtR'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04ed9/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_04ed9.dir/build.make CMakeFiles/cmTC_04ed9.dir/build
+        Building C object CMakeFiles/cmTC_04ed9.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_04ed9.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-CyzKtR/CheckIncludeFile.c
+        Linking C executable cmTC_04ed9
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04ed9.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_04ed9.dir/CheckIncludeFile.c.o -o cmTC_04ed9
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:62 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for string.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JS0Vce"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JS0Vce"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRING_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JS0Vce'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_97ed8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_97ed8.dir/build.make CMakeFiles/cmTC_97ed8.dir/build
+        Building C object CMakeFiles/cmTC_97ed8.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_97ed8.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JS0Vce/CheckIncludeFile.c
+        Linking C executable cmTC_97ed8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97ed8.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_97ed8.dir/CheckIncludeFile.c.o -o cmTC_97ed8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:63 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for strings.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-AwoUxr"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-AwoUxr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-AwoUxr'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_37d0e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_37d0e.dir/build.make CMakeFiles/cmTC_37d0e.dir/build
+        Building C object CMakeFiles/cmTC_37d0e.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_37d0e.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-AwoUxr/CheckIncludeFile.c
+        Linking C executable cmTC_37d0e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37d0e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_37d0e.dir/CheckIncludeFile.c.o -o cmTC_37d0e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:64 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for sys/stat.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wgBM3j"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wgBM3j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_STAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wgBM3j'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0af6f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0af6f.dir/build.make CMakeFiles/cmTC_0af6f.dir/build
+        Building C object CMakeFiles/cmTC_0af6f.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_0af6f.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-wgBM3j/CheckIncludeFile.c
+        Linking C executable cmTC_0af6f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0af6f.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0af6f.dir/CheckIncludeFile.c.o -o cmTC_0af6f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:65 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4yPVLp"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4yPVLp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4yPVLp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d6ab1/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d6ab1.dir/build.make CMakeFiles/cmTC_d6ab1.dir/build
+        Building C object CMakeFiles/cmTC_d6ab1.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_d6ab1.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-4yPVLp/CheckIncludeFile.c
+        Linking C executable cmTC_d6ab1
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6ab1.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d6ab1.dir/CheckIncludeFile.c.o -o cmTC_d6ab1
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:66 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for time.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-tFjoik"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-tFjoik"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_TIME_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-tFjoik'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f1a46/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f1a46.dir/build.make CMakeFiles/cmTC_f1a46.dir/build
+        Building C object CMakeFiles/cmTC_f1a46.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_f1a46.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-tFjoik/CheckIncludeFile.c
+        Linking C executable cmTC_f1a46
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1a46.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f1a46.dir/CheckIncludeFile.c.o -o cmTC_f1a46
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:67 (check_include_file)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-mBYFud"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-mBYFud"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-mBYFud'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_465da/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_465da.dir/build.make CMakeFiles/cmTC_465da.dir/build
+        Building C object CMakeFiles/cmTC_465da.dir/CheckIncludeFile.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_465da.dir/CheckIncludeFile.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-mBYFud/CheckIncludeFile.c
+        Linking C executable cmTC_465da
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_465da.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_465da.dir/CheckIncludeFile.c.o -o cmTC_465da
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake:89 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake:79 (CHECK_SOURCE_COMPILES)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:70 (check_struct_has_member)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Performing Test HAVE_STRUCT_TIMESPEC"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-u42f5Z"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-u42f5Z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRUCT_TIMESPEC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-u42f5Z'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dc44a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_dc44a.dir/build.make CMakeFiles/cmTC_dc44a.dir/build
+        Building C object CMakeFiles/cmTC_dc44a.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DHAVE_STRUCT_TIMESPEC  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_dc44a.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-u42f5Z/src.c
+        Linking C executable cmTC_dc44a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc44a.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_dc44a.dir/src.c.o -o cmTC_dc44a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:74 (check_type_size)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Check size of uintptr_t"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7J7Jyn"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7J7Jyn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UINTPTR_T"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7J7Jyn'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5b7bf/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5b7bf.dir/build.make CMakeFiles/cmTC_5b7bf.dir/build
+        Building C object CMakeFiles/cmTC_5b7bf.dir/UINTPTR_T.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_5b7bf.dir/UINTPTR_T.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7J7Jyn/UINTPTR_T.c
+        Linking C executable cmTC_5b7bf
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b7bf.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5b7bf.dir/UINTPTR_T.c.o -o cmTC_5b7bf
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:77 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for calloc"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_CALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c2b26/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c2b26.dir/build.make CMakeFiles/cmTC_c2b26.dir/build
+        Building C object CMakeFiles/cmTC_c2b26.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=calloc -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_c2b26.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'calloc'; expected 'void *(long unsigned int,  long unsigned int)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QQzpTS/CheckFunctionExists.c:1:1: note: 'calloc' is declared in header '<stdlib.h>'
+          +++ |+#include <stdlib.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_c2b26
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2b26.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=calloc -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c2b26.dir/CheckFunctionExists.c.o -o cmTC_c2b26
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:78 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for exit"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_EXIT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ac8b3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ac8b3.dir/build.make CMakeFiles/cmTC_ac8b3.dir/build
+        Building C object CMakeFiles/cmTC_ac8b3.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=exit -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_ac8b3.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'exit'; expected 'void(int)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-2i41Re/CheckFunctionExists.c:1:1: note: 'exit' is declared in header '<stdlib.h>'
+          +++ |+#include <stdlib.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_ac8b3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac8b3.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=exit -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ac8b3.dir/CheckFunctionExists.c.o -o cmTC_ac8b3
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:79 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for fprintf"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ed3b8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ed3b8.dir/build.make CMakeFiles/cmTC_ed3b8.dir/build
+        Building C object CMakeFiles/cmTC_ed3b8.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=fprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_ed3b8.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'fprintf'; expected 'int(void *, const char *, ...)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-LuqYEI/CheckFunctionExists.c:1:1: note: 'fprintf' is declared in header '<stdio.h>'
+          +++ |+#include <stdio.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_ed3b8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed3b8.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=fprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ed3b8.dir/CheckFunctionExists.c.o -o cmTC_ed3b8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:80 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for free"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FREE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_64983/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_64983.dir/build.make CMakeFiles/cmTC_64983.dir/build
+        Building C object CMakeFiles/cmTC_64983.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=free -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_64983.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'free'; expected 'void(void *)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-gIOItX/CheckFunctionExists.c:1:1: note: 'free' is declared in header '<stdlib.h>'
+          +++ |+#include <stdlib.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_64983
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64983.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=free -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_64983.dir/CheckFunctionExists.c.o -o cmTC_64983
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:81 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for longjmp"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QS6KYT"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QS6KYT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LONGJMP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QS6KYT'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ad893/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ad893.dir/build.make CMakeFiles/cmTC_ad893.dir/build
+        Building C object CMakeFiles/cmTC_ad893.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=longjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_ad893.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-QS6KYT/CheckFunctionExists.c
+        Linking C executable cmTC_ad893
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad893.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=longjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ad893.dir/CheckFunctionExists.c.o -o cmTC_ad893
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:82 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for siglongjmp"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-BeKuWQ"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-BeKuWQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIGLONGJMP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-BeKuWQ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_df167/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_df167.dir/build.make CMakeFiles/cmTC_df167.dir/build
+        Building C object CMakeFiles/cmTC_df167.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=siglongjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_df167.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-BeKuWQ/CheckFunctionExists.c
+        Linking C executable cmTC_df167
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df167.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=siglongjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_df167.dir/CheckFunctionExists.c.o -o cmTC_df167
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:83 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for malloc"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_905ef/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_905ef.dir/build.make CMakeFiles/cmTC_905ef.dir/build
+        Building C object CMakeFiles/cmTC_905ef.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=malloc -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_905ef.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'malloc'; expected 'void *(long unsigned int)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-7rffL6/CheckFunctionExists.c:1:1: note: 'malloc' is declared in header '<stdlib.h>'
+          +++ |+#include <stdlib.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_905ef
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_905ef.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=malloc -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_905ef.dir/CheckFunctionExists.c.o -o cmTC_905ef
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:84 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for memcpy"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMCPY"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8299a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8299a.dir/build.make CMakeFiles/cmTC_8299a.dir/build
+        Building C object CMakeFiles/cmTC_8299a.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=memcpy -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_8299a.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'memcpy'; expected 'void *(void *, const void *, long unsigned int)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-JzhHOm/CheckFunctionExists.c:1:1: note: 'memcpy' is declared in header '<string.h>'
+          +++ |+#include <string.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_8299a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8299a.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=memcpy -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8299a.dir/CheckFunctionExists.c.o -o cmTC_8299a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:85 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for memset"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMSET"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_33cd5/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_33cd5.dir/build.make CMakeFiles/cmTC_33cd5.dir/build
+        Building C object CMakeFiles/cmTC_33cd5.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=memset -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_33cd5.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'memset'; expected 'void *(void *, int,  long unsigned int)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-hgXURO/CheckFunctionExists.c:1:1: note: 'memset' is declared in header '<string.h>'
+          +++ |+#include <string.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_33cd5
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33cd5.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=memset -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_33cd5.dir/CheckFunctionExists.c.o -o cmTC_33cd5
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:86 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for printf"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_PRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c8bad/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c8bad.dir/build.make CMakeFiles/cmTC_c8bad.dir/build
+        Building C object CMakeFiles/cmTC_c8bad.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=printf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_c8bad.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'printf'; expected 'int(const char *, ...)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-jXIm1n/CheckFunctionExists.c:1:1: note: 'printf' is declared in header '<stdio.h>'
+          +++ |+#include <stdio.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_c8bad
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8bad.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=printf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c8bad.dir/CheckFunctionExists.c.o -o cmTC_c8bad
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:87 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for setjmp"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-v9zGjB"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-v9zGjB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SETJMP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-v9zGjB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cc230/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cc230.dir/build.make CMakeFiles/cmTC_cc230.dir/build
+        Building C object CMakeFiles/cmTC_cc230.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=setjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_cc230.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-v9zGjB/CheckFunctionExists.c
+        Linking C executable cmTC_cc230
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc230.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=setjmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cc230.dir/CheckFunctionExists.c.o -o cmTC_cc230
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:88 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for signal"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-O9pQQO"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-O9pQQO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIGNAL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-O9pQQO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6301e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6301e.dir/build.make CMakeFiles/cmTC_6301e.dir/build
+        Building C object CMakeFiles/cmTC_6301e.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=signal -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_6301e.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-O9pQQO/CheckFunctionExists.c
+        Linking C executable cmTC_6301e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6301e.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=signal -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6301e.dir/CheckFunctionExists.c.o -o cmTC_6301e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:89 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for strsignal"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Q0EDrm"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Q0EDrm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRSIGNAL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Q0EDrm'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e3f5b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e3f5b.dir/build.make CMakeFiles/cmTC_e3f5b.dir/build
+        Building C object CMakeFiles/cmTC_e3f5b.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=strsignal -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_e3f5b.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-Q0EDrm/CheckFunctionExists.c
+        Linking C executable cmTC_e3f5b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3f5b.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=strsignal -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e3f5b.dir/CheckFunctionExists.c.o -o cmTC_e3f5b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:90 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for strcmp"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRCMP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1c349/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1c349.dir/build.make CMakeFiles/cmTC_1c349.dir/build
+        Building C object CMakeFiles/cmTC_1c349.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=strcmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_1c349.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'strcmp'; expected 'int(const char *, const char *)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-SIZQWN/CheckFunctionExists.c:1:1: note: 'strcmp' is declared in header '<string.h>'
+          +++ |+#include <string.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_1c349
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c349.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=strcmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1c349.dir/CheckFunctionExists.c.o -o cmTC_1c349
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:91 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for clock_gettime"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-x6Qizg"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-x6Qizg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_CLOCK_GETTIME"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-x6Qizg'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_053b0/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_053b0.dir/build.make CMakeFiles/cmTC_053b0.dir/build
+        Building C object CMakeFiles/cmTC_053b0.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=clock_gettime -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_053b0.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-x6Qizg/CheckFunctionExists.c
+        Linking C executable cmTC_053b0
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_053b0.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=clock_gettime -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_053b0.dir/CheckFunctionExists.c.o -o cmTC_053b0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:101 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for sprintf"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e34ba/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e34ba.dir/build.make CMakeFiles/cmTC_e34ba.dir/build
+        Building C object CMakeFiles/cmTC_e34ba.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=sprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_e34ba.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'sprintf'; expected 'int(char *, const char *, ...)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-RPIFpu/CheckFunctionExists.c:1:1: note: 'sprintf' is declared in header '<stdio.h>'
+          +++ |+#include <stdio.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_e34ba
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e34ba.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=sprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e34ba.dir/CheckFunctionExists.c.o -o cmTC_e34ba
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:102 (check_function_exists)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Looking for vsnprintf"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_54f94/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_54f94.dir/build.make CMakeFiles/cmTC_54f94.dir/build
+        Building C object CMakeFiles/cmTC_54f94.dir/CheckFunctionExists.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14   -DCHECK_FUNCTION_EXISTS=vsnprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_54f94.dir/CheckFunctionExists.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD/CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'vsnprintf'; expected 'int(char *, long unsigned int,  const char *, char *)' [-Wbuiltin-declaration-mismatch]
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD/CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-rqhUAD/CheckFunctionExists.c:1:1: note: 'vsnprintf' is declared in header '<stdio.h>'
+          +++ |+#include <stdio.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_54f94
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54f94.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -DCHECK_FUNCTION_EXISTS=vsnprintf -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_54f94.dir/CheckFunctionExists.c.o -o cmTC_54f94
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:111 (check_c_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Performing Test HAVE_GCC_THREAD_LOCAL_STORAGE"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pGCC87"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pGCC87"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GCC_THREAD_LOCAL_STORAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pGCC87'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_88ce0/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_88ce0.dir/build.make CMakeFiles/cmTC_88ce0.dir/build
+        Building C object CMakeFiles/cmTC_88ce0.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DHAVE_GCC_THREAD_LOCAL_STORAGE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_88ce0.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-pGCC87/src.c
+        Linking C executable cmTC_88ce0
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88ce0.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_88ce0.dir/src.c.o -o cmTC_88ce0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/ConfigureChecks.cmake:132 (check_c_source_compiles)"
+      - "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/CMakeLists.txt:45 (include)"
+    checks:
+      - "Performing Test HAVE_CLOCK_REALTIME"
+    directories:
+      source: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-35H7zH"
+      binary: "/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-35H7zH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/cmake/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_CLOCK_REALTIME"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-35H7zH'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d3c67/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d3c67.dir/build.make CMakeFiles/cmTC_d3c67.dir/build
+        Building C object CMakeFiles/cmTC_d3c67.dir/src.c.o
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -DHAVE_CLOCK_REALTIME  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -o CMakeFiles/cmTC_d3c67.dir/src.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/CMakeScratch/TryCompile-35H7zH/src.c
+        Linking C executable cmTC_d3c67
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3c67.dir/link.txt --verbose=1
+        /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d3c67.dir/src.c.o -o cmTC_d3c67
+        
+      exitCode: 0
+...
