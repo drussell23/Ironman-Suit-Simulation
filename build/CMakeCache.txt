@@ -23,7 +23,7 @@ ADOLC_LIBRARIES:FILEPATH=ADOLC_LIBRARIES-NOTFOUND
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
-//Build as a shared library (.so/.dll)
+//Build shared libraries
 BUILD_SHARED_LIBS:BOOL=ON
 
 //Build the testing tree.
@@ -71,17 +71,29 @@ CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
 
+//Flags used by the CXX compiler during ADDRESSSANITIZER builds.
+CMAKE_CXX_FLAGS_ADDRESSSANITIZER:STRING=-g -O1 -fsanitize=address -fno-omit-frame-pointer
+
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
+//Flags used by the CXX compiler during MEMORYSANITIZER builds.
+CMAKE_CXX_FLAGS_MEMORYSANITIZER:STRING=-g -O2 -fsanitize=memory -fsanitize-memory-track-origins=2 -fno-omit-frame-pointer
+
 //Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the CXX compiler during PROFILING builds.
+CMAKE_CXX_FLAGS_PROFILING:STRING=-O0 -g -fprofile-arcs -ftest-coverage
 
 //Flags used by the CXX compiler during RELEASE builds.
 CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Flags used by the CXX compiler during UNDEFINEDSANITIZER builds.
+CMAKE_CXX_FLAGS_UNDEFINEDSANITIZER:STRING=-g -O1 -fsanitize=undefined -fsanitize=null -fsanitize=alignment -fno-sanitize-recover
 
 //No help, variable specified on the command line.
 CMAKE_C_COMPILER:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14
@@ -97,11 +109,20 @@ CMAKE_C_COMPILER_RANLIB:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ra
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
 
+//Flags used by the C compiler during ADDRESSSANITIZER builds.
+CMAKE_C_FLAGS_ADDRESSSANITIZER:STRING=-g -O1 -fsanitize=address -fno-omit-frame-pointer
+
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
 
+//Flags used by the C compiler during MEMORYSANITIZER builds.
+CMAKE_C_FLAGS_MEMORYSANITIZER:STRING=-g -O2 -fsanitize=memory -fsanitize-memory-track-origins=2 -fno-omit-frame-pointer
+
 //Flags used by the C compiler during MINSIZEREL builds.
 CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the C compiler during PROFILING builds.
+CMAKE_C_FLAGS_PROFILING:STRING=-O0 -g -fprofile-arcs -ftest-coverage
 
 //Flags used by the C compiler during RELEASE builds.
 CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
@@ -109,8 +130,23 @@ CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
+//Flags used by the C compiler during UNDEFINEDSANITIZER builds.
+CMAKE_C_FLAGS_UNDEFINEDSANITIZER:STRING=-g -O1 -fsanitize=undefined -fsanitize=null -fsanitize=alignment -fno-sanitize-recover
+
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
+
+//Flags used by the linker during ADDRESSSANITIZER builds.
+CMAKE_EXEC_LINKER_FLAGS_ADDRESSSANITIZER:STRING=-fsanitize=address
+
+//Flags used by the linker during MEMORYSANITIZER builds.
+CMAKE_EXEC_LINKER_FLAGS_MEMORYSANITIZER:STRING=-fsanitize=memory
+
+//Flags used by the linker during PROFILING builds.
+CMAKE_EXEC_LINKER_FLAGS_PROFILING:STRING=-fprofile-arcs -ftest-coverage
+
+//Flags used by the linker during UNDEFINEDSANITIZER builds.
+CMAKE_EXEC_LINKER_FLAGS_UNDEFINEDSANITIZER:STRING=-fsanitize=undefined
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
@@ -223,13 +259,25 @@ CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make
 // all build types.
 CMAKE_MODULE_LINKER_FLAGS:STRING=
 
+//Flags used by the linker during the creation of shared libraries
+// during ADDRESSSANITIZER builds.
+CMAKE_MODULE_LINKER_FLAGS_ADDRESSSANITIZER:STRING=-fsanitize=address
+
 //Flags used by the linker during the creation of modules during
 // DEBUG builds.
 CMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=
 
+//Flags used by the linker during the creation of shared libraries
+// during MEMORYSANITIZER builds.
+CMAKE_MODULE_LINKER_FLAGS_MEMORYSANITIZER:STRING=-fsanitize=memory
+
 //Flags used by the linker during the creation of modules during
 // MINSIZEREL builds.
 CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during the creation of shared libraries
+// during PROFILING builds.
+CMAKE_MODULE_LINKER_FLAGS_PROFILING:STRING=-fprofile-arcs -ftest-coverage
 
 //Flags used by the linker during the creation of modules during
 // RELEASE builds.
@@ -238,6 +286,10 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during the creation of modules during
 // RELWITHDEBINFO builds.
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//Flags used by the linker during the creation of shared libraries
+// during UNDEFINEDSANITIZER builds.
+CMAKE_MODULE_LINKER_FLAGS_UNDEFINEDSANITIZER:STRING=-fsanitize=undefined
 
 //Path to a program.
 CMAKE_NM:FILEPATH=/usr/bin/nm
@@ -294,12 +346,24 @@ CMAKE_READELF:FILEPATH=CMAKE_READELF-NOTFOUND
 CMAKE_SHARED_LINKER_FLAGS:STRING=
 
 //Flags used by the linker during the creation of shared libraries
+// during ADDRESSSANITIZER builds.
+CMAKE_SHARED_LINKER_FLAGS_ADDRESSSANITIZER:STRING=-fsanitize=address
+
+//Flags used by the linker during the creation of shared libraries
 // during DEBUG builds.
 CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
 
 //Flags used by the linker during the creation of shared libraries
+// during MEMORYSANITIZER builds.
+CMAKE_SHARED_LINKER_FLAGS_MEMORYSANITIZER:STRING=-fsanitize=memory
+
+//Flags used by the linker during the creation of shared libraries
 // during MINSIZEREL builds.
 CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during the creation of shared libraries
+// during PROFILING builds.
+CMAKE_SHARED_LINKER_FLAGS_PROFILING:STRING=-fprofile-arcs -ftest-coverage
 
 //Flags used by the linker during the creation of shared libraries
 // during RELEASE builds.
@@ -308,6 +372,10 @@ CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during the creation of shared libraries
 // during RELWITHDEBINFO builds.
 CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//Flags used by the linker during the creation of shared libraries
+// during UNDEFINEDSANITIZER builds.
+CMAKE_SHARED_LINKER_FLAGS_UNDEFINEDSANITIZER:STRING=-fsanitize=undefined
 
 //If set, runtime paths are not added when installing shared libraries,
 // but are added when building.
@@ -347,6 +415,9 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Path to include directory for cmocka_platform.h
+CMOCKA_PLATFORM_INCLUDE:PATH=
 
 //Test COMPILER_SUPPORT_std=cpp03
 COMPILER_SUPPORT_std:UNINITIALIZED=cpp03:INTERNAL=1
@@ -499,6 +570,12 @@ CUDA_cufftemu_LIBRARY:FILEPATH=CUDA_cufftemu_LIBRARY-NOTFOUND
 
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
+
+//Dot tool for use with Doxygen
+DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
+
+//Doxygen documentation generation tool (https://www.doxygen.nl)
+DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
 //Build benchmark suite
 EIGEN_BUILD_BTL:BOOL=OFF
@@ -841,6 +918,9 @@ PASTIX_M_m_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.
 //Path to a file.
 PASTIX_pastix_nompi.h_INCLUDE_DIRS:PATH=PASTIX_pastix_nompi.h_INCLUDE_DIRS-NOTFOUND
 
+//Build with picky developer flags
+PICKY_DEVELOPER:BOOL=OFF
+
 //The directory relative to CMAKE_INSTALL_PREFIX where eigen3.pc
 // is installed
 PKGCONFIG_INSTALL_DIR:PATH=share/pkgconfig
@@ -877,11 +957,20 @@ UMFPACK_INCLUDES:PATH=UMFPACK_INCLUDES-NOTFOUND
 //Path to a library.
 UMFPACK_LIBRARIES:FILEPATH=UMFPACK_LIBRARIES-NOTFOUND
 
+//Build with unit testing
+UNIT_TESTING:BOOL=OFF
+
 //Fetch GoogleTest via CMake if not found
 USE_GTEST_FETCH:BOOL=OFF
 
 //Link against system-installed Eigen3
 USE_SYSTEM_EIGEN:BOOL=OFF
+
+//Install a cmockery header
+WITH_CMOCKERY_SUPPORT:BOOL=OFF
+
+//Build examples
+WITH_EXAMPLES:BOOL=ON
 
 //Value Computed by CMake
 aerodynamics_physics_plugin_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build
@@ -891,6 +980,42 @@ aerodynamics_physics_plugin_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 aerodynamics_physics_plugin_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin
+
+//Value Computed by CMake
+cmocka-examples_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example
+
+//Value Computed by CMake
+cmocka-examples_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+cmocka-examples_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example
+
+//Value Computed by CMake
+cmocka-header_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/include
+
+//Value Computed by CMake
+cmocka-header_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+cmocka-header_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/include
+
+//Value Computed by CMake
+cmocka-library_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src
+
+//Value Computed by CMake
+cmocka-library_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+cmocka-library_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src
+
+//Value Computed by CMake
+cmocka_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build
+
+//Value Computed by CMake
+cmocka_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+cmocka_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src
 
 //Dependencies for the target
 eigen_lapack_LIB_DEPENDS:STATIC=general;eigen_blas;
@@ -985,6 +1110,8 @@ CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 CMAKE_COMMAND:INTERNAL=/opt/homebrew/bin/cmake
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=/opt/homebrew/bin/cpack
+//ADVANCED property for variable: CMAKE_CTEST_COMMAND
+CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/opt/homebrew/bin/ctest
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
@@ -1117,7 +1244,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1162,6 +1289,10 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//cmocka link libraries
+CMOCKA_LINK_LIBRARIES:INTERNAL=
+//ADVANCED property for variable: CMOCKA_PLATFORM_INCLUDE
+CMOCKA_PLATFORM_INCLUDE-ADVANCED:INTERNAL=1
 //Test COMPILER_SUPPORT_FASTMATH
 COMPILER_SUPPORT_FASTMATH:INTERNAL=1
 //Test COMPILER_SUPPORT_OPENMP
@@ -1330,6 +1461,14 @@ CUDA_parse_cubin:INTERNAL=/opt/homebrew/share/cmake/Modules/FindCUDA/parse_cubin
 CUDA_run_nvcc:INTERNAL=/opt/homebrew/share/cmake/Modules/FindCUDA/run_nvcc.cmake
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
+//Default C Compiler Flags
+DEFAULT_C_COMPILE_FLAGS:INTERNAL=-std=gnu99;-Wpedantic;-Wall;-Wshadow;-Wmissing-prototypes;-Wcast-align;-Werror=address;-Wstrict-prototypes;-Werror=strict-prototypes;-Wwrite-strings;-Werror=write-strings;-Werror-implicit-function-declaration;-Wpointer-arith;-Werror=pointer-arith;-Wdeclaration-after-statement;-Werror=declaration-after-statement;-Wreturn-type;-Werror=return-type;-Wuninitialized;-Werror=uninitialized;-Wimplicit-fallthrough;-Werror=strict-overflow;-Wstrict-overflow=2;-Wno-format-zero-length;-Wmissing-field-initializers;-Wformat;-Wformat-security;-Werror=format-security;-fno-common;-fstack-protector-strong;-fstack-clash-protection
+//Default C Linker Flags
+DEFAULT_LINK_FLAGS:INTERNAL=
+//ADVANCED property for variable: DOXYGEN_DOT_EXECUTABLE
+DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DOXYGEN_EXECUTABLE
+DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test EIGEN_COMPILER_SUPPORT_CPP11
 EIGEN_COMPILER_SUPPORT_CPP11:INTERNAL=1
 //ADVANCED property for variable: EIGEN_TEST_EIGEN2
@@ -1370,6 +1509,84 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Have include assert.h
+HAVE_ASSERT_H:INTERNAL=1
+//Have function calloc
+HAVE_CALLOC:INTERNAL=1
+//Have function clock_gettime
+HAVE_CLOCK_GETTIME:INTERNAL=1
+//Test HAVE_CLOCK_REALTIME
+HAVE_CLOCK_REALTIME:INTERNAL=1
+//Have function exit
+HAVE_EXIT:INTERNAL=1
+//Have function fprintf
+HAVE_FPRINTF:INTERNAL=1
+//Have function free
+HAVE_FREE:INTERNAL=1
+//Test HAVE_GCC_THREAD_LOCAL_STORAGE
+HAVE_GCC_THREAD_LOCAL_STORAGE:INTERNAL=1
+//Have include inttypes.h
+HAVE_INTTYPES_H:INTERNAL=1
+//Have include io.h
+HAVE_IO_H:INTERNAL=
+//Have function longjmp
+HAVE_LONGJMP:INTERNAL=1
+//Have function malloc
+HAVE_MALLOC:INTERNAL=1
+//Have include malloc.h
+HAVE_MALLOC_H:INTERNAL=
+//Have function memcpy
+HAVE_MEMCPY:INTERNAL=1
+//Have include memory.h
+HAVE_MEMORY_H:INTERNAL=1
+//Have function memset
+HAVE_MEMSET:INTERNAL=1
+//Have function printf
+HAVE_PRINTF:INTERNAL=1
+//Have function setjmp
+HAVE_SETJMP:INTERNAL=1
+//Have include setjmp.h
+HAVE_SETJMP_H:INTERNAL=1
+//Have function siglongjmp
+HAVE_SIGLONGJMP:INTERNAL=1
+//Have function signal
+HAVE_SIGNAL:INTERNAL=1
+//Have include signal.h
+HAVE_SIGNAL_H:INTERNAL=1
+//Have function sprintf
+HAVE_SNPRINTF:INTERNAL=1
+//Have include stdarg.h
+HAVE_STDARG_H:INTERNAL=1
+//Have include stddef.h
+HAVE_STDDEF_H:INTERNAL=1
+//Have include stdint.h
+HAVE_STDINT_H:INTERNAL=1
+//Have include stdio.h
+HAVE_STDIO_H:INTERNAL=1
+//Have include stdlib.h
+HAVE_STDLIB_H:INTERNAL=1
+//Have function strcmp
+HAVE_STRCMP:INTERNAL=1
+//Have include strings.h
+HAVE_STRINGS_H:INTERNAL=1
+//Have include string.h
+HAVE_STRING_H:INTERNAL=1
+//Have function strsignal
+HAVE_STRSIGNAL:INTERNAL=1
+//Test HAVE_STRUCT_TIMESPEC
+HAVE_STRUCT_TIMESPEC:INTERNAL=1
+//Have include sys/stat.h
+HAVE_SYS_STAT_H:INTERNAL=1
+//Have include sys/types.h
+HAVE_SYS_TYPES_H:INTERNAL=1
+//Have include time.h
+HAVE_TIME_H:INTERNAL=1
+//Result of TRY_COMPILE
+HAVE_UINTPTR_T:INTERNAL=TRUE
+//Have include unistd.h
+HAVE_UNISTD_H:INTERNAL=1
+//Have function vsnprintf
+HAVE_VSNPRINTF:INTERNAL=1
 //ADVANCED property for variable: KLU_INCLUDES
 KLU_INCLUDES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KLU_LIBRARIES
@@ -1392,6 +1609,10 @@ PASTIX_M_m_LIBRARY-ADVANCED:INTERNAL=1
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//Test REQUIRED_FLAGS_WERROR
+REQUIRED_FLAGS_WERROR:INTERNAL=1
+//Test REQUIRED_FLAGS_WFORMAT
+REQUIRED_FLAGS_WFORMAT:INTERNAL=1
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SPQR_INCLUDES
@@ -1402,10 +1623,74 @@ SPQR_LIBRARIES-ADVANCED:INTERNAL=1
 SUPERLU_INCLUDES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SUPERLU_LIBRARIES
 SUPERLU_LIBRARIES-ADVANCED:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(uintptr_t)
+UINTPTR_T:INTERNAL=8
 //ADVANCED property for variable: UMFPACK_INCLUDES
 UMFPACK_INCLUDES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: UMFPACK_LIBRARIES
 UMFPACK_LIBRARIES-ADVANCED:INTERNAL=1
+//Test WITH_FNO_COMMON_FLAG
+WITH_FNO_COMMON_FLAG:INTERNAL=1
+//Test WITH_STACK_CLASH_PROTECTION
+WITH_STACK_CLASH_PROTECTION:INTERNAL=1
+//Test WITH_STACK_PROTECTOR_STRONG
+WITH_STACK_PROTECTOR_STRONG:INTERNAL=1
+//Test WITH_STD_GNU99_FLAG
+WITH_STD_GNU99_FLAG:INTERNAL=1
+//Test WITH_VISIBILITY_HIDDEN
+WITH_VISIBILITY_HIDDEN:INTERNAL=1
+//Test WITH_WALL_FLAG
+WITH_WALL_FLAG:INTERNAL=1
+//Test WITH_WCAST_ALIGN_FLAG
+WITH_WCAST_ALIGN_FLAG:INTERNAL=1
+//Test WITH_WDECLARATION_AFTER_STATEMENT_FLAG
+WITH_WDECLARATION_AFTER_STATEMENT_FLAG:INTERNAL=1
+//Test WITH_WERROR_ADDRESS_FLAG
+WITH_WERROR_ADDRESS_FLAG:INTERNAL=1
+//Test WITH_WERROR_DECLARATION_AFTER_STATEMENT_FLAG
+WITH_WERROR_DECLARATION_AFTER_STATEMENT_FLAG:INTERNAL=1
+//Test WITH_WERROR_FORMAT_SECURITY_FLAG
+WITH_WERROR_FORMAT_SECURITY_FLAG:INTERNAL=1
+//Test WITH_WERROR_IMPLICIT_FUNCTION_DECLARATION_FLAG
+WITH_WERROR_IMPLICIT_FUNCTION_DECLARATION_FLAG:INTERNAL=1
+//Test WITH_WERROR_POINTER_ARITH_FLAG
+WITH_WERROR_POINTER_ARITH_FLAG:INTERNAL=1
+//Test WITH_WERROR_RETURN_TYPE_FLAG
+WITH_WERROR_RETURN_TYPE_FLAG:INTERNAL=1
+//Test WITH_WERROR_STRICT_OVERFLOW_FLAG
+WITH_WERROR_STRICT_OVERFLOW_FLAG:INTERNAL=1
+//Test WITH_WERROR_STRICT_PROTOTYPES_FLAG
+WITH_WERROR_STRICT_PROTOTYPES_FLAG:INTERNAL=1
+//Test WITH_WERROR_UNINITIALIZED_FLAG
+WITH_WERROR_UNINITIALIZED_FLAG:INTERNAL=1
+//Test WITH_WERROR_WRITE_STRINGS_FLAG
+WITH_WERROR_WRITE_STRINGS_FLAG:INTERNAL=1
+//Test WITH_WFORMAT_SECURITY_FLAG
+WITH_WFORMAT_SECURITY_FLAG:INTERNAL=1
+//Test WITH_WIMPLICIT_FALLTHROUGH_FLAG
+WITH_WIMPLICIT_FALLTHROUGH_FLAG:INTERNAL=1
+//Test WITH_WMISSING_FIELD_INITIALIZERS_FLAG
+WITH_WMISSING_FIELD_INITIALIZERS_FLAG:INTERNAL=1
+//Test WITH_WMISSING_PROTOTYPES_FLAG
+WITH_WMISSING_PROTOTYPES_FLAG:INTERNAL=1
+//Test WITH_WNO_FORMAT_ZERO_LENGTH_FLAG
+WITH_WNO_FORMAT_ZERO_LENGTH_FLAG:INTERNAL=1
+//Test WITH_WPEDANTIC_FLAG
+WITH_WPEDANTIC_FLAG:INTERNAL=1
+//Test WITH_WPOINTER_ARITH_FLAG
+WITH_WPOINTER_ARITH_FLAG:INTERNAL=1
+//Test WITH_WRETURN_TYPE_FLAG
+WITH_WRETURN_TYPE_FLAG:INTERNAL=1
+//Test WITH_WSHADOW_FLAG
+WITH_WSHADOW_FLAG:INTERNAL=1
+//Test WITH_WSTRICT_OVERFLOW_2_FLAG
+WITH_WSTRICT_OVERFLOW_2_FLAG:INTERNAL=1
+//Test WITH_WSTRICT_PROTOTYPES_FLAG
+WITH_WSTRICT_PROTOTYPES_FLAG:INTERNAL=1
+//Test WITH_WUNINITIALIZED_FLAG
+WITH_WUNINITIALIZED_FLAG:INTERNAL=1
+//Test WITH_WWRITE_STRINGS_FLAG
+WITH_WWRITE_STRINGS_FLAG:INTERNAL=1
 //Components requested for this build tree.
 _Boost_COMPONENTS_SEARCHED:INTERNAL=
 //Last used Boost_INCLUDE_DIR value.

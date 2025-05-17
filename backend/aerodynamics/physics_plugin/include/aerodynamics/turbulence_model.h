@@ -63,7 +63,7 @@ extern "C"
      *
      * @return double* array [num_nodes] of turbulent viscosity values.
      */
-    double *turb_model_compute_visocsity(const TurbulenceModel *model, const Mesh *mesh, const FlowState *state);
+    double *turb_model_compute_viscosity(const TurbulenceModel *model, const Mesh *mesh, const FlowState *state);
 
     /**
      *  Advance turbulence model (k, epsilon) fields by one time step.

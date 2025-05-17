@@ -1,0 +1,1 @@
+/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -dynamiclib -Wl,-headerpad_max_install_names -current_version 0.8.0 -o libcmocka.0.8.0.dylib -install_name @rpath/libcmocka.0.dylib CMakeFiles/cmocka.dir/cmocka.c.o

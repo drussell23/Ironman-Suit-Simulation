@@ -61,7 +61,7 @@ void turb_model_initialize(const TurbulenceModel *model, const Mesh *mesh, FlowS
     }
 }
 
-double *turb_model_compute_visocsity(const TurbulenceModel *model, const Mesh *mesh, const FlowState *state)
+double *turb_model_compute_viscosity(const TurbulenceModel *model, const Mesh *mesh, const FlowState *state)
 {
     // Compute turbulent viscosity ν_t at each node.
     if (!model || !mesh || !state)
@@ -108,7 +108,7 @@ void turb_model_update(
     size_t C = mesh->num_cells; // Get number of cells from mesh.
     size_t P = mesh->nodes_per_cell; // Get number of nodes per cell from mesh.
 
-    const double c_mu = model->params.c_mu; // Coefficient for k-epsilon model.
+    // const double c_mu = model->params.c_mu; // Coefficient for k-epsilon model.
     const double c1_eps = model->params.c1_eps; // Coefficient for the epsilon equation.
     const double c2_eps = model->params.c2_eps; // Coefficient for the epsilon equation.
 

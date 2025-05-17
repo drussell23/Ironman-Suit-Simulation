@@ -3,8 +3,8 @@ exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
-Name: aerodynamics_physics_plugin
-Description: Aerodynamics physics plugin (CFD solver + turbulence models)
+Name: @PROJECT_NAME@
+Description: @PROJECT_DESCRIPTION@
 Version: @PROJECT_VERSION@
 Libs: -L${libdir} -laerodynamics_physics_plugin
 Cflags: -I${includedir}

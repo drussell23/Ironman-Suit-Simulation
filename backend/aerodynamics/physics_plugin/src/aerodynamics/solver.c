@@ -118,7 +118,7 @@ void solver_step(Solver *solver, double dt) {
     mesh_compute_convection(solver->mesh, solver->flow_state, dt); // Compute convection term.
 
     // Step 2: Turbulent viscosity computation.
-    double *nu_t = turb_model_compute_visocsity(solver->turb_model, solver->mesh, solver->flow_state); // Compute turbulent viscosity.
+    double *nu_t = turb_model_compute_viscosity(solver->turb_model, solver->mesh, solver->flow_state); // Compute turbulent viscosity.
 
     if (!nu_t) {
         fprintf(stderr, "solver_step: Turbulent viscosity computation failed.\n");

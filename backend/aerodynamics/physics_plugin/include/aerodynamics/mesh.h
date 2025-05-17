@@ -6,11 +6,12 @@ extern "C"
 {
 #endif
 
-#include <math.h>                  // for sqrt
+#include <math.h> // for sqrt
 #include <string.h>
-#include <stdlib.h>                  // for malloc, free
-#include <stddef.h>                  // for size_t
-#include "aerodynamics/flow_state.h" // For FlowState
+#include <stdlib.h> // for malloc, free
+#include <stddef.h> // for size_t
+
+    typedef struct FlowState FlowState;
 
     /**
      * @brief Represents the computational mesh: node count & coordinates.
@@ -22,14 +23,14 @@ extern "C"
         double *coordinates; /// < Array of node coordinates (num_nodes * 3).
 
         // User-provided topology:
-        size_t num_cells; /// < Total number of cells in the mesh.
+        size_t num_cells;      /// < Total number of cells in the mesh.
         size_t nodes_per_cell; /// < Number of nodes per cell (e.g., 4 for tetrahedral mesh) (e.g. 4 for tets, 8 for hexahedra).
-        size_t *connectivity; /// < Array of node indices for each cell (num_cells * nodes_per_cell).
+        size_t *connectivity;  /// < Array of node indices for each cell (num_cells * nodes_per_cell).
 
         // Computed by mesh_initialize():
-        double *cell_volumes; /// < Array of cell volumes (num_cells).
+        double *cell_volumes;      /// < Array of cell volumes (num_cells).
         size_t *adjacency_offsets; /// < Array of offsets for adjacency list (num_cells + 1).
-        size_t *cell_adjacency; /// < Flattened adjacency list (num_cells * max_adj_cells).
+        size_t *cell_adjacency;    /// < Flattened adjacency list (num_cells * max_adj_cells).
     } Mesh;
 
     /**
@@ -48,18 +49,8 @@ extern "C"
     void mesh_destroy(Mesh *mesh);
 
     /**
-     * @brief Check if two cells share a face.
-     * 
-     * @param connA  Pointer to the connectivity array of the first cell.
-     * @param connB Pointer to the connectivity array of the second cell.   
-     * @param nodes_per_cell Number of nodes per cell (e.g., 4 for tetrahedral mesh).
-     * @return int 1 if the cells share a face, 0 otherwise.
-     */
-    static int share_face(const size_t *connA, const size_t *connB, size_t nodes_per_cell);
-
-    /**
      * @brief Initialize the mesh by computing connectivity, cell volumes, etc.
-     * 
+     *
      * @param mesh Pointer to the Mesh object to initialize.
      * @return int 0 on success, nonzero on error.
      */
@@ -93,6 +84,6 @@ extern "C"
 
 #ifdef __cplusplus
 }
-#endif 
+#endif
 
 #endif // AERODYNAMICS_MESH_H

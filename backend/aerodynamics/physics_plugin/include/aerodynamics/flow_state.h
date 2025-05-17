@@ -9,6 +9,10 @@ extern "C"
 #include <stddef.h>            // for size_t
 #include "aerodynamics/mesh.h" // your Mesh definition
 
+// Forward declare Mesh so flow_state_init() sees it.
+struct Mesh; 
+
+
     /**
      * @brief Holds all solution fields for one CFD time step.
      *
@@ -36,7 +40,7 @@ extern "C"
      * @param mesh   Pointer to a previously initialized Mesh.
      * @return int   0 on success, nonzero on error.
      */
-    int flow_state_init(FlowState *state, const Mesh *mesh);
+    int flow_state_init(FlowState *state, const struct Mesh *mesh);
 
     /**
      * @brief Free all arrays inside FlowState.
