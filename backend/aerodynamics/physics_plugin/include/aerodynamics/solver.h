@@ -6,69 +6,63 @@ extern "C"
 {
 #endif
 
-#include <stddef.h>   // for size_t
-
-#include "aerodynamics/mesh.h" // your Mesh definition
-#include "aerodynamics/turbulence_model.h"  // your TurbulenceModel definition
-#include "aerodynamics/flow_state.h"        // your FlowState definition
-#include "aerodynamics/actuator.h"          // your Actuator definition
+#include <stddef.h>                        // for size_t
+#include "aerodynamics/mesh.h"             // Mesh definition
+#include "aerodynamics/turbulence_model.h" // TurbulenceModel definition
+#include "aerodynamics/flow_state.h"       // FlowState definition
+#include "aerodynamics/actuator.h"         // Actuator definition
 
     /**
-     * Opaque handle for the CFD solver.
+     * Opaque solver type.
      */
     typedef struct Solver Solver;
 
     /**
-     * @brief Construct a new Solver.
-     *
-     * Takes ownership of neither mesh nor turb_model; they must outlive the Solver.
-     *
-     * @param mesh          Pointer to a preconfigured Mesh.
-     * @param turb_model    Pointer to an initialized TurbulenceModel.
-     * @return Solver*      New solver instance (NULL on failure).
+     * Create a new Solver instance.
+     * @param mesh        Preconfigured Mesh (must outlive Solver).
+     * @param turb_model  Initialized TurbulenceModel (must outlive Solver).
+     * @return New Solver*, or NULL on error.
      */
-    Solver *solver_create(Mesh *mesh, TurbulenceModel *turb_model);
+    Solver *solver_create(Mesh *mesh,
+                          TurbulenceModel *turb_model);
 
     /**
-     * @brief Destroy a Solver, freeing its internal resources.
-     *
-     * @param solver  Solver instance to destroy.
+     * Free a Solver and its internal resources.
+     * Does NOT free mesh or turb_model.
      */
     void solver_destroy(Solver *solver);
 
     /**
-     * @brief Initialize solver internals (allocate fields, set BCs).
-     *
-     * Must be called once before any calls to solver_step().
-     *
-     * @param solver  Solver instance.
+     * Initialize solver internals:
+     *  - Allocate and init internal FlowState
+     *  - Initialize mesh and turbulence model
+     * Must be called once before solver_step() or apply_actuators().
      */
     void solver_initialize(Solver *solver);
 
     /**
-     * @brief Read current flow state into user-provided structure.
-     *
-     * @param solver  Solver instance.
-     * @param out     Pointer to FlowState struct to populate.
+     * Copy current internal FlowState into user-provided FlowState.
+     * @param solver  Solver instance
+     * @param out      Pre-allocated FlowState (by flow_state_create or similar)
      */
     void solver_read_state(const Solver *solver, FlowState *out);
 
     /**
-     * @brief Apply actuator commands to the solver.
-     *
-     * @param solver     Solver instance.
-     * @param acts       Array of Actuator objects.
-     * @param act_count  Number of actuators in the array.
+     * Apply an array of actuators to solver's internal state.
+     * @param solver      Solver instance
+     * @param acts        Array of Actuator objects
+     * @param act_count   Number of actuators in array
+     * @param dt          Timestep size (seconds)
      */
     void solver_apply_actuators(Solver *solver,
                                 const Actuator *acts,
-                                size_t act_count, double dt);
+                                size_t act_count,
+                                double dt);
 
     /**
-     * @brief Advance the solution by one time step.
-     *
-     * @param solver  Solver instance.
-     * @param dt      Time step size (seconds).
+     * Advance solution one time step.
+     * @param solver  Solver instance
+     * @param dt      Timestep size (seconds)
      */
     void solver_step(Solver *solver, double dt);
 

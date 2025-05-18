@@ -6,7 +6,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/include -I/Users/derekjrussell/Documents/repos/IronMan/build/include -I/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests -I/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/include
 
-C_FLAGSarm64 = -g -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -Wall -Wextra -Wpedantic -std=c11 -Werror
+C_FLAGSarm64 = -g -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE
 
-C_FLAGS = -g -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE -Wall -Wextra -Wpedantic -std=c11 -Werror
+C_FLAGS = -g -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIE
 

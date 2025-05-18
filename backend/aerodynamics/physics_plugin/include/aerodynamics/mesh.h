@@ -40,7 +40,7 @@ extern "C"
      * @param coords  Pointer to an array of node coordinates (num_nodes * 3).
      * @return Mesh* Pointer to the created Mesh object, or NULL on failure.
      */
-    Mesh *mesh_create(size_t num_nodes, const double *coords);
+    Mesh *mesh_create(size_t num_nodes, const double *coords, size_t num_cells, size_t nodes_per_cell, const size_t *connectivity);
 
     /**
      * @brief Destroy the mesh, freeing its memory.

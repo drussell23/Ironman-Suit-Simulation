@@ -1,30 +1,39 @@
-# Aerodynamics Physics Plugin
+# Aerodynamics Physics Plugin (C)
 
 **Version**: 1.0.0  
-**Description**:  
-Shared C library providing a CFD solver with k–ε turbulence models, Smagorinsky LES, actuator support, and Python bindings.
-
----
-
-## 📋 Table of Contents
-
-1. [Prerequisites](#prerequisites)  
-2. [Directory Layout](#directory-layout)  
-3. [Building](#building)  
-4. [Running Tests](#running-tests)  
-5. [Python Usage](#python-usage)  
-6. [pkg-config & CMake Integration](#pkg-config--cmake-integration)  
-7. [Cleaning Up](#cleaning-up)  
+A standalone C library exposing a core CFD‐solver plugin with k–ε turbulence, LES subgrid models, actuators, mesh utilities, and a programmable API—complete with a full suite of CMocka unit tests.
 
 ---
 
 ## Prerequisites
 
 - **CMake** ≥ 3.18  
-- **C compiler**: Clang/GCC (supports C11)  
-- **CMocka** (auto-fetched via FetchContent)  
-- **Python** ≥ 3.7 (for Python bindings)  
-- **NumPy** (for Python examples)
+- **C compiler** supporting C11 (Clang, GCC)  
+- Internet access (FetchContent will pull in CMocka)  
+
+---
+
+## Building & Running C Tests
+
+1. **Configure & generate build files (enable unit tests)**
+
+```bash
+mkdir -p build
+cd build
+cmake .. -DENABLE_TESTING=ON
+```
+
+2. Compile the library and tests
+
+```bash
+cmake --build .
+```
+
+3. (Optional) Run all tests via CTest
+
+```bash
+ctest --output-on-failure
+```
 
 ---
 
@@ -37,25 +46,27 @@ physics_plugin/
 │   ├── aerodynamics_physics_plugin_config.h.in
 │   ├── Config.cmake.in
 │   └── aerodynamics_physics_plugin.pc.in
-├── include/
-│   └── aerodynamics/
-│       ├── solver.h
-│       ├── mesh.h
-│       ├── flow_state.h
-│       ├── actuator.h
-│       └── turbulence_model.h
-├── src/
-│   ├── solver.c
-│   ├── mesh.c
-│   ├── flow_state.c
+├── include/aerodynamics/
+│   ├── actuator.h
+│   ├── flow_state.h
+│   ├── mesh.h
+│   ├── solver.h
+│   └── turbulence_model.h
+├── src/aerodynamics/
 │   ├── actuator.c
+│   ├── bindings.c
+│   ├── flow_state.c
+│   ├── mesh.c
+│   ├── solver.c
 │   └── turbulence_model.c
-├── tests/
-│   ├── test_solver.c
-│   ├── test_mesh.c
-│   ├── test_flow_state.c
+├── tests/aerodynamics/
 │   ├── test_actuator.c
+│   ├── test_bindings.c
+│   ├── test_flow_state.c
+│   ├── test_mesh.c
+│   ├── test_solver.c
 │   └── test_turbulence_model.c
-├── python/
-│   └── command_executor.py
-└── README.md         ← *(this file)*
+├── scripts/
+│   └── fix_eof.sh
+└── README.md        ← *(this file)*
+```

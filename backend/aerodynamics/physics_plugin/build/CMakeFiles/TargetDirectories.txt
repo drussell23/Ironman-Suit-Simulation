@@ -1,5 +1,11 @@
 /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/aerodynamics_physics_plugin.dir
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/aerodynamics_physics_plugin_tests.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_actuator.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_bindings.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_flow_state.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_mesh.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_solver.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_turbulence_model.dir
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test_full_pipeline.dir
 /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/package.dir
 /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/package_source.dir
 /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/CMakeFiles/test.dir
