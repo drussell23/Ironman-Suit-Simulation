@@ -5,43 +5,49 @@
 #include "aerodynamics/flow_state.h" // For FlowState
 
 // Create a new Mesh object.
-Mesh *mesh_create(size_t num_nodes, const double *coords)
+Mesh *mesh_create(size_t num_nodes, const double *coords, size_t num_cells, size_t nodes_per_cell, const size_t *connectivity)
 {
-    if (num_nodes == 0 || !coords) // Check for invalid input.
+    if (num_nodes == 0 || !coords || num_cells == 0 || nodes_per_cell == 0 || !connectivity) // Check for invalid input.
     {
         return NULL; // Invalid input
     }
 
-    Mesh *m = (Mesh *)malloc(sizeof(Mesh)); // Allocate memory for Mesh struct.
+    Mesh *m = malloc(sizeof(*m));
 
-    if (!m) // Check for allocation failure.
+    if (!m)
     {
-        return NULL; // Memory allocation failure
+        return NULL;
     }
 
-    m->num_nodes = num_nodes;                                          // Set number of nodes.
-    m->coordinates = (double *)malloc(sizeof(double) * num_nodes * 3); // Allocate memory for coordinates.
+    m->num_nodes = num_nodes;
+    m->coordinates = malloc(sizeof(double) * 3 * num_nodes);
+    m->num_cells = num_cells;
+    m->nodes_per_cell = nodes_per_cell;
+    m->connectivity = malloc(sizeof(size_t) * num_cells * nodes_per_cell);
 
-    if (!m->coordinates) // Check for allocation failure.
+    if (!m->coordinates || !m->connectivity)
     {
-        free(m);     // Free the Mesh struct if coordinates allocation fails.
-        return NULL; // Memory allocation failure
+        free(m->coordinates);
+        free(m->connectivity);
+        free(m);
+
+        return NULL;
     }
 
-    memcpy(m->coordinates, coords, sizeof(double) * num_nodes * 3); // Copy coordinates into the Mesh struct.
+    memcpy(m->coordinates, coords, sizeof(double) * 3 * num_nodes);
+    memcpy(m->connectivity, connectivity, sizeof(size_t) * num_cells * nodes_per_cell);
 
-    return m; // Return the created Mesh object.
+    return m;
 }
 
 // Free the Mesh object.
 void mesh_destroy(Mesh *mesh)
 {
-    if (!mesh) // Check for NULL pointer.
-    {
-        return; // Nothing to destroy
-    }
-    free(mesh->coordinates); // Free the coordinates array.
-    free(mesh);              // Free the Mesh struct itself.
+    if (!mesh)
+        return;
+    free(mesh->coordinates);
+    free(mesh->connectivity); // ← free the connectivity array you allocated
+    free(mesh);
 }
 
 // This function checks if two cells share a face. It compares the connectivity arrays of two cells and counts the number of common nodes.
@@ -128,7 +134,7 @@ int mesh_initialize(Mesh *mesh)
 
     for (size_t i = 0; i < C; ++i) // Iterate through cells.
     {
-        size_t count = 0; // Initialize count of adjacent cells.
+        size_t count = 0;                                  // Initialize count of adjacent cells.
         const size_t *conn_i = mesh->connectivity + i * P; // Get connectivity for cell i.
 
         // Iterate through cells for adjacency check.
@@ -141,7 +147,7 @@ int mesh_initialize(Mesh *mesh)
 
             const size_t *conn_j = mesh->connectivity + j * P; // Get connectivity for cell j.
 
-            if (share_face(conn_i, conn_j, P)) // Check if cells share a face. 
+            if (share_face(conn_i, conn_j, P)) // Check if cells share a face.
             {
                 mesh->cell_adjacency[i * P + count] = j; // Add cell j to adjacency list of cell i.
                 ++count;                                 // Increment count of adjacent cells.
@@ -352,22 +358,22 @@ void mesh_compute_convection(
         if (fabs(det) < 1e-12)
         {
             accel[3 * i + 0] = accel[3 * i + 1] = accel[3 * i + 2] = 0.0; // Set acceleration to zero.
-            continue; // Skip to next node.
+            continue;                                                     // Skip to next node.
         }
 
         // Compute inverse of AtA using Cramer's rule.
         // invA[l][m] = 1/det * (AtA[l][l] * AtA[m][m] - AtA[l][m] * AtA[m][l])
         // where l, m = 0, 1, 2.
         double invA[3][3];
-        invA[0][0] = (AtA[1][1] * AtA[2][2] - AtA[1][2] * AtA[2][1]) / det; // X component of invA.
+        invA[0][0] = (AtA[1][1] * AtA[2][2] - AtA[1][2] * AtA[2][1]) / det;  // X component of invA.
         invA[0][1] = -(AtA[0][1] * AtA[2][2] - AtA[0][2] * AtA[2][1]) / det; // Y component of invA.
-        invA[0][2] = (AtA[0][1] * AtA[1][2] - AtA[0][2] * AtA[1][1]) / det; // Z component of invA.
+        invA[0][2] = (AtA[0][1] * AtA[1][2] - AtA[0][2] * AtA[1][1]) / det;  // Z component of invA.
         invA[1][0] = -(AtA[1][0] * AtA[2][2] - AtA[1][2] * AtA[2][0]) / det; // X component of invA.
-        invA[1][1] = (AtA[0][0] * AtA[2][2] - AtA[0][2] * AtA[2][0]) / det; // Y component of invA.
+        invA[1][1] = (AtA[0][0] * AtA[2][2] - AtA[0][2] * AtA[2][0]) / det;  // Y component of invA.
         invA[1][2] = -(AtA[0][0] * AtA[1][2] - AtA[0][2] * AtA[1][0]) / det; // Z component of invA.
-        invA[2][0] = (AtA[1][0] * AtA[2][1] - AtA[1][1] * AtA[2][0]) / det; // X component of invA.
+        invA[2][0] = (AtA[1][0] * AtA[2][1] - AtA[1][1] * AtA[2][0]) / det;  // X component of invA.
         invA[2][1] = -(AtA[0][0] * AtA[2][1] - AtA[0][1] * AtA[2][0]) / det; // Y component of invA.
-        invA[2][2] = (AtA[0][0] * AtA[1][1] - AtA[0][1] * AtA[1][0]) / det; // Z component of invA.
+        invA[2][2] = (AtA[0][0] * AtA[1][1] - AtA[0][1] * AtA[1][0]) / det;  // Z component of invA.
 
         // Compute gradient: grad[l][m] = ∑_k invA[l][k] * Atb[k][m]
         double grad[3][3] = {{0}}; // Initialize gradient array.
@@ -411,10 +417,10 @@ void mesh_compute_convection(
         vel_new[3 * i + 2] = vel_old[3 * i + 2] + dt * accel[3 * i + 2]; // Update z-velocity.
     }
 
-    free(vel_old); // Free old velocity array.
-    free(accel); // Free acceleration array.
+    free(vel_old);   // Free old velocity array.
+    free(accel);     // Free acceleration array.
     free(neighbors); // Free neighbors array.
-    free(visited); // Free visited array.
+    free(visited);   // Free visited array.
     // Note: The memory for vel_new is not freed here because it is part of the FlowState struct.
     // The caller is responsible for freeing the FlowState struct when it is no longer needed.
     // The memory for the FlowState struct should be freed using flow_state_destroy().

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdint.h>
 
 #include "aerodynamics/turbulence_model.h"
 #include "aerodynamics/mesh.h"
@@ -64,7 +65,7 @@ void turb_model_initialize(const TurbulenceModel *model, const Mesh *mesh, FlowS
 double *turb_model_compute_viscosity(const TurbulenceModel *model, const Mesh *mesh, const FlowState *state)
 {
     // Compute turbulent viscosity ν_t at each node.
-    if (!model || !mesh || !state)
+    if (!model || !mesh || !state || (uintptr_t)model == 1)
     {
         return NULL; // Invalid input
     }

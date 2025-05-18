@@ -3,13 +3,18 @@ set -euo pipefail
 
 # List of files to ensure have a trailing newline
 FILES="
-  include/aerodynamics/mesh.h
-  include/aerodynamics/turbulence_model.h
   include/aerodynamics/actuator.h
+  include/aerodynamics/bindings.h
   include/aerodynamics/flow_state.h
+  include/aerodynamics/mesh.h
+  include/aerodynamics/solver.h
+  include/aerodynamics/turbulence_model.h
   src/aerodynamics/actuator.c
+  src/aerodynamics/bindings.c
   src/aerodynamics/flow_state.c
   src/aerodynamics/mesh.c
+  src/aerodynamics/solver.c
+  src/aerodynamics/turbulence_model.c
 "
 
 echo "⟳ Running EOF‐newline fixup..."

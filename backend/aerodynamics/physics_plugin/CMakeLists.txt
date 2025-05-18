@@ -1,3 +1,10 @@
+# Next, rebuild and rerun tests:
+# ------------------------------
+# rm -rf build && mkdir build && cd build
+# cmake -DENABLE_TESTING=ON ..
+# cmake --build . -- -j4
+# ctest --output-on-failure
+
 cmake_minimum_required(VERSION 3.18)
 
 # turn on compile_commands.json generation
@@ -28,12 +35,9 @@ set(CMAKE_C_STANDARD_REQUIRED TRUE)
 set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-if(MSVC)
-  add_compile_options(/W4 /WX)
-else()
-  add_compile_options(-Wall -Wextra -Wpedantic -std=c11 -Werror)
-endif()
+cmake_policy(SET CMP0091 NEW) # Keep POSITION_INDEPENDENT_CODE behavior modern
 
+# → We’ll scope -Werror to just our library target, below.
 if(ENABLE_COVERAGE)
   if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(--coverage -O0)
@@ -79,6 +83,21 @@ file(GLOB_RECURSE PLUGIN_SOURCES
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 add_library(${PROJECT_NAME} ${PLUGIN_SOURCES})
 add_library(aerodynamics::physics_plugin ALIAS ${PROJECT_NAME})
+
+if(MSVC)
+  target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
+else()
+  target_compile_options(${PROJECT_NAME}
+    PRIVATE
+    -Wall
+    -Wextra
+    -Wpedantic
+    -std=c11
+    -Werror
+
+    # Don't elevate this macOS-only warning into an error:
+    -Wno-error=unused-command-line-argument)
+endif()
 
 # Public headers (install and build)
 target_include_directories(${PROJECT_NAME}
@@ -132,27 +151,55 @@ if(ENABLE_TESTING)
   )
   FetchContent_MakeAvailable(cmocka)
 
-  # Collect test sources
-  file(GLOB_RECURSE TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.c")
+  # Build one test executable per test_*.c
+  file(GLOB TEST_FILES "${CMAKE_CURRENT_SOURCE_DIR}/tests/aerodynamics/test_*.c")
 
-  add_executable(${PROJECT_NAME}_tests ${TEST_SOURCES})
+  foreach(test_src IN LISTS TEST_FILES)
+    get_filename_component(test_name ${test_src} NAME_WE)
+    add_executable(${test_name} ${test_src})
+    target_include_directories(${test_name}
+      PRIVATE
+      ${CMAKE_CURRENT_SOURCE_DIR}/include
+      ${CMAKE_CURRENT_BINARY_DIR}/include
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests
+      ${CMAKE_CURRENT_BINARY_DIR}/_deps/cmocka-src/inclde
+    )
+    target_link_libraries(${test_name}
+      PRIVATE
+      aerodynamics::physics_plugin
+      cmocka
+    )
 
-  # <── Add these four include dirs ──>
-  target_include_directories(${PROJECT_NAME}_tests
-    PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include # public headers
-    ${CMAKE_CURRENT_BINARY_DIR}/include # generated config.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/tests # so tests can #include "aerodynamics/…"
-    ${CMAKE_CURRENT_BINARY_DIR}/_deps/cmocka-src/include # CMocka’s headers
+    # Wrap on Linux only
+    if(UNIX AND NOT APPLE AND NOT MSVC)
+      target_link_options(${test_name} PRIVATE
+        -Wl, --wrap=calloc
+        -Wl, --wrap=malloc
+      )
+      target_compile_definitions(${test_name} PRIVATE MOCK_CALLOC)
+    endif()
+
+    add_test(NAME ${test_name} COMMAND ${test_name})
+  endforeach()
+
+  # ─── Whole-Pipeline Smoke Test ───────────────────────────────────────────────
+  add_executable(test_full_pipeline
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/integration/test_full_pipeline.c
   )
 
-  target_link_libraries(${PROJECT_NAME}_tests
+  target_include_directories(test_full_pipeline
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_BINARY_DIR}/include
+  )
+
+  target_link_libraries(test_full_pipeline
     PRIVATE
     aerodynamics::physics_plugin
-    cmocka-static
   )
 
-  add_test(NAME aerodynamics_unit_tests COMMAND ${PROJECT_NAME}_tests)
+  # Register the smoke-test with CTest.
+  add_test(NAME full_pipeline_c COMMAND test_full_pipeline)
 endif()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

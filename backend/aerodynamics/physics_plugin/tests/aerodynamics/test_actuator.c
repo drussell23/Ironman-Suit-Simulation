@@ -44,8 +44,9 @@ static void test_actuator_apply_surface(void **state)
 {
     (void)state; // unused
 
-    double coords[] = {0, 0, 0, 1, 0, 0, 0, 1, 0};
-    Mesh *mesh = mesh_create(3, coords);
+    double coords[] = {0, 0, 0,  1, 0, 0,  0, 1, 0};
+    size_t conn3[] = {0, 1, 2};
+    Mesh *mesh = mesh_create(3, coords, 1, 3, conn3);
     assert_non_null(mesh);
 
     FlowState fs;
@@ -71,7 +72,8 @@ static void test_actuator_apply_body_force(void **state)
     (void)state; // unused
 
     double coords[] = {0, 0, 0};
-    Mesh *mesh = mesh_create(1, coords);
+    size_t conn1[] = {0};
+    Mesh *mesh = mesh_create(1, coords, 1, 1, conn1);
     assert_non_null(mesh);
 
     FlowState fs;

@@ -1,0 +1,285 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/cmocka-build/src/libcmocka.dylib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"target_compile_options",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-std=gnu99"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wmissing-prototypes"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=address"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wstrict-prototypes"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=strict-prototypes"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wwrite-strings"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=write-strings"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror-implicit-function-declaration"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=pointer-arith"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wdeclaration-after-statement"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=declaration-after-statement"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wreturn-type"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=return-type"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=uninitialized"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wimplicit-fallthrough"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=strict-overflow"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wstrict-overflow=2"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-format-zero-length"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wmissing-field-initializers"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wformat"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=format-security"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fno-common"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fstack-protector-strong"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fstack-clash-protection"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-DHAVE_CONFIG_H"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CMOCKA_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src"
+				},
+				{
+					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/include"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "cmocka::@18a7a5e03b12bd613a1f",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			},
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "cmocka",
+	"nameOnDisk" : "libcmocka.dylib",
+	"paths" : 
+	{
+		"build" : "_deps/cmocka-build/src",
+		"source" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

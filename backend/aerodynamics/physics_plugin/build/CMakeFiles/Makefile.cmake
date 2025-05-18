@@ -189,7 +189,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/aerodynamics_physics_plugin.dir/DependInfo.cmake"
-  "CMakeFiles/aerodynamics_physics_plugin_tests.dir/DependInfo.cmake"
+  "CMakeFiles/test_actuator.dir/DependInfo.cmake"
+  "CMakeFiles/test_bindings.dir/DependInfo.cmake"
+  "CMakeFiles/test_flow_state.dir/DependInfo.cmake"
+  "CMakeFiles/test_mesh.dir/DependInfo.cmake"
+  "CMakeFiles/test_solver.dir/DependInfo.cmake"
+  "CMakeFiles/test_turbulence_model.dir/DependInfo.cmake"
+  "CMakeFiles/test_full_pipeline.dir/DependInfo.cmake"
   "_deps/cmocka-build/CMakeFiles/Experimental.dir/DependInfo.cmake"
   "_deps/cmocka-build/CMakeFiles/Nightly.dir/DependInfo.cmake"
   "_deps/cmocka-build/CMakeFiles/Continuous.dir/DependInfo.cmake"

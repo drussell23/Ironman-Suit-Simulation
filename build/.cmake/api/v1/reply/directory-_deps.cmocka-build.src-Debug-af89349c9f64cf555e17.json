@@ -1,0 +1,84 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/cmocka-build/src/libcmocka.0.8.0.dylib",
+				"_deps/cmocka-build/src/libcmocka.0.dylib"
+			],
+			"targetId" : "cmocka::@18a7a5e03b12bd613a1f",
+			"targetIndex" : 32,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/cmocka-build/src/libcmocka.dylib"
+			],
+			"targetId" : "cmocka::@18a7a5e03b12bd613a1f",
+			"targetIndex" : 32,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/cmocka",
+			"exportName" : "cmocka-config",
+			"exportTargets" : 
+			[
+				{
+					"id" : "cmocka::@18a7a5e03b12bd613a1f",
+					"index" : 32
+				}
+			],
+			"paths" : 
+			[
+				"_deps/cmocka-build/src/CMakeFiles/Export/04e5691e2d1e93251da6985bf87e180b/cmocka-config.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/cmocka-build/src",
+		"source" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src"
+	}
+}

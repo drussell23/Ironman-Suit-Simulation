@@ -205,17 +205,95 @@ aerodynamics_physics_plugin/fast:
 .PHONY : aerodynamics_physics_plugin/fast
 
 #=============================================================================
-# Target rules for targets named aerodynamics_physics_plugin_tests
+# Target rules for targets named test_actuator
 
 # Build rule for target.
-aerodynamics_physics_plugin_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 aerodynamics_physics_plugin_tests
-.PHONY : aerodynamics_physics_plugin_tests
+test_actuator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_actuator
+.PHONY : test_actuator
 
 # fast build rule for target.
-aerodynamics_physics_plugin_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/build
-.PHONY : aerodynamics_physics_plugin_tests/fast
+test_actuator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_actuator.dir/build.make CMakeFiles/test_actuator.dir/build
+.PHONY : test_actuator/fast
+
+#=============================================================================
+# Target rules for targets named test_bindings
+
+# Build rule for target.
+test_bindings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bindings
+.PHONY : test_bindings
+
+# fast build rule for target.
+test_bindings/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bindings.dir/build.make CMakeFiles/test_bindings.dir/build
+.PHONY : test_bindings/fast
+
+#=============================================================================
+# Target rules for targets named test_flow_state
+
+# Build rule for target.
+test_flow_state: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_flow_state
+.PHONY : test_flow_state
+
+# fast build rule for target.
+test_flow_state/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_flow_state.dir/build.make CMakeFiles/test_flow_state.dir/build
+.PHONY : test_flow_state/fast
+
+#=============================================================================
+# Target rules for targets named test_mesh
+
+# Build rule for target.
+test_mesh: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mesh
+.PHONY : test_mesh
+
+# fast build rule for target.
+test_mesh/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mesh.dir/build.make CMakeFiles/test_mesh.dir/build
+.PHONY : test_mesh/fast
+
+#=============================================================================
+# Target rules for targets named test_solver
+
+# Build rule for target.
+test_solver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_solver
+.PHONY : test_solver
+
+# fast build rule for target.
+test_solver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/build
+.PHONY : test_solver/fast
+
+#=============================================================================
+# Target rules for targets named test_turbulence_model
+
+# Build rule for target.
+test_turbulence_model: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_turbulence_model
+.PHONY : test_turbulence_model
+
+# fast build rule for target.
+test_turbulence_model/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_turbulence_model.dir/build.make CMakeFiles/test_turbulence_model.dir/build
+.PHONY : test_turbulence_model/fast
+
+#=============================================================================
+# Target rules for targets named test_full_pipeline
+
+# Build rule for target.
+test_full_pipeline: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_full_pipeline
+.PHONY : test_full_pipeline
+
+# fast build rule for target.
+test_full_pipeline/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_full_pipeline.dir/build.make CMakeFiles/test_full_pipeline.dir/build
+.PHONY : test_full_pipeline/fast
 
 #=============================================================================
 # Target rules for targets named Experimental
@@ -808,7 +886,7 @@ tests/aerodynamics/test_actuator.o: tests/aerodynamics/test_actuator.c.o
 
 # target to build an object file
 tests/aerodynamics/test_actuator.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_actuator.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_actuator.dir/build.make CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o
 .PHONY : tests/aerodynamics/test_actuator.c.o
 
 tests/aerodynamics/test_actuator.i: tests/aerodynamics/test_actuator.c.i
@@ -816,7 +894,7 @@ tests/aerodynamics/test_actuator.i: tests/aerodynamics/test_actuator.c.i
 
 # target to preprocess a source file
 tests/aerodynamics/test_actuator.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_actuator.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_actuator.dir/build.make CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.i
 .PHONY : tests/aerodynamics/test_actuator.c.i
 
 tests/aerodynamics/test_actuator.s: tests/aerodynamics/test_actuator.c.s
@@ -824,7 +902,7 @@ tests/aerodynamics/test_actuator.s: tests/aerodynamics/test_actuator.c.s
 
 # target to generate assembly for a file
 tests/aerodynamics/test_actuator.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_actuator.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_actuator.dir/build.make CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.s
 .PHONY : tests/aerodynamics/test_actuator.c.s
 
 tests/aerodynamics/test_bindings.o: tests/aerodynamics/test_bindings.c.o
@@ -832,7 +910,7 @@ tests/aerodynamics/test_bindings.o: tests/aerodynamics/test_bindings.c.o
 
 # target to build an object file
 tests/aerodynamics/test_bindings.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_bindings.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bindings.dir/build.make CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o
 .PHONY : tests/aerodynamics/test_bindings.c.o
 
 tests/aerodynamics/test_bindings.i: tests/aerodynamics/test_bindings.c.i
@@ -840,7 +918,7 @@ tests/aerodynamics/test_bindings.i: tests/aerodynamics/test_bindings.c.i
 
 # target to preprocess a source file
 tests/aerodynamics/test_bindings.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_bindings.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bindings.dir/build.make CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.i
 .PHONY : tests/aerodynamics/test_bindings.c.i
 
 tests/aerodynamics/test_bindings.s: tests/aerodynamics/test_bindings.c.s
@@ -848,7 +926,7 @@ tests/aerodynamics/test_bindings.s: tests/aerodynamics/test_bindings.c.s
 
 # target to generate assembly for a file
 tests/aerodynamics/test_bindings.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_bindings.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bindings.dir/build.make CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.s
 .PHONY : tests/aerodynamics/test_bindings.c.s
 
 tests/aerodynamics/test_flow_state.o: tests/aerodynamics/test_flow_state.c.o
@@ -856,7 +934,7 @@ tests/aerodynamics/test_flow_state.o: tests/aerodynamics/test_flow_state.c.o
 
 # target to build an object file
 tests/aerodynamics/test_flow_state.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_flow_state.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_flow_state.dir/build.make CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o
 .PHONY : tests/aerodynamics/test_flow_state.c.o
 
 tests/aerodynamics/test_flow_state.i: tests/aerodynamics/test_flow_state.c.i
@@ -864,7 +942,7 @@ tests/aerodynamics/test_flow_state.i: tests/aerodynamics/test_flow_state.c.i
 
 # target to preprocess a source file
 tests/aerodynamics/test_flow_state.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_flow_state.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_flow_state.dir/build.make CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.i
 .PHONY : tests/aerodynamics/test_flow_state.c.i
 
 tests/aerodynamics/test_flow_state.s: tests/aerodynamics/test_flow_state.c.s
@@ -872,7 +950,7 @@ tests/aerodynamics/test_flow_state.s: tests/aerodynamics/test_flow_state.c.s
 
 # target to generate assembly for a file
 tests/aerodynamics/test_flow_state.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_flow_state.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_flow_state.dir/build.make CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.s
 .PHONY : tests/aerodynamics/test_flow_state.c.s
 
 tests/aerodynamics/test_mesh.o: tests/aerodynamics/test_mesh.c.o
@@ -880,7 +958,7 @@ tests/aerodynamics/test_mesh.o: tests/aerodynamics/test_mesh.c.o
 
 # target to build an object file
 tests/aerodynamics/test_mesh.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_mesh.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mesh.dir/build.make CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o
 .PHONY : tests/aerodynamics/test_mesh.c.o
 
 tests/aerodynamics/test_mesh.i: tests/aerodynamics/test_mesh.c.i
@@ -888,7 +966,7 @@ tests/aerodynamics/test_mesh.i: tests/aerodynamics/test_mesh.c.i
 
 # target to preprocess a source file
 tests/aerodynamics/test_mesh.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_mesh.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mesh.dir/build.make CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.i
 .PHONY : tests/aerodynamics/test_mesh.c.i
 
 tests/aerodynamics/test_mesh.s: tests/aerodynamics/test_mesh.c.s
@@ -896,7 +974,7 @@ tests/aerodynamics/test_mesh.s: tests/aerodynamics/test_mesh.c.s
 
 # target to generate assembly for a file
 tests/aerodynamics/test_mesh.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_mesh.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mesh.dir/build.make CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.s
 .PHONY : tests/aerodynamics/test_mesh.c.s
 
 tests/aerodynamics/test_solver.o: tests/aerodynamics/test_solver.c.o
@@ -904,7 +982,7 @@ tests/aerodynamics/test_solver.o: tests/aerodynamics/test_solver.c.o
 
 # target to build an object file
 tests/aerodynamics/test_solver.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_solver.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/tests/aerodynamics/test_solver.c.o
 .PHONY : tests/aerodynamics/test_solver.c.o
 
 tests/aerodynamics/test_solver.i: tests/aerodynamics/test_solver.c.i
@@ -912,7 +990,7 @@ tests/aerodynamics/test_solver.i: tests/aerodynamics/test_solver.c.i
 
 # target to preprocess a source file
 tests/aerodynamics/test_solver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_solver.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/tests/aerodynamics/test_solver.c.i
 .PHONY : tests/aerodynamics/test_solver.c.i
 
 tests/aerodynamics/test_solver.s: tests/aerodynamics/test_solver.c.s
@@ -920,7 +998,7 @@ tests/aerodynamics/test_solver.s: tests/aerodynamics/test_solver.c.s
 
 # target to generate assembly for a file
 tests/aerodynamics/test_solver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_solver.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/tests/aerodynamics/test_solver.c.s
 .PHONY : tests/aerodynamics/test_solver.c.s
 
 tests/aerodynamics/test_turbulence_model.o: tests/aerodynamics/test_turbulence_model.c.o
@@ -928,7 +1006,7 @@ tests/aerodynamics/test_turbulence_model.o: tests/aerodynamics/test_turbulence_m
 
 # target to build an object file
 tests/aerodynamics/test_turbulence_model.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_turbulence_model.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_turbulence_model.dir/build.make CMakeFiles/test_turbulence_model.dir/tests/aerodynamics/test_turbulence_model.c.o
 .PHONY : tests/aerodynamics/test_turbulence_model.c.o
 
 tests/aerodynamics/test_turbulence_model.i: tests/aerodynamics/test_turbulence_model.c.i
@@ -936,7 +1014,7 @@ tests/aerodynamics/test_turbulence_model.i: tests/aerodynamics/test_turbulence_m
 
 # target to preprocess a source file
 tests/aerodynamics/test_turbulence_model.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_turbulence_model.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_turbulence_model.dir/build.make CMakeFiles/test_turbulence_model.dir/tests/aerodynamics/test_turbulence_model.c.i
 .PHONY : tests/aerodynamics/test_turbulence_model.c.i
 
 tests/aerodynamics/test_turbulence_model.s: tests/aerodynamics/test_turbulence_model.c.s
@@ -944,8 +1022,32 @@ tests/aerodynamics/test_turbulence_model.s: tests/aerodynamics/test_turbulence_m
 
 # target to generate assembly for a file
 tests/aerodynamics/test_turbulence_model.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aerodynamics_physics_plugin_tests.dir/build.make CMakeFiles/aerodynamics_physics_plugin_tests.dir/tests/aerodynamics/test_turbulence_model.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_turbulence_model.dir/build.make CMakeFiles/test_turbulence_model.dir/tests/aerodynamics/test_turbulence_model.c.s
 .PHONY : tests/aerodynamics/test_turbulence_model.c.s
+
+tests/integration/test_full_pipeline.o: tests/integration/test_full_pipeline.c.o
+.PHONY : tests/integration/test_full_pipeline.o
+
+# target to build an object file
+tests/integration/test_full_pipeline.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_full_pipeline.dir/build.make CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o
+.PHONY : tests/integration/test_full_pipeline.c.o
+
+tests/integration/test_full_pipeline.i: tests/integration/test_full_pipeline.c.i
+.PHONY : tests/integration/test_full_pipeline.i
+
+# target to preprocess a source file
+tests/integration/test_full_pipeline.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_full_pipeline.dir/build.make CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.i
+.PHONY : tests/integration/test_full_pipeline.c.i
+
+tests/integration/test_full_pipeline.s: tests/integration/test_full_pipeline.c.s
+.PHONY : tests/integration/test_full_pipeline.s
+
+# target to generate assembly for a file
+tests/integration/test_full_pipeline.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_full_pipeline.dir/build.make CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.s
+.PHONY : tests/integration/test_full_pipeline.c.s
 
 # Help Target
 help:
@@ -992,12 +1094,18 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... dist"
 	@echo "... aerodynamics_physics_plugin"
-	@echo "... aerodynamics_physics_plugin_tests"
 	@echo "... allocate_module_test"
 	@echo "... assert_macro_test"
 	@echo "... assert_module_test"
 	@echo "... cmocka"
 	@echo "... simple_test"
+	@echo "... test_actuator"
+	@echo "... test_bindings"
+	@echo "... test_flow_state"
+	@echo "... test_full_pipeline"
+	@echo "... test_mesh"
+	@echo "... test_solver"
+	@echo "... test_turbulence_model"
 	@echo "... src/aerodynamics/actuator.o"
 	@echo "... src/aerodynamics/actuator.i"
 	@echo "... src/aerodynamics/actuator.s"
@@ -1034,6 +1142,9 @@ help:
 	@echo "... tests/aerodynamics/test_turbulence_model.o"
 	@echo "... tests/aerodynamics/test_turbulence_model.i"
 	@echo "... tests/aerodynamics/test_turbulence_model.s"
+	@echo "... tests/integration/test_full_pipeline.o"
+	@echo "... tests/integration/test_full_pipeline.i"
+	@echo "... tests/integration/test_full_pipeline.s"
 .PHONY : help
 
 

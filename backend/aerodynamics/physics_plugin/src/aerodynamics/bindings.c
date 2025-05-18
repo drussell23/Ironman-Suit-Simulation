@@ -29,16 +29,9 @@ MeshHandle mesh_create_bind(size_t num_nodes, const double *coords, size_t num_c
         return NULL;
     }
 
-    Mesh *mesh = mesh_create(num_nodes, coords);
+    // Pass full topology to core API.
+    Mesh *mesh = mesh_create(num_nodes, coords, num_cells, nodes_per_cell, connectivity);
     CHECK_ALLOC(mesh, "mesh structure");
-
-    mesh->num_cells = num_cells;
-    mesh->nodes_per_cell = nodes_per_cell;
-
-    size_t total_conn = num_cells * nodes_per_cell;
-    mesh->connectivity = malloc(sizeof(size_t) * total_conn);
-    CHECK_ALLOC(mesh->connectivity, "mesh connectivity");
-    memcpy(mesh->connectivity, connectivity, sizeof(size_t) * total_conn);
 
     LOG("Mesh created successfully (nodes: %zu, cells: %zu)", num_nodes, num_cells);
     return (MeshHandle)mesh;
@@ -157,10 +150,19 @@ void solver_apply_actuator_bind(SolverHandle solver, ActuatorHandle actuator, do
 {
     if (!solver || !actuator || dt <= 0.0)
     {
-        LOG("Invalid input to solver_apply_actuator (solver: %p, actuator: %p, dt: %f)", solver, actuator, dt);
+        LOG("Invalid input to solver_apply_actuator "
+            "(solver: %p, actuator: %p, dt: %f)",
+            solver, actuator, dt);
+
         return;
     }
-    solver_apply_actuators((Solver *)solver, (Actuator *)actuator, 1, dt);
+
+    // Forward the single ActuatorHandle into the core API
+    solver_apply_actuators((Solver *)solver,
+                           (const Actuator *)actuator,
+                           1,
+                           dt);
+
     LOG("Actuator applied to solver for dt=%.5f seconds.", dt);
 }
 
