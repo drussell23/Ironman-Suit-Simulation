@@ -52,14 +52,20 @@ void solver_destroy(Solver *solver)
 
 void solver_initialize(Solver *solver)
 {
-    if (!solver)
+    if (!solver || !solver->mesh || !solver->turb_model)
+    {
+        fprintf(stderr, "solver_initialize: invalid input.\n");
         return;
-    // Initialize mesh (e.g. build neighbors)
+    }
+
+    // 1) Build mesh connectivity, volumes, adjacency, etc.
     if (mesh_initialize(solver->mesh) != 0)
     {
         fprintf(stderr, "solver_initialize: mesh init failed.\n");
+        return;
     }
-    // Allocate and init FlowState
+
+    // 2) Allocate and zero-init the FlowState
     solver->flow_state = malloc(sizeof(*solver->flow_state));
     if (!solver->flow_state)
     {
@@ -73,16 +79,21 @@ void solver_initialize(Solver *solver)
         solver->flow_state = NULL;
         return;
     }
-    // Initialize turbulence model fields
-    turb_model_initialize(solver->turb_model, solver->mesh, solver->flow_state);
+
+    // 3) Initialize turbulence-model fields (k, ε)
+    turb_model_initialize(solver->turb_model,
+                          solver->mesh,
+                          solver->flow_state);
 }
 
 void solver_read_state(const Solver *solver, FlowState *out)
 {
     if (!solver || !out || !solver->flow_state)
         return;
+
     size_t N = mesh_get_num_nodes(solver->mesh);
-    // Copy arrays
+
+    // Copy arrays.
     memcpy(out->velocity, solver->flow_state->velocity, sizeof(double) * 3 * N);
     memcpy(out->pressure, solver->flow_state->pressure, sizeof(double) * N);
     memcpy(out->turbulence_kinetic_energy, solver->flow_state->turbulence_kinetic_energy, sizeof(double) * N);
@@ -96,10 +107,13 @@ void solver_apply_actuators(Solver *solver,
 {
     if (!solver || !acts || act_count == 0 || dt <= 0.0)
         return;
+
     if (!solver->flow_state)
         return;
+
     Mesh *mesh = solver->mesh;
     FlowState *state = solver->flow_state;
+    
     for (size_t i = 0; i < act_count; ++i)
     {
         actuator_apply(&acts[i], mesh, state, dt);

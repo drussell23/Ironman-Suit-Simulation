@@ -45,8 +45,16 @@ void mesh_destroy(Mesh *mesh)
 {
     if (!mesh)
         return;
+
+    // Free user-provided data
     free(mesh->coordinates);
-    free(mesh->connectivity); // ← free the connectivity array you allocated
+    free(mesh->connectivity);
+
+    // Free arrays allocated by mesh_initialize()
+    free(mesh->cell_volumes);
+    free(mesh->cell_adjacency);
+    free(mesh->adjacency_offsets);
+
     free(mesh);
 }
 
