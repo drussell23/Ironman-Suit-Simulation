@@ -1,10 +1,10 @@
-Start testing: May 18 11:02 PDT
+Start testing: May 18 18:14 PDT
 ----------------------------------------------------------
 1/11 Testing: test_actuator
 1/11 Test: test_actuator
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_actuator"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_actuator" start time: May 18 11:02 PDT
+"test_actuator" start time: May 18 18:14 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 5 test(s).
@@ -21,10 +21,10 @@ Output:
 [==========] tests: 5 test(s) run.
 [  PASSED  ] 5 test(s).
 <end of output>
-Test time =   1.50 sec
+Test time =   1.17 sec
 ----------------------------------------------------------
 Test Passed.
-"test_actuator" end time: May 18 11:02 PDT
+"test_actuator" end time: May 18 18:14 PDT
 "test_actuator" time elapsed: 00:00:01
 ----------------------------------------------------------
 
@@ -32,7 +32,7 @@ Test Passed.
 2/11 Test: test_bindings
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_bindings"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_bindings" start time: May 18 11:02 PDT
+"test_bindings" start time: May 18 18:14 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 6 test(s).
@@ -75,19 +75,19 @@ Output:
 [AeroBindings] Attempted to initialize null solver.
 [AeroBindings] Solver initialized.
 [AeroBindings] Invalid input to solver_step (solver: 0x0, dt: 0.010000)
-[AeroBindings] Invalid input to solver_step (solver: 0x600001378000, dt: -1.000000)
+[AeroBindings] Invalid input to solver_step (solver: 0x6000014dc020, dt: -1.000000)
 [AeroBindings] Solver stepped by dt=0.05000 seconds.
 [AeroBindings] Null mesh provided to flow_state_create.
 [AeroBindings] Flow state created.
-[AeroBindings] Invalid input to solver_read_state (solver: 0x0, state: 0x600001d780f0)
-[AeroBindings] Invalid input to solver_read_state (solver: 0x600001378000, state: 0x0)
+[AeroBindings] Invalid input to solver_read_state (solver: 0x0, state: 0x600001adc120)
+[AeroBindings] Invalid input to solver_read_state (solver: 0x6000014dc020, state: 0x0)
 [AeroBindings] Solver state read successfully.
 [AeroBindings] Invalid input to flow_state_get_velocity.
 [AeroBindings] Invalid input to flow_state_get_velocity.
 [AeroBindings] Actuator 'surf' created (type: 0, nodes: 2)
-[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x0, actuator: 0x600003078000, dt: 0.100000)
-[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x600001378000, actuator: 0x0, dt: 0.100000)
-[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x600001378000, actuator: 0x600003078000, dt: -0.500000)
+[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x0, actuator: 0x6000037d0000, dt: 0.100000)
+[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x6000014dc020, actuator: 0x0, dt: 0.100000)
+[AeroBindings] Invalid input to solver_apply_actuator (solver: 0x6000014dc020, actuator: 0x6000037d0000, dt: -0.500000)
 [AeroBindings] Actuator applied to solver for dt=1.00000 seconds.
 [AeroBindings] Flow state destroyed.
 [AeroBindings] Solver destroyed.
@@ -98,10 +98,10 @@ Output:
 [==========] tests: 6 test(s) run.
 [  PASSED  ] 6 test(s).
 <end of output>
-Test time =   0.40 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"test_bindings" end time: May 18 11:02 PDT
+"test_bindings" end time: May 18 18:14 PDT
 "test_bindings" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -109,7 +109,7 @@ Test Passed.
 3/11 Test: test_flow_state
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_flow_state"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_flow_state" start time: May 18 11:02 PDT
+"test_flow_state" start time: May 18 18:14 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 3 test(s).
@@ -122,10 +122,10 @@ Output:
 [==========] tests: 3 test(s) run.
 [  PASSED  ] 3 test(s).
 <end of output>
-Test time =   0.41 sec
+Test time =   0.51 sec
 ----------------------------------------------------------
 Test Passed.
-"test_flow_state" end time: May 18 11:02 PDT
+"test_flow_state" end time: May 18 18:14 PDT
 "test_flow_state" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -133,7 +133,7 @@ Test Passed.
 4/11 Test: test_mesh
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_mesh"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_mesh" start time: May 18 11:02 PDT
+"test_mesh" start time: May 18 18:14 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 8 test(s).
@@ -156,10 +156,10 @@ Output:
 [==========] tests: 8 test(s) run.
 [  PASSED  ] 8 test(s).
 <end of output>
-Test time =   0.40 sec
+Test time =   0.42 sec
 ----------------------------------------------------------
 Test Passed.
-"test_mesh" end time: May 18 11:02 PDT
+"test_mesh" end time: May 18 18:15 PDT
 "test_mesh" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -167,7 +167,7 @@ Test Passed.
 5/11 Test: test_solver
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_solver"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_solver" start time: May 18 11:02 PDT
+"test_solver" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 7 test(s).
@@ -186,6 +186,7 @@ solver_create: NULL mesh or turb_model.
 [ RUN      ] test_solver_step_null
 [       OK ] test_solver_step_null
 [ RUN      ] test_solver_initialize_null
+solver_initialize: invalid input.
 [       OK ] test_solver_initialize_null
 [==========] tests: 7 test(s) run.
 [  PASSED  ] 7 test(s).
@@ -193,7 +194,7 @@ solver_create: NULL mesh or turb_model.
 Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"test_solver" end time: May 18 11:02 PDT
+"test_solver" end time: May 18 18:15 PDT
 "test_solver" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -201,7 +202,7 @@ Test Passed.
 6/11 Test: test_turbulence_model
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_turbulence_model"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"test_turbulence_model" start time: May 18 11:02 PDT
+"test_turbulence_model" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 9 test(s).
@@ -229,7 +230,7 @@ Output:
 Test time =   0.40 sec
 ----------------------------------------------------------
 Test Passed.
-"test_turbulence_model" end time: May 18 11:02 PDT
+"test_turbulence_model" end time: May 18 18:15 PDT
 "test_turbulence_model" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -237,15 +238,14 @@ Test Passed.
 7/11 Test: full_pipeline_c
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/test_full_pipeline"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build
-"full_pipeline_c" start time: May 18 11:02 PDT
+"full_pipeline_c" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
-Assertion failed: (!isnan(out->velocity[3 * i + d])), function main, file test_full_pipeline.c, line 68.
 <end of output>
 Test time =   0.40 sec
 ----------------------------------------------------------
-Test Failed.
-"full_pipeline_c" end time: May 18 11:02 PDT
+Test Passed.
+"full_pipeline_c" end time: May 18 18:15 PDT
 "full_pipeline_c" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -253,7 +253,7 @@ Test Failed.
 8/11 Test: simple_test
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example/simple_test"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example
-"simple_test" start time: May 18 11:02 PDT
+"simple_test" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 1 test(s).
@@ -262,10 +262,10 @@ Output:
 [==========] tests: 1 test(s) run.
 [  PASSED  ] 1 test(s).
 <end of output>
-Test time =   0.49 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"simple_test" end time: May 18 11:02 PDT
+"simple_test" end time: May 18 18:15 PDT
 "simple_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -273,24 +273,24 @@ Test Passed.
 9/11 Test: allocate_module_test
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example/allocate_module_test"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example
-"allocate_module_test" start time: May 18 11:02 PDT
+"allocate_module_test" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 3 test(s).
 [ RUN      ] leak_memory_test
 [  ERROR   ] --- Blocks allocated...
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:41: note: block 0x600002d18080 allocated here
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:41: note: block 0x6000009e0080 allocated here
 ERROR: leak_memory_test leaked 1 block(s)
 
 [  FAILED  ] leak_memory_test
 [ RUN      ] buffer_overflow_test
-[  ERROR   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:48: error: Guard block of 0x600002d180e0 size=4 is corrupt
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:46: note: allocated here at 0x600002d180e4
+[  ERROR   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:48: error: Guard block of 0x6000009e00e0 size=4 is corrupt
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:46: note: allocated here at 0x6000009e00e4
 [   LINE   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:48: error: Failure!
 [  FAILED  ] buffer_overflow_test
 [ RUN      ] buffer_underflow_test
-[  ERROR   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:54: error: Guard block of 0x600002d18160 size=4 is corrupt
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:52: note: allocated here at 0x600002d1815f
+[  ERROR   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:54: error: Guard block of 0x6000009e0160 size=4 is corrupt
+/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:52: note: allocated here at 0x6000009e015f
 [   LINE   ] --- /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-src/example/allocate_module.c:54: error: Failure!
 [  FAILED  ] buffer_underflow_test
 [==========] tests: 3 test(s) run.
@@ -302,10 +302,10 @@ ERROR: leak_memory_test leaked 1 block(s)
 
  3 FAILED TEST(S)
 <end of output>
-Test time =   0.39 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"allocate_module_test" end time: May 18 11:02 PDT
+"allocate_module_test" end time: May 18 18:15 PDT
 "allocate_module_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -313,7 +313,7 @@ Test Passed.
 10/11 Test: assert_macro_test
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example/assert_macro_test"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example
-"assert_macro_test" start time: May 18 11:02 PDT
+"assert_macro_test" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 2 test(s).
@@ -333,10 +333,10 @@ Output:
 
  2 FAILED TEST(S)
 <end of output>
-Test time =   0.40 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"assert_macro_test" end time: May 18 11:02 PDT
+"assert_macro_test" end time: May 18 18:15 PDT
 "assert_macro_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -344,7 +344,7 @@ Test Passed.
 11/11 Test: assert_module_test
 Command: "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example/assert_module_test"
 Directory: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/_deps/cmocka-build/example
-"assert_module_test" start time: May 18 11:02 PDT
+"assert_module_test" start time: May 18 18:15 PDT
 Output:
 ----------------------------------------------------------
 [==========] tests: Running 3 test(s).
@@ -367,11 +367,11 @@ Expected assert in decrement_value(NULL)
 
  2 FAILED TEST(S)
 <end of output>
-Test time =   0.39 sec
+Test time =   0.40 sec
 ----------------------------------------------------------
 Test Passed.
-"assert_module_test" end time: May 18 11:02 PDT
+"assert_module_test" end time: May 18 18:15 PDT
 "assert_module_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 18 11:02 PDT
+End testing: May 18 18:15 PDT

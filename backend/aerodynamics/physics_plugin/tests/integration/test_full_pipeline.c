@@ -8,27 +8,27 @@
 
 int main(void) {
     // 1) Make a 4-node tetrahedral mesh.
-    size_t num_nodes = 4;
+    const size_t num_nodes = 4;
 
-    double coords[4 * 3] = {
+    const double coords[12] = {
         0.0, 0.0, 0.0, // node 0
         1.0, 0.0, 0.0, // node 1
         0.0, 1.0, 0.0, // node 2
         0.0, 0.0, 1.0  // node 3
     };
 
-    size_t num_cells = 1;
-    size_t nodes_per_cell = 4;
-    size_t connectivity[4] = {0, 1, 2, 3};
+    const size_t num_cells = 1;
+    const size_t nodes_per_cell = 4;
+    const size_t connectivity[4] = {0, 1, 2, 3};
 
-    Mesh *mesh = mesh_create(num_nodes, coords, num_cells, nodes_per_cell, connectivity);
+    Mesh *mesh = mesh_create(num_nodes, 
+                             coords, 
+                             num_cells, 
+                             nodes_per_cell, 
+                             connectivity
+                            );
+
     assert(mesh);
-
-    mesh->num_cells = num_cells;
-    mesh->nodes_per_cell = nodes_per_cell;
-    mesh->connectivity = malloc(sizeof(connectivity));
-
-    memcpy(mesh->connectivity, connectivity, sizeof(connectivity));
 
     // 2) Create turbulence model (k-epsilon).
     TurbulenceModel *tm = turbulence_model_create(TURBULENCE_MODEL_K_EPSILON, NULL);
