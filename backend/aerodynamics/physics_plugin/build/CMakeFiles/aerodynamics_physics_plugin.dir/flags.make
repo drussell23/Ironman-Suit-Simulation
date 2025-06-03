@@ -6,7 +6,7 @@ C_DEFINES = -Daerodynamics_physics_plugin_EXPORTS
 
 C_INCLUDES = -I/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/include -I/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/build/include
 
-C_FLAGSx86_64 = -std=c11 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -Wall -Wextra -Wpedantic -std=c11 -Werror -Wno-error=unused-command-line-argument
+C_FLAGSarm64 = -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -Wall -Wextra -Wpedantic -std=c11 -Werror -Wno-error=unused-command-line-argument
 
-C_FLAGS = -std=c11 -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -Wall -Wextra -Wpedantic -std=c11 -Werror -Wno-error=unused-command-line-argument
+C_FLAGS = -std=c11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -Wall -Wextra -Wpedantic -std=c11 -Werror -Wno-error=unused-command-line-argument
 

@@ -91,12 +91,6 @@ double *turb_model_compute_viscosity(const TurbulenceModel *model, const Mesh *m
     return nu_t; // Return the computed turbulent viscosity array.
 }
 
-#include <stdlib.h>
-#include <math.h>
-#include "aerodynamics/turbulence_model.h"
-#include "aerodynamics/mesh.h"
-#include "aerodynamics/flow_state.h"
-
 void turb_model_update(
     const TurbulenceModel *model,
     const Mesh *mesh,
@@ -134,7 +128,7 @@ void turb_model_update(
 
         // Evolve k:  dk/dt = Pk − ε
         double k_new = k_old + dt * (Pk - eps_old);
-        
+
         // Evolve ε: dε/dt = (ε/k) [ c1·Pk − c2·ε ]
         double eps_new = eps_old + dt * ((eps_old / k_old) * (c1 * Pk - c2 * eps_old));
 
