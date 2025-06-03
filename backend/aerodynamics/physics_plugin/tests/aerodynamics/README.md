@@ -1,72 +1,57 @@
-# Aerodynamics Physics Plugin (C)
+# Aerodynamics Plugin Unit Tests
 
-**Version**: 1.0.0  
-A standalone C library exposing a core CFD‐solver plugin with k–ε turbulence, LES subgrid models, actuators, mesh utilities, and a programmable API—complete with a full suite of CMocka unit tests.
-
----
-
-## Prerequisites
-
-- **CMake** ≥ 3.18  
-- **C compiler** supporting C11 (Clang, GCC)  
-- Internet access (FetchContent will pull in CMocka)  
+This directory houses **CMocka**-based unit tests for the individual modules of the Aerodynamics physics plugin. 
 
 ---
 
-## Building & Running C Tests
-
-1. **Configure & generate build files (enable unit tests)**
+## Structure
 
 ```bash
-mkdir -p build
-cd build
-cmake .. -DENABLE_TESTING=ON
-```
-
-2. Compile the library and tests
-
-```bash
-cmake --build .
-```
-
-3. (Optional) Run all tests via CTest
-
-```bash
-ctest --output-on-failure
+tests/aerodynamics/
+├── test_actuator.c             # Tests for `actuator.c`
+├── test_bindings.c             # Tests for the C binding layer
+├── test_flow_state.c           # Tests for `flow_state.c`
+├── test_mesh.c                 # Tests for `mesh.c`
+├── test_solver.c               # Tests for `solver.c`
+└── test_turbulence_model.c     # Tests for `turbulence_model.c` 
 ```
 
 ---
 
-## Directory Layout
+## Running the tests
 
-```text
-physics_plugin/
-├── CMakeLists.txt
-├── cmake/
-│   ├── aerodynamics_physics_plugin_config.h.in
-│   ├── Config.cmake.in
-│   └── aerodynamics_physics_plugin.pc.in
-├── include/aerodynamics/
-│   ├── actuator.h
-│   ├── flow_state.h
-│   ├── mesh.h
-│   ├── solver.h
-│   └── turbulence_model.h
-├── src/aerodynamics/
-│   ├── actuator.c
-│   ├── bindings.c
-│   ├── flow_state.c
-│   ├── mesh.c
-│   ├── solver.c
-│   └── turbulence_model.c
-├── tests/aerodynamics/
-│   ├── test_actuator.c
-│   ├── test_bindings.c
-│   ├── test_flow_state.c
-│   ├── test_mesh.c
-│   ├── test_solver.c
-│   └── test_turbulence_model.c
-├── scripts/
-│   └── fix_eof.sh
-└── README.md        ← *(this file)*
+1. **Configure and build** (from `physics_plugin` root):
+
+```bash
+mkdir -p build && cd build
+cmake -DENABLE_TESTING=ON ..
+make -j$(nproc)
 ```
+
+2. **Run all unit tests:**
+
+```bash
+ctest --output-on-failure -R test_
+```
+
+3. **Run a single test** (e.g., mesh tests):
+
+```bash
+ctest -R test_mesh --output-on-failure
+```
+
+---
+
+## Adding new tests
+
+1. Create a new `test_*.c` file following the naming convention.
+2. Write CMocka `static void` test functions and register them in your file's `main()`.
+
+3. Re-run CMake to pick up the new file automatically. 
+
+---
+
+## Dependencies
+
+* **CMake** ≥ 3.10
+* cmocka pulled in via `FetchContent` in `CMakeLists.txt`
