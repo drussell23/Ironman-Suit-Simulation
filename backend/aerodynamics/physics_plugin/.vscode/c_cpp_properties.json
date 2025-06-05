@@ -2,7 +2,6 @@
   "configurations": [
     {
       "name": "Mac PhysicsPlugin",
-      // ← this is where CMake just wrote compile_commands.json
       "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       "includePath": [
         "${workspaceFolder}/backend/aerodynamics/physics_plugin/include",

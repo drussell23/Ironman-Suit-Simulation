@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_flow_state"
+			"path" : "test_full_pipeline"
 		}
 	],
 	"backtrace" : 1,
@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 160,
+				"line" : 186,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 168,
+				"line" : 196,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 161,
+				"line" : 190,
 				"parent" : 0
 			}
 		]
@@ -61,18 +61,6 @@
 				{
 					"backtrace" : 3,
 					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/include"
-				},
-				{
-					"backtrace" : 3,
-					"path" : "/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests"
-				},
-				{
-					"backtrace" : 3,
-					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/inclde"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/include"
 				}
 			],
 			"language" : "C",
@@ -95,13 +83,9 @@
 		{
 			"backtrace" : 2,
 			"id" : "aerodynamics_physics_plugin::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "cmocka::@18a7a5e03b12bd613a1f"
 		}
 	],
-	"id" : "test_flow_state::@6890427a1f51a3e7e1df",
+	"id" : "test_full_pipeline::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -115,24 +99,19 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/derekjrussell/Documents/repos/IronMan/build -Wl,-rpath,/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src",
+				"fragment" : "-Wl,-rpath,/Users/derekjrussell/Documents/repos/IronMan/build",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
 				"fragment" : "libaerodynamics_physics_plugin.dylib",
 				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "_deps/cmocka-build/src/libcmocka.0.8.0.dylib",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
-	"name" : "test_flow_state",
-	"nameOnDisk" : "test_flow_state",
+	"name" : "test_full_pipeline",
+	"nameOnDisk" : "test_full_pipeline",
 	"paths" : 
 	{
 		"build" : ".",
@@ -153,7 +132,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/aerodynamics/test_flow_state.c",
+			"path" : "tests/integration/test_full_pipeline.c",
 			"sourceGroupIndex" : 0
 		}
 	],
