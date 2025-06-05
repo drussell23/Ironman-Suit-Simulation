@@ -1,193 +1,111 @@
-# Python Bindings & Tests for Aerodynamics Plugin 
+# Python Bindings & Tests for Aerodynamics Plugin
 
-This folder contains:
+This folder provides Python wrappers and tests for the Aerodynamics C plugin (`libaerodynamics_physics_plugin`), enabling easy integration and validation of the C API.
 
-- **`bindings.py`**
-  A set of `ctypes`-based Python wrappers around the core Aerodynamics C library (`libaerodynamics_physics_plugin.dylib`). It exposes high-level classes (`Mesh`, `FlowState`, `TurbulenceModel`, `Solver`, `Actuator`, etc.) that can be used from Python. 
+## Files
 
-- **`command_executor.py`** and **`test_command_executor.py`**
-  A small utility (`command_executor.py`) that runs shell commands and parse JSON output. Its associated unit test file (`test_command_executor.py`) lives here as well.
+- **bindings.py**
+  - `ctypes`-based wrapper loading `libaerodynamics_physics_plugin` from `../build/`
+  - Defines function prototypes and return types
+  - Exposes Python classes: `Mesh`, `FlowState`, `TurbulenceModel`, `Solver`, `Actuator`
+  - Methods mirror C API: create/destroy, initialize, apply actuators, step, read state
 
-- **`integration_tests/test_full_pipeline.py`**
-  An end-to-end smoke test that:
-  1. Builds a simple mesh, 
-  2. Creates a turbulence model, 
-  3. Constructs an actuator, 
-  4. Initializes the solver, 
-  5. Steps through a few timestamps, and 
-  6. Verifies that no numerical `NaN` values appear in the final velocity/pressure arrays.
+- **command_executor.py**
+  - Utility to run external shell commands and parse JSON output
+  - Function: `run_and_parse_json(cmd: List[str]) -> Dict`
 
-## Prerequisites 
+- **test_command_executor.py**
+  - `unittest`-based test for `run_and_parse_json`, ensuring proper JSON parsing
 
-1. **C Shared Library (`libaerodynamics_physics_plugin.dylib`)**
-   Make sure you have already built the Aerodynamics C plugin (with all its unit tests passing) so that:
+- **integration_tests/test_full_pipeline.py**
+  - End-to-end smoke test for the full aerodynamics pipeline:
+    1. Build mesh
+    2. Create k–ε turbulence model
+    3. Construct actuator
+    4. Initialize solver
+    5. Step through timesteps
+    6. Verify no NaNs in final velocity and pressure arrays
 
-   **`physics_plugin/build/libaerodynamics_physics_plugin.dylib`** exists. On Apple Silicon, you must compile for `arm64` (or create a universal binary). For example:
+## Prerequisites
 
-```bash
-cd path/to/IronMan/backend/aerodynamics/physics_plugin
-rm -rf build 
-mkdir build && cd build
-cmake -DCMAKE_OSX_ARCHITECTURES=arm64 ..
-make
-```
+1. **Aerodynamics C plugin**
+   ```bash
+   cd backend/aerodynamics/physics_plugin
+   mkdir -p build && cd build
+   cmake .. -DCMAKE_OSX_ARCHITECTURES=arm64  # or x86_64
+   cmake --build .
+   ```
+   Ensure `build/libaerodynamics_physics_plugin.dylib` exists and matches your CPU architecture.
 
-After this, **`build/libaerodynamics_physics_plugin.dylib`** should be an **`arm64`** Mach-O library. You can verify with:
+2. **Python environment**
+   - Python 3.8+
+   - `numpy`
+   - Test framework: `pytest` or built-in `unittest`
 
-file **`build/libaerodynamics_physics_plugin.dylib`** 
-# => Mach-O 64-bit dynamically linked shared library arm64
+   ```bash
+   pip install numpy pytest
+   ```
 
-2. **Python & Dependencies**
-    * Python 3.8+ (tested on Python 3.10).
-    * **`pytest`** or **`unittest`** (built-in) for running tests.
-    * **`numpy`** (used by **`FlowState.get_velocity()`** and **`get_pressure()`**).
-
-   If you don't already have **`numpy`**, install it via pip: **`pip install numpy`**.
-
-## Directory Layout 
+## Directory Layout
 
 ```bash
 python/
-├── __pycache__/                 # (automatically generated)
-├── bindings.py                  # Python–C bindings for Aerodynamics plugin
-├── command_executor.py          # Helper for running external commands (shell) from Python
-├── test_command_executor.py     # Unit test for command_executor.py
-├── README.md                    # (this file)
+├── bindings.py
+├── command_executor.py
+├── test_command_executor.py
+├── README.md
 └── integration_tests/
-    ├── __pycache__/             # (auto)
-    └── test_full_pipeline.py    # End-to-end integration test for bindings.py
+    └── test_full_pipeline.py
 ```
 
-## How to Run Unit Tests
+## Running Tests
 
-1. Test **`command_executor.py`** (example of a simple unit test)
+### Unit Test
 
-```bash 
-cd path/to/IronMan/backend/aerodynamics/physics_plugin/python
+```bash
+cd backend/aerodynamics/physics_plugin/python
 python -m unittest test_command_executor.py
-# or, if you prefer pytest:
+# or
 pytest test_command_executor.py
 ```
 
-This verifies that your **`run_and_parse_json()`** and associated helpers in **`command_executor.py`** behave as expected.
+### Integration Test
 
-## How to Run the Integration Test (`test_full_pipeline.py`)
-
-Because **`bindings.py`** expects to find **`libaerodynamics_physics_plugin.dylib`** in **`../build/`**, you must ensure:
-
-1. You have built the C plugin as described above.
-2. Python's import path includes the **`python/`** folder itself so that **`bindings.py`** can be imported by the test.
-
-Below are two common ways to run the integration test: 
-
-## Option A: From within `integration_tests/` with `PYTHONPATH`
-
-1. Open a terminal and navigate into the integration test folder:
-
-**`cd path/to/IronMan/backend/aerodynamics/physics_plugin/python/integration_tests`**
-
-2. Prepend the parent directory (**`..`**) onto **`PYTHONPATH`** so Python can locate **`bindings.py`**: 
-
-**`export PYTHONPATH="../:$PYTHONPATH"`**
-
-3. Run the test directly:
-
-**`python test_full_pipeline.py`**
-
-or using **`unittest`** discovery:
-
-**`python -m unittest test_full_pipeline.py`**
-
-If everything is set up correctly, you will see output similar to:
-
-```csharp 
-[AeroBindings] Mesh created successfully (nodes: 4, cells: 1)
-[AeroBindings] Turbulence model created (Cmu=0.090, sigma_k=1.000)
-[AeroBindings] Actuator 'A0' created (type: 0, nodes: 1)
-[AeroBindings] Solver created successfully.
-[AeroBindings] Solver initialized.
-[AeroBindings] Flow state created.
-[AeroBindings] Actuator applied to solver for dt=0.05000 seconds.
-[AeroBindings] Solver stepped forward by dt=0.05000 seconds.
-[AeroBindings] Solver’s flow state copied into FlowState object.
-… (repeats for each timestep) …
-Final Velocities: [0. 0. 0. 0. 0. …]
-Final Pressures:  [0. 0. 0. 0.]
-[AeroBindings] Actuator destroyed.
-[AeroBindings] Solver destroyed.
-[AeroBindings] Turbulence model destroyed.
-[AeroBindings] Flow state destroyed.
-[AeroBindings] Mesh destroyed.
-
-----------------------------------------------------------------------
-Ran 1 test in 0.004s
-
-OK
+**Option A** (inside `integration_tests/`):
+```bash
+cd backend/aerodynamics/physics_plugin/python/integration_tests
+export PYTHONPATH="../:$PYTHONPATH"
+python test_full_pipeline.py
 ```
 
-That **`OK`** at the bottom confirms a successful integration smoke test.
-
-## Option B: From the python/ root folder
-
-If you'd rather avoid exporting **`PYTHONPATH`** manually, you can run the integration test from the parent directory (**`python/`**) where **`bindings.py`** lives:
-
+**Option B** (from python root):
 ```bash
-cd path/to/IronMan/backend/aerodynamics/physics_plugin/python
+cd backend/aerodynamics/physics_plugin/python
 python -m unittest integration_tests.test_full_pipeline
 ```
 
-Because **`python/`** is on **`sys.path[0]`**, Python can find **`bindings.py`** automatically. You should see the same successful output as above.
+Expected output includes:
+```
+[AeroBindings] Mesh created successfully (nodes: 4, cells: 1)
+...  # per-timestep logs
+Final Velocities: [0. 0. 0. 0.]
+Final Pressures:  [0. 0. 0. 0.]
+OK
+```
 
 ## Troubleshooting
 
-1. **`ModuleNotFoundError: No module named 'bindings'`**
-* Make sure you have `export PYTHONPATH="../"` if you are inside `integration_tests/`.
-* Or run from the `python/` folder so that `bindings.py` is on the default import path.
+- **ModuleNotFoundError: No module named 'bindings'**
+  - Ensure your `PYTHONPATH` includes the `python/` directory
 
-2. **`OSError: dlopen(.../build/libaerodynamics_physics_plugin.dylib, ...) incompatible architecture`**
-* That means your `.dylib` is built for the wrong CPU (e.g. x86_64 vs. arm64).
-* Rebuild the library for your machine’s architecture. On Apple Silicon (M1/M2), run:
+- **OSError: dlopen(..., incompatible architecture)**
+  - Rebuild the C plugin with matching `CMAKE_OSX_ARCHITECTURES`
 
-```bash
-cd path/to/physics_plugin/build
-rm -rf *
-cmake -DCMAKE_OSX_ARCHITECTURES=arm64 ..
-make
-```
+- **NaNs or TypeError in tests**
+  - Verify `argtypes` and `restype` in `bindings.py` match C signatures
 
-* Confirm with:
+## Extending
 
-```bash 
-file build/libaerodynamics_physics_plugin.dylib
-# Should say “Mach-O 64-bit dynamically linked shared library arm64”
-```
-
-3. **`TypeError` from `solver.step()` or `apply_actuator()`**
-* Ensure your `bindings.py` wrapper for `solver_step_bind` and `solver_apply_actuator_bind` passes `ctypes.c_double(dt)` (not a plain Python float).
-* Also verify that you declared:
-
-```python
-_lib.solver_step_bind.argtypes = [ctypes.c_void_p, ctypes.c_double]
-_lib.solver_apply_actuator_bind.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_double]
-```
-
-4. **`actuator_set_command_bind` missing**
-* If your C code defines `actuator_set_command_bind(...)`, be sure you added the corresponding:
-
-```python
-_lib.actuator_set_command_bind.argtypes = [ctypes.c_void_p, ctypes.c_double]
-_lib.actuator_set_command_bind.restype  = None
-
-class Actuator:
-    …
-    def set_command(self, cmd: float):
-        _lib.actuator_set_command_bind(self._as_parameter_, ctypes.c_double(cmd))
-```
-* Otherwise, your Python test may fail if it tries to call `set_command()`.
-
-
-
-
-
-
-
+- Add new C API wrappers in `bindings.py`
+- Write additional unit tests or integration tests
+- Integrate into CI/CD pipelines for continuous validation
