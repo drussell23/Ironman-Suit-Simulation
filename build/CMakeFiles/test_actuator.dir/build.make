@@ -76,15 +76,15 @@ CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o: CMakeFiles/te
 CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c
 CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o: CMakeFiles/test_actuator.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o -MF CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o.d -o CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o -MF CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o.d -o CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c
 
 CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c > CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c > CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.i
 
 CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c -o CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_actuator.c -o CMakeFiles/test_actuator.dir/tests/aerodynamics/test_actuator.c.s
 
 # Object files for target test_actuator
 test_actuator_OBJECTS = \

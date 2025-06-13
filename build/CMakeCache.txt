@@ -14,36 +14,11 @@
 # EXTERNAL cache entries
 ########################
 
-//Path to a file.
-ADOLC_INCLUDES:PATH=ADOLC_INCLUDES-NOTFOUND
-
-//Path to a library.
-ADOLC_LIBRARIES:FILEPATH=ADOLC_LIBRARIES-NOTFOUND
-
-//Builds the googlemock subproject
-BUILD_GMOCK:BOOL=ON
-
 //Build shared libraries
 BUILD_SHARED_LIBS:BOOL=ON
 
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
-
-//The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=Boost_DIR-NOTFOUND
-
-//Path to a file.
-Boost_INCLUDE_DIR:PATH=Boost_INCLUDE_DIR-NOTFOUND
-
-//Path to a file.
-CHOLMOD_INCLUDES:PATH=CHOLMOD_INCLUDES-NOTFOUND
-
-//Path to a library.
-CHOLMOD_LIBRARIES:FILEPATH=CHOLMOD_LIBRARIES-NOTFOUND
-
-//The directory relative to CMAKE_INSTALL_PREFIX where Eigen3Config.cmake
-// is installed
-CMAKEPACKAGE_INSTALL_DIR:PATH=share/eigen3/cmake
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
@@ -58,53 +33,22 @@ CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-g++-14
-
-//A wrapper around 'ar' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ar-14
-
-//A wrapper around 'ranlib' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ranlib-14
-
-//Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++
 
 //Flags used by the CXX compiler during ADDRESSSANITIZER builds.
 CMAKE_CXX_FLAGS_ADDRESSSANITIZER:STRING=-g -O1 -fsanitize=address -fno-omit-frame-pointer
 
-//Flags used by the CXX compiler during DEBUG builds.
-CMAKE_CXX_FLAGS_DEBUG:STRING=-g
-
 //Flags used by the CXX compiler during MEMORYSANITIZER builds.
 CMAKE_CXX_FLAGS_MEMORYSANITIZER:STRING=-g -O2 -fsanitize=memory -fsanitize-memory-track-origins=2 -fno-omit-frame-pointer
 
-//Flags used by the CXX compiler during MINSIZEREL builds.
-CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
-
 //Flags used by the CXX compiler during PROFILING builds.
 CMAKE_CXX_FLAGS_PROFILING:STRING=-O0 -g -fprofile-arcs -ftest-coverage
-
-//Flags used by the CXX compiler during RELEASE builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
-
-//Flags used by the CXX compiler during RELWITHDEBINFO builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Flags used by the CXX compiler during UNDEFINEDSANITIZER builds.
 CMAKE_CXX_FLAGS_UNDEFINEDSANITIZER:STRING=-g -O1 -fsanitize=undefined -fsanitize=null -fsanitize=alignment -fno-sanitize-recover
 
 //No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14
-
-//A wrapper around 'ar' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ar-14
-
-//A wrapper around 'ranlib' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ranlib-14
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/clang
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -168,32 +112,6 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/pkgRedirects
-
-//Fortran compiler
-CMAKE_Fortran_COMPILER:STRING=/opt/homebrew/bin/gfortran
-
-//A wrapper around 'ar' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_Fortran_COMPILER_AR:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ar-14
-
-//A wrapper around 'ranlib' adding the appropriate '--plugin' option
-// for the GCC compiler
-CMAKE_Fortran_COMPILER_RANLIB:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-ranlib-14
-
-//Flags used by the Fortran compiler during all build types.
-CMAKE_Fortran_FLAGS:STRING=
-
-//Flags used by the Fortran compiler during DEBUG builds.
-CMAKE_Fortran_FLAGS_DEBUG:STRING=-g
-
-//Flags used by the Fortran compiler during MINSIZEREL builds.
-CMAKE_Fortran_FLAGS_MINSIZEREL:STRING=-Os
-
-//Flags used by the Fortran compiler during RELEASE builds.
-CMAKE_Fortran_FLAGS_RELEASE:STRING=-O3
-
-//Flags used by the Fortran compiler during RELWITHDEBINFO builds.
-CMAKE_Fortran_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -419,9 +337,6 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Path to include directory for cmocka_platform.h
 CMOCKA_PLATFORM_INCLUDE:PATH=
 
-//Test COMPILER_SUPPORT_std=cpp03
-COMPILER_SUPPORT_std:UNINITIALIZED=cpp03:INTERNAL=1
-
 //Path to the coverage program that CTest uses for performing coverage
 // inspection
 COVERAGE_COMMAND:FILEPATH=/usr/bin/gcov
@@ -489,85 +404,6 @@ CTEST_SUBMIT_RETRY_COUNT:STRING=3
 //How long to wait between timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_DELAY:STRING=5
 
-//Compile device code in 64 bit mode
-CUDA_64_BIT_DEVICE_CODE:BOOL=ON
-
-//Attach the build rule to the CUDA source file.  Enable only when
-// the CUDA source file is added to at most one target.
-CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE:BOOL=ON
-
-//Generate and parse .cubin files in Device mode.
-CUDA_BUILD_CUBIN:BOOL=OFF
-
-//Build in Emulation mode
-CUDA_BUILD_EMULATION:BOOL=OFF
-
-//"cudart" library
-CUDA_CUDART_LIBRARY:FILEPATH=CUDA_CUDART_LIBRARY-NOTFOUND
-
-//"cuda" library (older versions only).
-CUDA_CUDA_LIBRARY:FILEPATH=CUDA_CUDA_LIBRARY-NOTFOUND
-
-//Directory to put all the output files.  If blank it will default
-// to the CMAKE_CURRENT_BINARY_DIR
-CUDA_GENERATED_OUTPUT_DIR:PATH=
-
-//Generated file extension
-CUDA_HOST_COMPILATION_CPP:BOOL=ON
-
-//Host side compiler used by NVCC
-CUDA_HOST_COMPILER:FILEPATH=/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14
-
-//Path to a program.
-CUDA_NVCC_EXECUTABLE:FILEPATH=CUDA_NVCC_EXECUTABLE-NOTFOUND
-
-//Semi-colon delimit multiple arguments. during all build types.
-CUDA_NVCC_FLAGS:STRING=
-
-//Semi-colon delimit multiple arguments. during DEBUG builds.
-CUDA_NVCC_FLAGS_DEBUG:STRING=
-
-//Semi-colon delimit multiple arguments. during MINSIZEREL builds.
-CUDA_NVCC_FLAGS_MINSIZEREL:STRING=
-
-//Semi-colon delimit multiple arguments. during RELEASE builds.
-CUDA_NVCC_FLAGS_RELEASE:STRING=
-
-//Semi-colon delimit multiple arguments. during RELWITHDEBINFO
-// builds.
-CUDA_NVCC_FLAGS_RELWITHDEBINFO:STRING=
-
-//Propagate C/CXX_FLAGS and friends to the host compiler via -Xcompile
-CUDA_PROPAGATE_HOST_FLAGS:BOOL=ON
-
-//Path to a file.
-CUDA_SDK_ROOT_DIR:PATH=CUDA_SDK_ROOT_DIR-NOTFOUND
-
-//Compile CUDA objects with separable compilation enabled.  Requires
-// CUDA 5.0+
-CUDA_SEPARABLE_COMPILATION:BOOL=OFF
-
-//Path to a file.
-CUDA_TOOLKIT_INCLUDE:PATH=CUDA_TOOLKIT_INCLUDE-NOTFOUND
-
-//Print out the commands run while compiling the CUDA source file.
-//  With the Makefile generator this defaults to VERBOSE variable
-// specified on the command line, but can be forced on with this
-// option.
-CUDA_VERBOSE_BUILD:BOOL=OFF
-
-//"cublas" library
-CUDA_cublas_LIBRARY:FILEPATH=CUDA_cublas_LIBRARY-NOTFOUND
-
-//"cublasemu" library
-CUDA_cublasemu_LIBRARY:FILEPATH=CUDA_cublasemu_LIBRARY-NOTFOUND
-
-//"cufft" library
-CUDA_cufft_LIBRARY:FILEPATH=CUDA_cufft_LIBRARY-NOTFOUND
-
-//"cufftemu" library
-CUDA_cufftemu_LIBRARY:FILEPATH=CUDA_cufftemu_LIBRARY-NOTFOUND
-
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
 
@@ -577,170 +413,6 @@ DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
 //Doxygen documentation generation tool (https://www.doxygen.nl)
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
-//Build benchmark suite
-EIGEN_BUILD_BTL:BOOL=OFF
-
-//Enable creation of Eigen documentation
-EIGEN_BUILD_DOC:BOOL=ON
-
-//Build pkg-config .pc file for Eigen
-EIGEN_BUILD_PKGCONFIG:BOOL=ON
-
-//Enable/disable gcov
-EIGEN_COVERAGE_TESTING:BOOL=OFF
-
-//Regular expression for build error messages to be filtered out
-EIGEN_CTEST_ERROR_EXCEPTION:STRING=
-
-//The CUDA compute architecture level to target when compiling
-// CUDA code
-EIGEN_CUDA_COMPUTE_ARCH:STRING=30
-
-//Target to be built in dashboard mode, default is buildtests
-EIGEN_DASHBOARD_BUILD_TARGET:STRING=buildtests
-
-//Enable advanced debugging of assertions
-EIGEN_DEBUG_ASSERTS:BOOL=OFF
-
-//Use row-major as default matrix storage order
-EIGEN_DEFAULT_TO_ROW_MAJOR:BOOL=OFF
-
-//Use MathJax for rendering math in HTML docs
-EIGEN_DOC_USE_MATHJAX:BOOL=ON
-
-//OFF
-EIGEN_ENABLE_LAPACK_TESTS:BOOL=OFF
-
-//Build internal documentation
-EIGEN_INTERNAL_DOCUMENTATION:BOOL=OFF
-
-//Disable checking of assertions using exceptions
-EIGEN_NO_ASSERTION_CHECKING:BOOL=OFF
-
-//Split large tests into smaller executables
-EIGEN_SPLIT_LARGE_TESTS:BOOL=ON
-
-//Use the triSYCL Sycl implementation (ComputeCPP by default).
-EIGEN_SYCL_TRISYCL:BOOL=OFF
-
-//Force generating 32bit code.
-EIGEN_TEST_32BIT:BOOL=OFF
-
-//Enable/Disable AltiVec in tests/examples
-EIGEN_TEST_ALTIVEC:BOOL=OFF
-
-//Enable/Disable AVX in tests/examples
-EIGEN_TEST_AVX:BOOL=OFF
-
-//Enable/Disable AVX2 in tests/examples
-EIGEN_TEST_AVX2:BOOL=OFF
-
-//Enable/Disable AVX512 in tests/examples
-EIGEN_TEST_AVX512:BOOL=OFF
-
-//Enable/Disable AVX512DQ in tests/examples
-EIGEN_TEST_AVX512DQ:BOOL=OFF
-
-//Test building the doxygen documentation
-EIGEN_TEST_BUILD_DOCUMENTATION:BOOL=OFF
-
-//Options passed to the build command of unit tests
-EIGEN_TEST_BUILD_FLAGS:STRING=
-
-//Enable CUDA support in unit tests
-EIGEN_TEST_CUDA:BOOL=OFF
-
-//Use clang instead of nvcc to compile the CUDA tests
-EIGEN_TEST_CUDA_CLANG:BOOL=OFF
-
-//Additional compiler flags when compiling unit tests.
-EIGEN_TEST_CUSTOM_CXX_FLAGS:STRING=
-
-//Additional linker flags when linking unit tests.
-EIGEN_TEST_CUSTOM_LINKER_FLAGS:STRING=
-
-//Enable testing with C++11 and C++11 features (e.g. Tensor module).
-EIGEN_TEST_CXX11:BOOL=OFF
-
-//Run whole Eigen2 test suite against EIGEN2_SUPPORT
-EIGEN_TEST_EIGEN2:BOOL=OFF
-
-//Use external BLAS library for testsuite
-EIGEN_TEST_EXTERNAL_BLAS:BOOL=OFF
-
-//Enable/Disable F16C in tests/examples
-EIGEN_TEST_F16C:BOOL=OFF
-
-//Enable/Disable FMA in tests/examples
-EIGEN_TEST_FMA:BOOL=OFF
-
-//Add HIP support.
-EIGEN_TEST_HIP:BOOL=OFF
-
-//Enable testing of realword sparse matrices contained in the specified
-// path
-EIGEN_TEST_MATRIX_DIR:STRING=
-
-//Maximal matrix/vector size, default is 320
-EIGEN_TEST_MAX_SIZE:STRING=320
-
-//Enable/Disable MSA in tests/examples
-EIGEN_TEST_MSA:BOOL=OFF
-
-//Enable/Disable Neon in tests/examples
-EIGEN_TEST_NEON:BOOL=OFF
-
-//Enable/Disable Neon in tests/examples
-EIGEN_TEST_NEON64:BOOL=OFF
-
-//Disable Qt support in unit tests
-EIGEN_TEST_NOQT:BOOL=OFF
-
-//Disables C++ exceptions
-EIGEN_TEST_NO_EXCEPTIONS:BOOL=OFF
-
-//Disable explicit alignment (hence vectorization) in tests/examples
-EIGEN_TEST_NO_EXPLICIT_ALIGNMENT:BOOL=OFF
-
-//Disable explicit vectorization in tests/examples
-EIGEN_TEST_NO_EXPLICIT_VECTORIZATION:BOOL=OFF
-
-//Enable OpenGL support in unit tests
-EIGEN_TEST_OPENGL:BOOL=OFF
-
-//Enable/Disable OpenMP in tests/examples
-EIGEN_TEST_OPENMP:BOOL=OFF
-
-//Enable/Disable SSE2 in tests/examples
-EIGEN_TEST_SSE2:BOOL=OFF
-
-//Enable/Disable SSE3 in tests/examples
-EIGEN_TEST_SSE3:BOOL=OFF
-
-//Enable/Disable SSE4.1 in tests/examples
-EIGEN_TEST_SSE4_1:BOOL=OFF
-
-//Enable/Disable SSE4.2 in tests/examples
-EIGEN_TEST_SSE4_2:BOOL=OFF
-
-//Enable/Disable SSSE3 in tests/examples
-EIGEN_TEST_SSSE3:BOOL=OFF
-
-//Add Sycl support.
-EIGEN_TEST_SYCL:BOOL=OFF
-
-//Enable/Disable VSX in tests/examples
-EIGEN_TEST_VSX:BOOL=OFF
-
-//Force using X87 instructions. Implies no vectorization.
-EIGEN_TEST_X87:BOOL=OFF
-
-//Enable/Disable S390X(zEC13) ZVECTOR in tests/examples
-EIGEN_TEST_Z13:BOOL=OFF
-
-//Enable/Disable S390X(zEC14) ZVECTOR in tests/examples
-EIGEN_TEST_Z14:BOOL=OFF
-
 //Enable code-coverage instrumentation
 ENABLE_COVERAGE:BOOL=OFF
 
@@ -749,51 +421,6 @@ ENABLE_EXAMPLES:BOOL=OFF
 
 //Enable building and running unit tests
 ENABLE_TESTING:BOOL=ON
-
-//Value Computed by CMake
-Eigen3_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-build
-
-//Value Computed by CMake
-Eigen3_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-Eigen3_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-src
-
-//Value Computed by CMake
-EigenBlas_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-build/blas
-
-//Value Computed by CMake
-EigenBlas_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-EigenBlas_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-src/blas
-
-//Value Computed by CMake
-EigenDemos_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-build/demos
-
-//Value Computed by CMake
-EigenDemos_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-EigenDemos_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-src/demos
-
-//Value Computed by CMake
-EigenDoc_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-build/doc
-
-//Value Computed by CMake
-EigenDoc_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-EigenDoc_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-src/doc
-
-//Value Computed by CMake
-EigenLapack_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-build/lapack
-
-//Value Computed by CMake
-EigenLapack_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-EigenLapack_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/eigen-src/lapack
 
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/Users/derekjrussell/Documents/repos/IronMan/build/_deps
@@ -809,87 +436,14 @@ FETCHCONTENT_QUIET:BOOL=ON
 // for cmocka
 FETCHCONTENT_SOURCE_DIR_CMOCKA:PATH=
 
-//When not empty, overrides where to find pre-populated content
-// for eigen
-FETCHCONTENT_SOURCE_DIR_EIGEN:PATH=
-
-//When not empty, overrides where to find pre-populated content
-// for googletest
-FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH=
-
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of cmocka
 FETCHCONTENT_UPDATES_DISCONNECTED_CMOCKA:BOOL=OFF
 
-//Enables UPDATE_DISCONNECTED behavior just for population of eigen
-FETCHCONTENT_UPDATES_DISCONNECTED_EIGEN:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of googletest
-FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
-
-//Path to a program.
-GITCOMMAND:FILEPATH=/usr/bin/git
-
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
-
-//Path to a library.
-GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_LIBRARY_DEBUG:FILEPATH=GMOCK_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a file.
-GMP_INCLUDES:PATH=/opt/homebrew/include
-
-//Path to a library.
-GMP_LIBRARIES:FILEPATH=/opt/homebrew/lib/libgmp.dylib
-
-//Path to a file.
-GOOGLEHASH_INCLUDES:PATH=GOOGLEHASH_INCLUDES-NOTFOUND
-
-//Path to a file.
-GTEST_INCLUDE_DIR:PATH=GTEST_INCLUDE_DIR-NOTFOUND
-
-//Path to a library.
-GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
-
-//Path to a library.
-GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
-
-//Path to a library.
-GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//The directory containing a CMake configuration file for GTest.
-GTest_DIR:PATH=GTest_DIR-NOTFOUND
-
-//Installation directory of HWLOC library
-HWLOC_DIR:PATH=
-
-//The directory relative to CMAKE_INSTALL_PREFIX where Eigen header
-// files are installed
-INCLUDE_INSTALL_DIR:PATH=include/eigen3
-
-//Enable installation of googletest. (Projects embedding googletest
-// may want to turn this OFF.)
-INSTALL_GTEST:BOOL=ON
-
-//Path to a file.
-KLU_INCLUDES:PATH=KLU_INCLUDES-NOTFOUND
-
-//Path to a library.
-KLU_LIBRARIES:FILEPATH=KLU_LIBRARIES-NOTFOUND
 
 //Command to build the project
 MAKECOMMAND:STRING=/opt/homebrew/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
@@ -900,38 +454,8 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
-//Path to a file.
-MPFR_INCLUDES:PATH=/opt/homebrew/include
-
-//Path to a library.
-MPFR_LIBRARIES:FILEPATH=/opt/homebrew/lib/libmpfr.dylib
-
-//Path to a file.
-MPREAL_INCLUDES:PATH=MPREAL_INCLUDES-NOTFOUND
-
-//Installation directory of PASTIX library
-PASTIX_DIR:PATH=
-
-//Path to a library.
-PASTIX_M_m_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/libm.tbd
-
-//Path to a file.
-PASTIX_pastix_nompi.h_INCLUDE_DIRS:PATH=PASTIX_pastix_nompi.h_INCLUDE_DIRS-NOTFOUND
-
 //Build with picky developer flags
 PICKY_DEVELOPER:BOOL=OFF
-
-//The directory relative to CMAKE_INSTALL_PREFIX where eigen3.pc
-// is installed
-PKGCONFIG_INSTALL_DIR:PATH=share/pkgconfig
-
-//Arguments to supply to pkg-config
-PKG_CONFIG_ARGN:STRING=
-
-//pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
-
-QT_QMAKE_EXECUTABLE:FILEPATH=NOTFOUND
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=RT_LIBRARY-NOTFOUND
@@ -939,32 +463,8 @@ RT_LIBRARY:FILEPATH=RT_LIBRARY-NOTFOUND
 //Name of the computer/site where compile is being run
 SITE:STRING=Dereks-MacBook-Pro.local
 
-//Path to a file.
-SPQR_INCLUDES:PATH=SPQR_INCLUDES-NOTFOUND
-
-//Path to a library.
-SPQR_LIBRARIES:FILEPATH=SPQR_LIBRARIES-NOTFOUND
-
-//Path to a file.
-SUPERLU_INCLUDES:PATH=SUPERLU_INCLUDES-NOTFOUND
-
-//Path to a library.
-SUPERLU_LIBRARIES:FILEPATH=SUPERLU_LIBRARIES-NOTFOUND
-
-//Path to a file.
-UMFPACK_INCLUDES:PATH=UMFPACK_INCLUDES-NOTFOUND
-
-//Path to a library.
-UMFPACK_LIBRARIES:FILEPATH=UMFPACK_LIBRARIES-NOTFOUND
-
 //Build with unit testing
 UNIT_TESTING:BOOL=OFF
-
-//Fetch GoogleTest via CMake if not found
-USE_GTEST_FETCH:BOOL=OFF
-
-//Link against system-installed Eigen3
-USE_SYSTEM_EIGEN:BOOL=OFF
 
 //Install a cmockery header
 WITH_CMOCKERY_SUPPORT:BOOL=OFF
@@ -1017,81 +517,11 @@ cmocka_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 cmocka_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src
 
-//Dependencies for the target
-eigen_lapack_LIB_DEPENDS:STATIC=general;eigen_blas;
-
-//Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-build/googlemock
-
-//Value Computed by CMake
-gmock_IS_TOP_LEVEL:STATIC=OFF
-
-//Dependencies for the target
-gmock_LIB_DEPENDS:STATIC=general;gtest;
-
-//Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-src/googlemock
-
-//Build all of Google Mock's own tests.
-gmock_build_tests:BOOL=OFF
-
-//Dependencies for the target
-gmock_main_LIB_DEPENDS:STATIC=general;gmock;
-
-//Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-build
-
-//Value Computed by CMake
-googletest-distribution_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-src
-
-//Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-build/googletest
-
-//Value Computed by CMake
-gtest_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-src/googletest
-
-//Build gtest's sample programs.
-gtest_build_samples:BOOL=OFF
-
-//Build all of gtest's own tests.
-gtest_build_tests:BOOL=OFF
-
-//Disable uses of pthreads in gtest.
-gtest_disable_pthreads:BOOL=OFF
-
-//Use shared (DLL) run-time lib even when Google Test is built
-// as static lib.
-gtest_force_shared_crt:BOOL=OFF
-
-//Build gtest with internal symbols hidden in shared libraries.
-gtest_hide_internal_symbols:BOOL=OFF
-
-//Dependencies for the target
-gtest_main_LIB_DEPENDS:STATIC=general;gtest;
-
 
 ########################
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: ADOLC_INCLUDES
-ADOLC_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ADOLC_LIBRARIES
-ADOLC_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_DIR
-Boost_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_INCLUDE_DIR
-Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CHOLMOD_INCLUDES
-CHOLMOD_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CHOLMOD_LIBRARIES
-CHOLMOD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -1114,28 +544,8 @@ CMAKE_CPACK_COMMAND:INTERNAL=/opt/homebrew/bin/cpack
 CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/opt/homebrew/bin/ctest
-//ADVANCED property for variable: CMAKE_CXX_COMPILER
-CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
-CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
-CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_FLAGS
-CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
-CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_FLAGS_MINSIZEREL
-CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELEASE
-CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
-CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_COMPILER_AR
-CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
-CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -1164,22 +574,6 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
-//ADVANCED property for variable: CMAKE_Fortran_COMPILER
-CMAKE_Fortran_COMPILER-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_COMPILER_AR
-CMAKE_Fortran_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_COMPILER_RANLIB
-CMAKE_Fortran_COMPILER_RANLIB-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_FLAGS
-CMAKE_Fortran_FLAGS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_FLAGS_DEBUG
-CMAKE_Fortran_FLAGS_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_FLAGS_MINSIZEREL
-CMAKE_Fortran_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_FLAGS_RELEASE
-CMAKE_Fortran_FLAGS_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_Fortran_FLAGS_RELWITHDEBINFO
-CMAKE_Fortran_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 //Generator instance identifier.
@@ -1188,8 +582,6 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Test CMAKE_HAVE_LIBC_PTHREAD
-CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin
@@ -1293,68 +685,6 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 CMOCKA_LINK_LIBRARIES:INTERNAL=
 //ADVANCED property for variable: CMOCKA_PLATFORM_INCLUDE
 CMOCKA_PLATFORM_INCLUDE-ADVANCED:INTERNAL=1
-//Test COMPILER_SUPPORT_FASTMATH
-COMPILER_SUPPORT_FASTMATH:INTERNAL=1
-//Test COMPILER_SUPPORT_OPENMP
-COMPILER_SUPPORT_OPENMP:INTERNAL=1
-//Test COMPILER_SUPPORT_Qunusedarguments
-COMPILER_SUPPORT_Qunusedarguments:INTERNAL=
-//Test COMPILER_SUPPORT_STRICTANSI
-COMPILER_SUPPORT_STRICTANSI:INTERNAL=
-//Test COMPILER_SUPPORT_WERROR
-COMPILER_SUPPORT_WERROR:INTERNAL=1
-//Test COMPILER_SUPPORT_Wall
-COMPILER_SUPPORT_Wall:INTERNAL=1
-//Test COMPILER_SUPPORT_Wcastalign
-COMPILER_SUPPORT_Wcastalign:INTERNAL=1
-//Test COMPILER_SUPPORT_Wcharsubscripts
-COMPILER_SUPPORT_Wcharsubscripts:INTERNAL=1
-//Test COMPILER_SUPPORT_Wcpp11extensions
-COMPILER_SUPPORT_Wcpp11extensions:INTERNAL=1
-//Test COMPILER_SUPPORT_Wdoublepromotion
-COMPILER_SUPPORT_Wdoublepromotion:INTERNAL=1
-//Test COMPILER_SUPPORT_Wenumconversion
-COMPILER_SUPPORT_Wenumconversion:INTERNAL=1
-//Test COMPILER_SUPPORT_Wextra
-COMPILER_SUPPORT_Wextra:INTERNAL=1
-//Test COMPILER_SUPPORT_Wformatsecurity
-COMPILER_SUPPORT_Wformatsecurity:INTERNAL=1
-//Test COMPILER_SUPPORT_Wlogicalop
-COMPILER_SUPPORT_Wlogicalop:INTERNAL=1
-//Test COMPILER_SUPPORT_Wnolonglong
-COMPILER_SUPPORT_Wnolonglong:INTERNAL=1
-//Test COMPILER_SUPPORT_Wnonvirtualdtor
-COMPILER_SUPPORT_Wnonvirtualdtor:INTERNAL=1
-//Test COMPILER_SUPPORT_Wnopsabi
-COMPILER_SUPPORT_Wnopsabi:INTERNAL=1
-//Test COMPILER_SUPPORT_Wnovariadicmacros
-COMPILER_SUPPORT_Wnovariadicmacros:INTERNAL=1
-//Test COMPILER_SUPPORT_Wpointerarith
-COMPILER_SUPPORT_Wpointerarith:INTERNAL=1
-//Test COMPILER_SUPPORT_Wshadow
-COMPILER_SUPPORT_Wshadow:INTERNAL=1
-//Test COMPILER_SUPPORT_Wshorten64to32
-COMPILER_SUPPORT_Wshorten64to32:INTERNAL=
-//Test COMPILER_SUPPORT_Wundef
-COMPILER_SUPPORT_Wundef:INTERNAL=1
-//Test COMPILER_SUPPORT_Wunusedlocaltypedefs
-COMPILER_SUPPORT_Wunusedlocaltypedefs:INTERNAL=1
-//Test COMPILER_SUPPORT_Wwritestrings
-COMPILER_SUPPORT_Wwritestrings:INTERNAL=1
-//Test COMPILER_SUPPORT_ansi
-COMPILER_SUPPORT_ansi:INTERNAL=1
-//Test COMPILER_SUPPORT_fnochecknew
-COMPILER_SUPPORT_fnochecknew:INTERNAL=1
-//Test COMPILER_SUPPORT_fnocommon
-COMPILER_SUPPORT_fnocommon:INTERNAL=1
-//Test COMPILER_SUPPORT_fstrictaliasing
-COMPILER_SUPPORT_fstrictaliasing:INTERNAL=1
-//Test COMPILER_SUPPORT_pedantic
-COMPILER_SUPPORT_pedantic:INTERNAL=1
-//Test COMPILER_SUPPORT_wd2304
-COMPILER_SUPPORT_wd2304:INTERNAL=
-//Test COMPILER_SUPPORT_wd981
-COMPILER_SUPPORT_wd981:INTERNAL=
 //ADVANCED property for variable: COVERAGE_COMMAND
 COVERAGE_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_EXTRA_FLAGS
@@ -1399,66 +729,6 @@ CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_64_BIT_DEVICE_CODE
-CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
-CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_BUILD_CUBIN
-CUDA_BUILD_CUBIN-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_BUILD_EMULATION
-CUDA_BUILD_EMULATION-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_CUDART_LIBRARY
-CUDA_CUDART_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_CUDA_LIBRARY
-CUDA_CUDA_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_GENERATED_OUTPUT_DIR
-CUDA_GENERATED_OUTPUT_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_HOST_COMPILATION_CPP
-CUDA_HOST_COMPILATION_CPP-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_EXECUTABLE
-CUDA_NVCC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_FLAGS
-CUDA_NVCC_FLAGS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_FLAGS_DEBUG
-CUDA_NVCC_FLAGS_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_FLAGS_MINSIZEREL
-CUDA_NVCC_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_FLAGS_RELEASE
-CUDA_NVCC_FLAGS_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_NVCC_FLAGS_RELWITHDEBINFO
-CUDA_NVCC_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_PROPAGATE_HOST_FLAGS
-CUDA_PROPAGATE_HOST_FLAGS-ADVANCED:INTERNAL=1
-//This is the value of the last time CUDA_SDK_ROOT_DIR was set
-// successfully.
-CUDA_SDK_ROOT_DIR_INTERNAL:INTERNAL=CUDA_SDK_ROOT_DIR-NOTFOUND
-//ADVANCED property for variable: CUDA_SEPARABLE_COMPILATION
-CUDA_SEPARABLE_COMPILATION-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_TOOLKIT_INCLUDE
-CUDA_TOOLKIT_INCLUDE-ADVANCED:INTERNAL=1
-//This is the value of the last time CUDA_TOOLKIT_ROOT_DIR was
-// set successfully.
-CUDA_TOOLKIT_ROOT_DIR_INTERNAL:INTERNAL=
-//This is the value of the last time CUDA_TOOLKIT_TARGET_DIR was
-// set successfully.
-CUDA_TOOLKIT_TARGET_DIR_INTERNAL:INTERNAL=
-CUDA_USE_STATIC_CUDA_RUNTIME:INTERNAL=OFF
-//ADVANCED property for variable: CUDA_VERBOSE_BUILD
-CUDA_VERBOSE_BUILD-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_cublas_LIBRARY
-CUDA_cublas_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_cublasemu_LIBRARY
-CUDA_cublasemu_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_cufft_LIBRARY
-CUDA_cufft_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_cufftemu_LIBRARY
-CUDA_cufftemu_LIBRARY-ADVANCED:INTERNAL=1
-//Location of make2cmake.cmake
-CUDA_make2cmake:INTERNAL=/opt/homebrew/share/cmake/Modules/FindCUDA/make2cmake.cmake
-//Location of parse_cubin.cmake
-CUDA_parse_cubin:INTERNAL=/opt/homebrew/share/cmake/Modules/FindCUDA/parse_cubin.cmake
-//Location of run_nvcc.cmake
-CUDA_run_nvcc:INTERNAL=/opt/homebrew/share/cmake/Modules/FindCUDA/run_nvcc.cmake
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Default C Compiler Flags
@@ -1469,46 +739,8 @@ DEFAULT_LINK_FLAGS:INTERNAL=
 DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
-//Test EIGEN_COMPILER_SUPPORT_CPP11
-EIGEN_COMPILER_SUPPORT_CPP11:INTERNAL=1
-//ADVANCED property for variable: EIGEN_TEST_EIGEN2
-EIGEN_TEST_EIGEN2-ADVANCED:INTERNAL=1
-//Details about finding GMP
-FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/opt/homebrew/include][/opt/homebrew/lib/libgmp.dylib][v()]
-//Details about finding MPFR
-FIND_PACKAGE_MESSAGE_DETAILS_MPFR:INTERNAL=[/opt/homebrew/include][/opt/homebrew/lib/libmpfr.dylib][TRUE][v(1.0.0)]
-//Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12][cfound components: Interpreter ][v3.12.8()]
-//Details about finding Threads
-FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//ADVANCED property for variable: GITCOMMAND
-GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_LIBRARY
-GMOCK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
-GMOCK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY
-GMOCK_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY_DEBUG
-GMOCK_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMP_INCLUDES
-GMP_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMP_LIBRARIES
-GMP_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GOOGLEHASH_INCLUDES
-GOOGLEHASH_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_INCLUDE_DIR
-GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY
-GTEST_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
-GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY
-GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
-GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //Have include assert.h
 HAVE_ASSERT_H:INTERNAL=1
 //Have function calloc
@@ -1587,48 +819,20 @@ HAVE_UINTPTR_T:INTERNAL=TRUE
 HAVE_UNISTD_H:INTERNAL=1
 //Have function vsnprintf
 HAVE_VSNPRINTF:INTERNAL=1
-//ADVANCED property for variable: KLU_INCLUDES
-KLU_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: KLU_LIBRARIES
-KLU_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: MPFR_INCLUDES
-MPFR_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: MPFR_LIBRARIES
-MPFR_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: MPREAL_INCLUDES
-MPREAL_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PASTIX_M_m_LIBRARY
-PASTIX_M_m_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_ARGN
-PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test REQUIRED_FLAGS_WERROR
 REQUIRED_FLAGS_WERROR:INTERNAL=1
 //Test REQUIRED_FLAGS_WFORMAT
 REQUIRED_FLAGS_WFORMAT:INTERNAL=1
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: SPQR_INCLUDES
-SPQR_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: SPQR_LIBRARIES
-SPQR_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: SUPERLU_INCLUDES
-SUPERLU_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: SUPERLU_LIBRARIES
-SUPERLU_LIBRARIES-ADVANCED:INTERNAL=1
 //CHECK_TYPE_SIZE: sizeof(uintptr_t)
 UINTPTR_T:INTERNAL=8
-//ADVANCED property for variable: UMFPACK_INCLUDES
-UMFPACK_INCLUDES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: UMFPACK_LIBRARIES
-UMFPACK_LIBRARIES-ADVANCED:INTERNAL=1
 //Test WITH_FNO_COMMON_FLAG
 WITH_FNO_COMMON_FLAG:INTERNAL=1
 //Test WITH_STACK_CLASH_PROTECTION
@@ -1637,8 +841,6 @@ WITH_STACK_CLASH_PROTECTION:INTERNAL=1
 WITH_STACK_PROTECTOR_STRONG:INTERNAL=1
 //Test WITH_STD_GNU99_FLAG
 WITH_STD_GNU99_FLAG:INTERNAL=1
-//Test WITH_VISIBILITY_HIDDEN
-WITH_VISIBILITY_HIDDEN:INTERNAL=1
 //Test WITH_WALL_FLAG
 WITH_WALL_FLAG:INTERNAL=1
 //Test WITH_WCAST_ALIGN_FLAG
@@ -1691,42 +893,6 @@ WITH_WSTRICT_PROTOTYPES_FLAG:INTERNAL=1
 WITH_WUNINITIALIZED_FLAG:INTERNAL=1
 //Test WITH_WWRITE_STRINGS_FLAG
 WITH_WWRITE_STRINGS_FLAG:INTERNAL=1
-//Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=
-//Last used Boost_INCLUDE_DIR value.
-_Boost_INCLUDE_DIR_LAST:INTERNAL=Boost_INCLUDE_DIR-NOTFOUND
-//Last used Boost_NAMESPACE value.
-_Boost_NAMESPACE_LAST:INTERNAL=boost
-//Last used Boost_USE_MULTITHREADED value.
-_Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-//Compiler reason failure
-_Python_Compiler_REASON_FAILURE:INTERNAL=
-//Development reason failure
-_Python_Development_REASON_FAILURE:INTERNAL=
-//Path to a program.
-_Python_EXECUTABLE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
-//Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;8;64;32;<none>;cpython-312-darwin;abi3;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=f2cd4a4ff351fd9423fc3d6272d3bb69
-//NumPy reason failure
-_Python_NumPy_REASON_FAILURE:INTERNAL=
-cmake_package_name:INTERNAL=GTest
-generated_dir:INTERNAL=/Users/derekjrussell/Documents/repos/IronMan/build/_deps/googletest-build/googletest/generated
-//ADVANCED property for variable: gmock_build_tests
-gmock_build_tests-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_build_samples
-gtest_build_samples-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_build_tests
-gtest_build_tests-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_disable_pthreads
-gtest_disable_pthreads-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_force_shared_crt
-gtest_force_shared_crt-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_hide_internal_symbols
-gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
-//Test standard_math_library_linked_to_automatically
-standard_math_library_linked_to_automatically:INTERNAL=1
-targets_export_name:INTERNAL=GTestTargets
 

@@ -76,15 +76,15 @@ CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o: CMakeFiles/te
 CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c
 CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o: CMakeFiles/test_bindings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o -MF CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o.d -o CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o -MF CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o.d -o CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c
 
 CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c > CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c > CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.i
 
 CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c -o CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_bindings.c -o CMakeFiles/test_bindings.dir/tests/aerodynamics/test_bindings.c.s
 
 # Object files for target test_bindings
 test_bindings_OBJECTS = \

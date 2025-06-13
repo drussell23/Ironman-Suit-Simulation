@@ -76,29 +76,29 @@ _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o: 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o: _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o -MF CMakeFiles/assert_module_test.dir/assert_module.c.o.d -o CMakeFiles/assert_module_test.dir/assert_module.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.o -MF CMakeFiles/assert_module_test.dir/assert_module.c.o.d -o CMakeFiles/assert_module_test.dir/assert_module.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c
 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assert_module_test.dir/assert_module.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c > CMakeFiles/assert_module_test.dir/assert_module.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c > CMakeFiles/assert_module_test.dir/assert_module.c.i
 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assert_module_test.dir/assert_module.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c -o CMakeFiles/assert_module_test.dir/assert_module.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) -DUNIT_TESTING=1 $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module.c -o CMakeFiles/assert_module_test.dir/assert_module.c.s
 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o: _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/flags.make
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o: _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o -MF CMakeFiles/assert_module_test.dir/assert_module_test.c.o.d -o CMakeFiles/assert_module_test.dir/assert_module_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.o -MF CMakeFiles/assert_module_test.dir/assert_module_test.c.o.d -o CMakeFiles/assert_module_test.dir/assert_module_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c
 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assert_module_test.dir/assert_module_test.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c > CMakeFiles/assert_module_test.dir/assert_module_test.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c > CMakeFiles/assert_module_test.dir/assert_module_test.c.i
 
 _deps/cmocka-build/example/CMakeFiles/assert_module_test.dir/assert_module_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assert_module_test.dir/assert_module_test.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c -o CMakeFiles/assert_module_test.dir/assert_module_test.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_module_test.c -o CMakeFiles/assert_module_test.dir/assert_module_test.c.s
 
 # Object files for target assert_module_test
 assert_module_test_OBJECTS = \

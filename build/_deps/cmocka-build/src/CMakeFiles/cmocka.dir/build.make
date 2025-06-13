@@ -76,15 +76,15 @@ _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o: _deps/cmocka-build/src/
 _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c
 _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o: _deps/cmocka-build/src/CMakeFiles/cmocka.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o -MF CMakeFiles/cmocka.dir/cmocka.c.o.d -o CMakeFiles/cmocka.dir/cmocka.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.o -MF CMakeFiles/cmocka.dir/cmocka.c.o.d -o CMakeFiles/cmocka.dir/cmocka.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c
 
 _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cmocka.dir/cmocka.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c > CMakeFiles/cmocka.dir/cmocka.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c > CMakeFiles/cmocka.dir/cmocka.c.i
 
 _deps/cmocka-build/src/CMakeFiles/cmocka.dir/cmocka.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cmocka.dir/cmocka.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c -o CMakeFiles/cmocka.dir/cmocka.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/src/cmocka.c -o CMakeFiles/cmocka.dir/cmocka.c.s
 
 # Object files for target cmocka
 cmocka_OBJECTS = \
