@@ -76,15 +76,15 @@ _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o: _deps/cmo
 _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c
 _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o: _deps/cmocka-build/example/CMakeFiles/simple_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o -MF CMakeFiles/simple_test.dir/simple_test.c.o.d -o CMakeFiles/simple_test.dir/simple_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.o -MF CMakeFiles/simple_test.dir/simple_test.c.o.d -o CMakeFiles/simple_test.dir/simple_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c
 
 _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/simple_test.dir/simple_test.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c > CMakeFiles/simple_test.dir/simple_test.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c > CMakeFiles/simple_test.dir/simple_test.c.i
 
 _deps/cmocka-build/example/CMakeFiles/simple_test.dir/simple_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/simple_test.dir/simple_test.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c -o CMakeFiles/simple_test.dir/simple_test.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/simple_test.c -o CMakeFiles/simple_test.dir/simple_test.c.s
 
 # Object files for target simple_test
 simple_test_OBJECTS = \

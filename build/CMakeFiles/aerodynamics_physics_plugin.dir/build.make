@@ -76,85 +76,85 @@ CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o: CMakeF
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/actuator.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/actuator.c.s
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/flags.make
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/bindings.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/bindings.c.s
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/flags.make
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/flow_state.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/flow_state.c.s
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/flags.make
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/mesh.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/mesh.c.s
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/flags.make
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/solver.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/solver.c.s
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/flags.make
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o: CMakeFiles/aerodynamics_physics_plugin.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o -MF CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o.d -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c > CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.i
 
 CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/src/aerodynamics/turbulence_model.c -o CMakeFiles/aerodynamics_physics_plugin.dir/src/aerodynamics/turbulence_model.c.s
 
 # Object files for target aerodynamics_physics_plugin
 aerodynamics_physics_plugin_OBJECTS = \

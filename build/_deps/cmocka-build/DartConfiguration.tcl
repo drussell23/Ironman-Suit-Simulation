@@ -14,7 +14,7 @@ CostDataFile:
 Site: Dereks-MacBook-Pro.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-aarch64-apple-darwin24-g++-14
+BuildName: Darwin-clang++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /usr/bin/git
+GITCommand: 
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: true
 
 # Compiler info
-Compiler: /opt/homebrew/bin/aarch64-apple-darwin24-g++-14
+Compiler: /usr/bin/clang++
 CompilerVersion: 
 
 # Dynamic analysis (MemCheck)

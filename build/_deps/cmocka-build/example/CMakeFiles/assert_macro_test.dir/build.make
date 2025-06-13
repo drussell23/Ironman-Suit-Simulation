@@ -76,29 +76,29 @@ _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o: _d
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o: _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o -MF CMakeFiles/assert_macro_test.dir/assert_macro.c.o.d -o CMakeFiles/assert_macro_test.dir/assert_macro.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.o -MF CMakeFiles/assert_macro_test.dir/assert_macro.c.o.d -o CMakeFiles/assert_macro_test.dir/assert_macro.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c
 
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assert_macro_test.dir/assert_macro.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c > CMakeFiles/assert_macro_test.dir/assert_macro.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c > CMakeFiles/assert_macro_test.dir/assert_macro.c.i
 
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assert_macro_test.dir/assert_macro.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c -o CMakeFiles/assert_macro_test.dir/assert_macro.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro.c -o CMakeFiles/assert_macro_test.dir/assert_macro.c.s
 
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o: _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/flags.make
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o: /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o: _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o -MF CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o.d -o CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o -MF CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o.d -o CMakeFiles/assert_macro_test.dir/assert_macro_test.c.o -c /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c
 
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c > CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c > CMakeFiles/assert_macro_test.dir/assert_macro_test.c.i
 
 _deps/cmocka-build/example/CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s"
-	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c -o CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s
+	cd /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-build/example && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-src/example/assert_macro_test.c -o CMakeFiles/assert_macro_test.dir/assert_macro_test.c.s
 
 # Object files for target assert_macro_test
 assert_macro_test_OBJECTS = \

@@ -5,29 +5,16 @@ from backend.aerodynamics.flight_models.sensor_models.pitot import PitotSensor, 
 from backend.aerodynamics.environmental_effects.atmospheric_density import density_at_altitude
 from backend.aerodynamics.environmental_effects.thermal_effects import temperature_at_altitude
 
-"""
-Pitot sensor model tests
 
-Test cases:
-    1. Static pressure at sea level
-    2. Total and dynamic pressure
-    3. Indicated Airspeed (IAS) computation
-    4. True Airspeed (TAS) with and without compressibility correction
-    5. Handling of negative dynamic pressure
-    6. Error raising on invalid velocity input shapes
-"""
-
-# Test case 1: Static pressure at sea level
 def test_static_pressure_at_sea_level():
-    # Baseline measurement with zero noise/bias
-    pitot = PitotSensor(noise_std_static=0.0, bias_static=0.0) # Baseline sensor with zero noise/bias 
-    p_static = pitot.measure_static_pressure(0.0) # Measured static pressure    
-    rho = density_at_altitude(0.0) # Sea level density
-    T = temperature_at_altitude(0.0) # Sea level temperature
-    expected = rho * GAS_CONSTANT * T # Expected static pressure at sea level
-    assert p_static == pytest.approx(expected, rel=1e-6) # Assert static pressure at sea level
+    pitot = PitotSensor(noise_std_static=0.0, bias_static=0.0)
+    p_static = pitot.measure_static_pressure(0.0)
+    rho = density_at_altitude(0.0)
+    T = temperature_at_altitude(0.0)
+    expected = rho * GAS_CONSTANT * T
+    assert p_static == pytest.approx(expected, rel=1e-6)
 
-# Test case 2: Total and dynamic pressure   
+
 def test_total_and_dynamic_pressure():
     pitot = PitotSensor(noise_std_static=0.0, bias_static=0.0,
                         noise_std_total=0.0, bias_total=0.0)
@@ -39,7 +26,7 @@ def test_total_and_dynamic_pressure():
     assert p_t == pytest.approx(p_s + expected_q, rel=1e-6)
     assert q_dyn == pytest.approx(expected_q, rel=1e-6)
 
-# Test case 3: Indicated Airspeed (IAS) computation
+
 def test_indicated_airspeed_computation():
     pitot = PitotSensor()
     q = 0.5 * density_at_altitude(0.0) * 20.0**2
@@ -47,7 +34,7 @@ def test_indicated_airspeed_computation():
     expected = np.sqrt(2 * q / SEA_LEVEL_DENSITY)
     assert v_ias == pytest.approx(expected, rel=1e-6)
 
-# Test case 4: True Airspeed (TAS) without compressibility  
+
 def test_true_airspeed_without_compressibility():
     pitot = PitotSensor()
     q = 0.5 * density_at_altitude(1000.0) * 15.0**2
@@ -55,7 +42,7 @@ def test_true_airspeed_without_compressibility():
     expected = np.sqrt(2 * q / density_at_altitude(1000.0))
     assert v_tas == pytest.approx(expected, rel=1e-6)
 
-# Test case 5: True Airspeed (TAS) with compressibility correction  
+
 def test_true_airspeed_compressibility_low_mach():
     pitot = PitotSensor()
     q = 0.5 * density_at_altitude(5000.0) * 5.0**2
@@ -63,20 +50,19 @@ def test_true_airspeed_compressibility_low_mach():
     v_co = pitot.true_airspeed(q, 5000.0, compressibility=True)
     assert v_co == pytest.approx(v_no, rel=1e-6)
 
-# Test case 6: Handling of negative dynamic pressure        
+
 def test_indicated_airspeed_negative_q():
     pitot = PitotSensor()
     v_ias = pitot.indicated_airspeed(-100.0)
     assert v_ias == 0.0
 
 
-# Test case 7: Error raising on invalid velocity input shapes
 def test_measure_total_pressure_invalid_shape_raises():
     pitot = PitotSensor()
     with pytest.raises(ValueError):
         pitot.measure_total_pressure(np.array([1.0, 2.0]), 0.0)
 
-# Test case 8: Error raising on invalid velocity input shapes   
+
 def test_measure_dynamic_pressure_invalid_shape_raises():
     pitot = PitotSensor()
     with pytest.raises(ValueError):

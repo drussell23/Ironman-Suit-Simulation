@@ -76,15 +76,15 @@ CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o: CMak
 CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c
 CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o: CMakeFiles/test_full_pipeline.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o -MF CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o.d -o CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o -MF CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o.d -o CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c
 
 CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c > CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c > CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.i
 
 CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c -o CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/integration/test_full_pipeline.c -o CMakeFiles/test_full_pipeline.dir/tests/integration/test_full_pipeline.c.s
 
 # Object files for target test_full_pipeline
 test_full_pipeline_OBJECTS = \

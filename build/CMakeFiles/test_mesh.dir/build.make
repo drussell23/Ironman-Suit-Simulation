@@ -76,15 +76,15 @@ CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o: CMakeFiles/test_mesh.
 CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c
 CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o: CMakeFiles/test_mesh.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o -MF CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o.d -o CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o -MF CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o.d -o CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c
 
 CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c > CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c > CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.i
 
 CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c -o CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_mesh.c -o CMakeFiles/test_mesh.dir/tests/aerodynamics/test_mesh.c.s
 
 # Object files for target test_mesh
 test_mesh_OBJECTS = \

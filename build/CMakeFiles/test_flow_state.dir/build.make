@@ -76,15 +76,15 @@ CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o: CMakeFile
 CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o: /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c
 CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o: CMakeFiles/test_flow_state.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o -MF CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o.d -o CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o -MF CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o.d -o CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.o -c /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c
 
 CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.i"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c > CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c > CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.i
 
 CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.s"
-	/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c -o CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/tests/aerodynamics/test_flow_state.c -o CMakeFiles/test_flow_state.dir/tests/aerodynamics/test_flow_state.c.s
 
 # Object files for target test_flow_state
 test_flow_state_OBJECTS = \
