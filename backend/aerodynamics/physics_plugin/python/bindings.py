@@ -12,13 +12,36 @@ _lib_path = os.path.join(
     os.path.dirname(__file__), "..", "build", f"lib{_lib_name}.dylib"
 )
 if not os.path.exists(_lib_path):
-    # Fall back to system search (e.g. /usr/local/lib)
-    _found = find_library(_lib_name)
-    if not _found:
-        raise OSError(f"Could not find shared library '{_lib_name}'")
-    _lib_path = _found
+    # Try .so for Linux
+    _lib_path = os.path.join(
+        os.path.dirname(__file__), "..", "build", f"lib{_lib_name}.so"
+    )
+    if not os.path.exists(_lib_path):
+        # Fall back to system search (e.g. /usr/local/lib)
+        _found = find_library(_lib_name)
+        if not _found:
+            raise OSError(f"Could not find shared library '{_lib_name}'")
+        _lib_path = _found
 
 _lib = ctypes.CDLL(_lib_path)
+
+# -----------------------------------------------------------------------------
+# Error handling decorators
+# -----------------------------------------------------------------------------
+class AerodynamicsError(Exception):
+    """Exception raised for errors in the aerodynamics physics plugin."""
+    pass
+
+def check_null_result(func):
+    """Decorator to check if C function returns NULL and raise exception."""
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        if result is None or (isinstance(result, ctypes.c_void_p) and not result):
+            raise AerodynamicsError(f"{func.__name__} returned NULL")
+        return result
+    wrapper.__name__ = func.__name__
+    wrapper.__doc__ = func.__doc__
+    return wrapper
 
 # ----------------------------------------------------------------------
 # Python bindings for Aerodynamics plugin continue below...

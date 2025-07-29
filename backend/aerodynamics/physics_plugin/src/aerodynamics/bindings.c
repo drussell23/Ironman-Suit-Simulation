@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "aerodynamics/bindings.h"
+#include "aerodynamics/vtk_writer.h"
 
 // C99-compliant variadic LOG macro (handles one or more args)
 #define LOG(...)                            \
@@ -264,4 +265,61 @@ void flow_state_get_dissipation_bind(FlowStateHandle state, double *out_eps)
         return;
     }
     memcpy(out_eps, s->turbulence_dissipation_rate, sizeof(double) * s->num_nodes);
+}
+
+// VTK writer bindings implementation
+int vtk_write_solution_bind(const char *filename, MeshHandle mesh, FlowStateHandle state, int format)
+{
+    if (!filename || !mesh || !state)
+    {
+        LOG("Invalid input to vtk_write_solution_bind.");
+        return -1;
+    }
+    
+    return vtk_write_solution(filename, (Mesh*)mesh, (FlowState*)state, (VTKFormat)format);
+}
+
+int vtk_write_mesh_bind(const char *filename, MeshHandle mesh, int format)
+{
+    if (!filename || !mesh)
+    {
+        LOG("Invalid input to vtk_write_mesh_bind.");
+        return -1;
+    }
+    
+    return vtk_write_mesh(filename, (Mesh*)mesh, (VTKFormat)format);
+}
+
+void *vtk_create_time_series_writer_bind(const char *base_filename, int format)
+{
+    if (!base_filename)
+    {
+        LOG("Invalid input to vtk_create_time_series_writer_bind.");
+        return NULL;
+    }
+    
+    return vtk_create_time_series_writer(base_filename, (VTKFormat)format);
+}
+
+int vtk_write_timestep_bind(void *writer, int timestep, double time, MeshHandle mesh, FlowStateHandle state)
+{
+    if (!writer || !mesh || !state)
+    {
+        LOG("Invalid input to vtk_write_timestep_bind.");
+        return -1;
+    }
+    
+    return vtk_write_timestep(writer, timestep, time, (Mesh*)mesh, (FlowState*)state);
+}
+
+void vtk_close_time_series_writer_bind(void *writer)
+{
+    if (!writer)
+    {
+        LOG("Attempted to close null VTK writer.");
+        return;
+    }
+    
+    vtk_close_time_series_writer(writer);
+    LOG("VTK time series writer closed.");
 }

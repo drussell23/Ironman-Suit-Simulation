@@ -62,6 +62,15 @@ extern "C"
     void flow_state_get_tke_bind(FlowStateHandle state, double *out_tke);
     void flow_state_get_dissipation_bind(FlowStateHandle state, double *out_eps);
 
+    /**
+     * VTK writer bindings.
+     */
+    int vtk_write_solution_bind(const char *filename, MeshHandle mesh, FlowStateHandle state, int format);
+    int vtk_write_mesh_bind(const char *filename, MeshHandle mesh, int format);
+    void *vtk_create_time_series_writer_bind(const char *base_filename, int format);
+    int vtk_write_timestep_bind(void *writer, int timestep, double time, MeshHandle mesh, FlowStateHandle state);
+    void vtk_close_time_series_writer_bind(void *writer);
+
 #ifdef __cplusplus
 }
 #endif

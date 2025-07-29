@@ -6,6 +6,11 @@
 #include "aerodynamics/turbulence_model.h"
 #include "aerodynamics/mesh.h"
 #include "aerodynamics/flow_state.h"
+#include "aerodynamics_physics_plugin_config.h"
+
+#if HAVE_OPENMP
+#include <omp.h>
+#endif
 
 TurbulenceModel *turbulence_model_create(TurbulenceModelType type, const KEpsilonParameters *params)
 {
@@ -55,6 +60,7 @@ void turb_model_initialize(const TurbulenceModel *model, const Mesh *mesh, FlowS
 
     size_t N = mesh_get_num_nodes(mesh); // Get number of nodes from mesh.
 
+    #pragma omp parallel for if(N > 1000)
     for (size_t i = 0; i < N; ++i)
     {
         state->turbulence_kinetic_energy[i] = 1e-3;   // Set initial turbulence kinetic energy.
@@ -82,6 +88,7 @@ double *turb_model_compute_viscosity(const TurbulenceModel *model, const Mesh *m
     double c_mu = model->params.c_mu; // Get coefficient for k-epsilon model.
 
     // Compute turbulent viscosity for each node.
+    #pragma omp parallel for if(N > 1000)
     for (size_t i = 0; i < N; ++i)
     {
         double k = fmax(state->turbulence_kinetic_energy[i], 1e-10);         // Get turbulence kinetic energy.
@@ -116,6 +123,7 @@ void turb_model_update(
     const double c1 = model->params.c1_eps;
     const double c2 = model->params.c2_eps;
 
+    #pragma omp parallel for if(N > 1000)
     for (size_t i = 0; i < N; ++i)
     {
         // Get old k & ε, enforce floor

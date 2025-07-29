@@ -26,6 +26,7 @@ option(BUILD_SHARED_LIBS "Build as a shared library (.so/.dll)" ON)
 option(ENABLE_TESTING "Enable building and running unit tests" ON)
 option(ENABLE_EXAMPLES "Enable building example executables" OFF)
 option(ENABLE_COVERAGE "Enable code-coverage instrumentation" OFF)
+option(ENABLE_OPENMP "Enable OpenMP parallelization" ON)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Compiler Standards & Flags
@@ -45,6 +46,24 @@ if(ENABLE_COVERAGE)
   else()
     message(WARNING "Code coverage not supported for this compiler")
   endif()
+endif()
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# OpenMP Support
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+if(ENABLE_OPENMP)
+  find_package(OpenMP)
+  if(OpenMP_C_FOUND)
+    message(STATUS "OpenMP found: version ${OpenMP_C_VERSION}")
+    set(HAVE_OPENMP 1)
+  else()
+    message(STATUS "OpenMP not found. Building without parallelization.")
+    message(STATUS "  Note: On macOS, install libomp via Homebrew: brew install libomp")
+    set(HAVE_OPENMP 0)
+  endif()
+else()
+  message(STATUS "OpenMP disabled by user")
+  set(HAVE_OPENMP 0)
 endif()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -106,6 +125,12 @@ target_include_directories(${PROJECT_NAME}
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
+
+# Link OpenMP if available
+if(OpenMP_C_FOUND)
+  target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_C)
+  target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_OPENMP=1)
+endif()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Optional C-API wrapper (src/c_api/*.c)

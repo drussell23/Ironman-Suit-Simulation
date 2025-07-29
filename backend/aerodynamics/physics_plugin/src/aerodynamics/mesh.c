@@ -3,6 +3,11 @@
 
 #include "aerodynamics/mesh.h"       // For Mesh
 #include "aerodynamics/flow_state.h" // For FlowState
+#include "aerodynamics_physics_plugin_config.h"
+
+#if HAVE_OPENMP
+#include <omp.h>
+#endif
 
 // Create a new Mesh object.
 Mesh *mesh_create(size_t num_nodes, const double *coords, size_t num_cells, size_t nodes_per_cell, const size_t *connectivity)
@@ -96,12 +101,20 @@ int mesh_initialize(Mesh *mesh)
         return -1; // Memory allocation failure
     }
 
-    // 2) Compute volumes (asusmes simple tetra: P == 4).
+    // 2) Compute volumes (handle different cell types).
+    #pragma omp parallel for if(C > 1000)
     for (size_t c = 0; c < C; ++c)
     {                                                    // Iterate through cells.
         const size_t *conn = mesh->connectivity + c * P; // Get connectivity for cell c.
 
-        // Load coordinates of vertices.
+        // For now, just set a default volume for non-tetrahedral cells
+        if (P != 4)
+        {
+            mesh->cell_volumes[c] = 1.0; // Default volume
+            continue;
+        }
+
+        // Load coordinates of vertices for tetrahedral cells.
         double x0 = mesh->coordinates[3 * conn[0] + 0]; // X coordinate of vertex 0.
         double y0 = mesh->coordinates[3 * conn[0] + 1]; // Y coordinate of vertex 0.
         double z0 = mesh->coordinates[3 * conn[0] + 2]; // Z coordinate of vertex 0.
@@ -252,10 +265,24 @@ void mesh_compute_convection(
     }
 
     // For each node, build least-squares system:
+    #pragma omp parallel for if(N > 500) \
+        private(neighbors, visited) \
+        shared(mesh, coords, vel_old, accel)
     for (size_t i = 0; i < N; ++i) // Iterate through the nodes.
     {
+        // Thread-local temporary arrays
+        size_t *local_neighbors = malloc(sizeof(size_t) * N);
+        uint8_t *local_visited = calloc(N, 1);
+        
+        if (!local_neighbors || !local_visited)
+        {
+            free(local_neighbors);
+            free(local_visited);
+            continue;
+        }
+        
         // 2) Gather unique neighbors of node i via connectivity
-        memset(visited, 0, N); // Reset visited array.
+        memset(local_visited, 0, N); // Reset visited array.
         size_t nb_count = 0;   // Initialize neighbor count.
 
         for (size_t c = 0; c < C; ++c) // Iterate through cells.
@@ -284,13 +311,13 @@ void mesh_compute_convection(
             {
                 size_t j = conn[k]; // Get node index.
 
-                if (j == i || visited[j]) // Check if node is itself or already visited.
+                if (j == i || local_visited[j]) // Check if node is itself or already visited.
                 {
                     continue; // Skip if node is itself or already visited.
                 }
 
-                visited[j] = 1;            // Mark node as visited.
-                neighbors[nb_count++] = j; // Add node to neighbors list.
+                local_visited[j] = 1;            // Mark node as visited.
+                local_neighbors[nb_count++] = j; // Add node to neighbors list.
             }
         }
 
@@ -318,7 +345,7 @@ void mesh_compute_convection(
         // Iterate through neighbors.
         for (size_t n = 0; n < nb_count; ++n)
         {
-            size_t j = neighbors[n]; // Get neighbor index.
+            size_t j = local_neighbors[n]; // Get neighbor index.
 
             // r_ij = x_j - x_i
             double rx = coords[3 * j + 0] - xi; // X component of r_ij.
@@ -413,11 +440,16 @@ void mesh_compute_convection(
         accel[3 * i + 0] = -(ui[0] * grad[0][0] + ui[1] * grad[1][0] + ui[2] * grad[2][0]); // X component of acceleration.
         accel[3 * i + 1] = -(ui[0] * grad[0][1] + ui[1] * grad[1][1] + ui[2] * grad[2][1]); // Y component of acceleration.
         accel[3 * i + 2] = -(ui[0] * grad[0][2] + ui[1] * grad[1][2] + ui[2] * grad[2][2]); // Z component of acceleration.
+        
+        // Clean up thread-local arrays
+        free(local_neighbors);
+        free(local_visited);
     }
 
     // 6) Update velocities.
 
     // Apply the computed acceleration to the old velocity to get the new velocity.
+    #pragma omp parallel for if(N > 1000)
     for (size_t i = 0; i < N; ++i)
     {
         vel_new[3 * i + 0] = vel_old[3 * i + 0] + dt * accel[3 * i + 0]; // Update x-velocity.
@@ -444,6 +476,7 @@ void mesh_compute_diffusion(const Mesh *mesh, FlowState *state, const double *nu
 
     size_t n = mesh->num_nodes; // Get number of nodes from mesh.
 
+    #pragma omp parallel for if(n > 1000)
     for (size_t i = 0; i < n; ++i)
     {
         size_t off = i * 3;           // Calculate offset for 3D velocity vector.

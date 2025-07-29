@@ -66,7 +66,7 @@ void solver_initialize(Solver *solver)
     }
 
     // 2) Allocate and zero-init the FlowState
-    solver->flow_state = malloc(sizeof(*solver->flow_state));
+    solver->flow_state = malloc(sizeof(FlowState));
     if (!solver->flow_state)
     {
         fprintf(stderr, "solver_initialize: flow_state malloc failed.\n");
