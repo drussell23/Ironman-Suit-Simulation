@@ -1,3 +1,0 @@
-/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-subbuild/CMakeFiles/cmocka-populate.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-subbuild/CMakeFiles/edit_cache.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/_deps/cmocka-subbuild/CMakeFiles/rebuild_cache.dir

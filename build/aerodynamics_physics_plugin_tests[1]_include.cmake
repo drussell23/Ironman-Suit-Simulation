@@ -1,5 +1,0 @@
-if(EXISTS "/Users/derekjrussell/Documents/repos/IronMan/build/aerodynamics_physics_plugin_tests[1]_tests.cmake")
-  include("/Users/derekjrussell/Documents/repos/IronMan/build/aerodynamics_physics_plugin_tests[1]_tests.cmake")
-else()
-  add_test(aerodynamics_physics_plugin_tests_NOT_BUILT aerodynamics_physics_plugin_tests_NOT_BUILT)
-endif()

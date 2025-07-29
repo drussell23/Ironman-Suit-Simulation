@@ -1,6 +1,0 @@
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/aerodynamics_physics_plugin.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/package.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/package_source.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/test.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/edit_cache.dir
-/Users/derekjrussell/Documents/repos/IronMan/build/CMakeFiles/rebuild_cache.dir
