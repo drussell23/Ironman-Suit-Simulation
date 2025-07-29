@@ -139,8 +139,163 @@ class BaseAgent(ABC):
         self.training = training
 
 
+# Neural Network Architectures
+if TORCH_AVAILABLE:
+    class DuelingQNetwork(nn.Module):
+        """Dueling DQN architecture with separate value and advantage streams."""
+
+        def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
+            super().__init__()
+
+            # Shared feature layers
+            self.feature_layer = nn.Sequential(
+                nn.Linear(state_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+                nn.ReLU(),
+            )
+
+            # Value stream
+            self.value_stream = nn.Sequential(
+                nn.Linear(hidden_dim, hidden_dim // 2),
+                nn.ReLU(),
+                nn.Linear(hidden_dim // 2, 1),
+            )
+
+            # Advantage stream
+            self.advantage_stream = nn.Sequential(
+                nn.Linear(hidden_dim, hidden_dim // 2),
+                nn.ReLU(),
+                nn.Linear(hidden_dim // 2, action_dim),
+            )
+
+        def forward(self, x):
+            features = self.feature_layer(x)
+            value = self.value_stream(features)
+            advantage = self.advantage_stream(features)
+
+            # Combine value and advantage
+            q_values = value + advantage - advantage.mean(dim=1, keepdim=True)
+            return q_values
+
+
+    class ActorNetwork(nn.Module):
+        """Actor network for PPO with continuous actions."""
+
+        def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
+            super().__init__()
+
+            self.network = nn.Sequential(
+                nn.Linear(state_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+                nn.ReLU(),
+            )
+
+            self.mean_layer = nn.Linear(hidden_dim, action_dim)
+            self.log_std_layer = nn.Linear(hidden_dim, action_dim)
+
+        def forward(self, state, action=None):
+            features = self.network(state)
+            mean = self.mean_layer(features)
+            log_std = self.log_std_layer(features)
+            log_std = torch.clamp(log_std, -20, 2)
+
+            std = log_std.exp()
+            normal = Normal(mean, std)
+
+            if action is None:
+                action = normal.rsample()
+
+            log_prob = normal.log_prob(action).sum(dim=-1)
+            return action, log_prob
+
+        def entropy(self, state):
+            features = self.network(state)
+            mean = self.mean_layer(features)
+            log_std = self.log_std_layer(features)
+            log_std = torch.clamp(log_std, -20, 2)
+            std = log_std.exp()
+            normal = Normal(mean, std)
+            return normal.entropy().sum(dim=-1)
+
+
+    class CriticNetwork(nn.Module):
+        """Critic network for PPO."""
+
+        def __init__(self, state_dim: int, hidden_dim: int = 128):
+            super().__init__()
+
+            self.network = nn.Sequential(
+                nn.Linear(state_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, 1),
+            )
+
+        def forward(self, state):
+            return self.network(state)
+
+
+    class SACActor(nn.Module):
+        """Actor network for SAC."""
+
+        def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
+            super().__init__()
+
+            self.network = nn.Sequential(
+                nn.Linear(state_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+                nn.ReLU(),
+            )
+
+            self.mean_layer = nn.Linear(hidden_dim, action_dim)
+            self.log_std_layer = nn.Linear(hidden_dim, action_dim)
+
+        def forward(self, state):
+            features = self.network(state)
+            mean = self.mean_layer(features)
+            log_std = self.log_std_layer(features)
+            log_std = torch.clamp(log_std, -20, 2)
+
+            std = log_std.exp()
+            normal = Normal(mean, std)
+
+            action = normal.rsample()
+            log_prob = normal.log_prob(action).sum(dim=-1)
+
+            # Tanh squashing
+            action = torch.tanh(action)
+            log_prob -= torch.log(1 - action.pow(2) + 1e-6).sum(dim=-1)
+
+            return action, log_prob
+
+
+    class SACCritic(nn.Module):
+        """Critic network for SAC."""
+
+        def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
+            super().__init__()
+
+            self.network = nn.Sequential(
+                nn.Linear(state_dim + action_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+                nn.ReLU(),
+                nn.Linear(hidden_dim, 1),
+            )
+
+        def forward(self, state, action):
+            x = torch.cat([state, action], dim=-1)
+            return self.network(x)
+
+
+# RL Agent Classes
+if TORCH_AVAILABLE:
     class DQNAgent(BaseAgent):
-    """Deep Q-Network with dueling architecture and double Q-learning."""
+        """Deep Q-Network with dueling architecture and double Q-learning."""
 
     def __init__(self, state_dim: int, action_dim: int, **kwargs):
         if not TORCH_AVAILABLE:
@@ -544,7 +699,7 @@ class SACAgent(BaseAgent):
 
     def load(self, filepath: str):
         """Load agent."""
-            data = torch.load(filepath, map_location=self.device)
+        data = torch.load(filepath, map_location=self.device)
         self.actor.load_state_dict(data["actor"])
         self.critic1.load_state_dict(data["critic1"])
         self.critic2.load_state_dict(data["critic2"])
@@ -579,7 +734,7 @@ class MultiAgentCoordinator:
             return self._decentralized_coordination(states)
         elif self.coordination_strategy == "hierarchical":
             return self._hierarchical_coordination(states)
-else:
+        else:
             raise ValueError(
                 f"Unknown coordination strategy: {self.coordination_strategy}"
             )
@@ -667,156 +822,3 @@ else:
         # In reality, this would implement sophisticated conflict resolution strategies
         return action2  # Placeholder
 
-
-# Neural Network Architectures
-
-
-class DuelingQNetwork(nn.Module):
-    """Dueling DQN architecture with separate value and advantage streams."""
-
-    def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
-        super().__init__()
-
-        # Shared feature layers
-        self.feature_layer = nn.Sequential(
-            nn.Linear(state_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.ReLU(),
-        )
-
-        # Value stream
-        self.value_stream = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim // 2),
-            nn.ReLU(),
-            nn.Linear(hidden_dim // 2, 1),
-        )
-
-        # Advantage stream
-        self.advantage_stream = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim // 2),
-            nn.ReLU(),
-            nn.Linear(hidden_dim // 2, action_dim),
-        )
-
-    def forward(self, x):
-        features = self.feature_layer(x)
-        value = self.value_stream(features)
-        advantage = self.advantage_stream(features)
-
-        # Combine value and advantage
-        q_values = value + advantage - advantage.mean(dim=1, keepdim=True)
-        return q_values
-
-
-class ActorNetwork(nn.Module):
-    """Actor network for PPO with continuous actions."""
-
-    def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
-        super().__init__()
-
-        self.network = nn.Sequential(
-            nn.Linear(state_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.ReLU(),
-        )
-
-        self.mean_layer = nn.Linear(hidden_dim, action_dim)
-        self.log_std_layer = nn.Linear(hidden_dim, action_dim)
-
-    def forward(self, state, action=None):
-        features = self.network(state)
-        mean = self.mean_layer(features)
-        log_std = self.log_std_layer(features)
-        log_std = torch.clamp(log_std, -20, 2)
-
-        std = log_std.exp()
-        normal = Normal(mean, std)
-
-        if action is None:
-            action = normal.rsample()
-
-        log_prob = normal.log_prob(action).sum(dim=-1)
-        return action, log_prob
-
-    def entropy(self, state):
-        features = self.network(state)
-        mean = self.mean_layer(features)
-        log_std = self.log_std_layer(features)
-        log_std = torch.clamp(log_std, -20, 2)
-        std = log_std.exp()
-        normal = Normal(mean, std)
-        return normal.entropy().sum(dim=-1)
-
-
-class CriticNetwork(nn.Module):
-    """Critic network for PPO."""
-
-    def __init__(self, state_dim: int, hidden_dim: int = 128):
-        super().__init__()
-
-        self.network = nn.Sequential(
-            nn.Linear(state_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, 1),
-        )
-
-    def forward(self, state):
-        return self.network(state)
-
-
-class SACActor(nn.Module):
-    """Actor network for SAC."""
-
-    def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
-        super().__init__()
-
-        self.network = nn.Sequential(
-            nn.Linear(state_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.ReLU(),
-        )
-
-        self.mean_layer = nn.Linear(hidden_dim, action_dim)
-        self.log_std_layer = nn.Linear(hidden_dim, action_dim)
-
-    def forward(self, state):
-        features = self.network(state)
-        mean = self.mean_layer(features)
-        log_std = self.log_std_layer(features)
-        log_std = torch.clamp(log_std, -20, 2)
-
-        std = log_std.exp()
-        normal = Normal(mean, std)
-
-        action = normal.rsample()
-        log_prob = normal.log_prob(action).sum(dim=-1)
-
-        # Tanh squashing
-        action = torch.tanh(action)
-        log_prob -= torch.log(1 - action.pow(2) + 1e-6).sum(dim=-1)
-
-        return action, log_prob
-
-
-class SACCritic(nn.Module):
-    """Critic network for SAC."""
-
-    def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 128):
-        super().__init__()
-
-        self.network = nn.Sequential(
-            nn.Linear(state_dim + action_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.ReLU(),
-            nn.Linear(hidden_dim, 1),
-        )
-
-    def forward(self, state, action):
-        x = torch.cat([state, action], dim=-1)
-        return self.network(x)

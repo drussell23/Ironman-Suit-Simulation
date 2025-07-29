@@ -147,7 +147,7 @@ if(ENABLE_TESTING)
   FetchContent_Declare(
     cmocka
     GIT_REPOSITORY https://gitlab.com/cmocka/cmocka.git
-    GIT_TAG cmocka-1.1.7
+    GIT_TAG cmocka-1.1.8
   )
   FetchContent_MakeAvailable(cmocka)
 
