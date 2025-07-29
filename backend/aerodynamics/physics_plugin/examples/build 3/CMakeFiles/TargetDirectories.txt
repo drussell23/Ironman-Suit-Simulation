@@ -1,3 +1,0 @@
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/examples/build/CMakeFiles/full_pipeline_example.dir
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/examples/build/CMakeFiles/edit_cache.dir
-/Users/derekjrussell/Documents/repos/IronMan/backend/aerodynamics/physics_plugin/examples/build/CMakeFiles/rebuild_cache.dir
