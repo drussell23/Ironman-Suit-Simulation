@@ -315,7 +315,7 @@ if TORCH_AVAILABLE:
         # Networks
         self.policy_net = DuelingQNetwork(state_dim, action_dim).to(self.device)
         self.target_net = DuelingQNetwork(state_dim, action_dim).to(self.device)
-            self.target_net.load_state_dict(self.policy_net.state_dict())
+        self.target_net.load_state_dict(self.policy_net.state_dict())
 
         # Optimizer
         self.optimizer = optim.Adam(self.policy_net.parameters(), lr=self.lr)
@@ -327,16 +327,16 @@ if TORCH_AVAILABLE:
     def select_action(self, state: np.ndarray, **kwargs) -> int:
         """Epsilon-greedy action selection."""
         if self.training and random.random() < self.epsilon:
-                return random.randrange(self.action_dim)
+            return random.randrange(self.action_dim)
 
         state_t = torch.FloatTensor(state).unsqueeze(0).to(self.device)
-            with torch.no_grad():
+        with torch.no_grad():
             q_values = self.policy_net(state_t)
         return q_values.argmax().item()
 
     def train(self, batch: Tuple) -> Dict[str, float]:
         """Train the agent."""
-            if len(self.buffer) < self.batch_size:
+        if len(self.buffer) < self.batch_size:
             return {}
 
         states, actions, rewards, next_states, dones, weights = self.buffer.sample(
@@ -355,19 +355,19 @@ if TORCH_AVAILABLE:
         current_q = self.policy_net(states_t).gather(1, actions_t)
 
         # Target Q values (Double DQN)
-            with torch.no_grad():
+        with torch.no_grad():
             next_actions = self.policy_net(next_states_t).argmax(1).unsqueeze(1)
             next_q = self.target_net(next_states_t).gather(1, next_actions)
-                target_q = rewards_t + self.gamma * next_q * (1 - dones_t)
+            target_q = rewards_t + self.gamma * next_q * (1 - dones_t)
 
         # Loss with importance sampling weights
         loss = (weights_t * F.mse_loss(current_q, target_q, reduction="none")).mean()
 
         # Optimize
-            self.optimizer.zero_grad()
-            loss.backward()
+        self.optimizer.zero_grad()
+        loss.backward()
         torch.nn.utils.clip_grad_norm_(self.policy_net.parameters(), 1.0)
-            self.optimizer.step()
+        self.optimizer.step()
 
         # Update target network
         self.steps += 1
@@ -699,7 +699,7 @@ class SACAgent(BaseAgent):
 
     def load(self, filepath: str):
         """Load agent."""
-            data = torch.load(filepath, map_location=self.device)
+        data = torch.load(filepath, map_location=self.device)
         self.actor.load_state_dict(data["actor"])
         self.critic1.load_state_dict(data["critic1"])
         self.critic2.load_state_dict(data["critic2"])
@@ -734,7 +734,7 @@ class MultiAgentCoordinator:
             return self._decentralized_coordination(states)
         elif self.coordination_strategy == "hierarchical":
             return self._hierarchical_coordination(states)
-else:
+        else:
             raise ValueError(
                 f"Unknown coordination strategy: {self.coordination_strategy}"
             )
