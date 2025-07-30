@@ -60,6 +60,18 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# Unity - IronManSuitSim3D specific
+IronManSuitSim3D/[Ll]ibrary/
+IronManSuitSim3D/[Tt]emp/
+IronManSuitSim3D/[Oo]bj/
+IronManSuitSim3D/[Bb]uild/
+IronManSuitSim3D/[Bb]uilds/
+IronManSuitSim3D/[Ll]ogs/
+IronManSuitSim3D/[Uu]ser[Ss]ettings/
+IronManSuitSim3D/*.csproj
+IronManSuitSim3D/*.sln
+IronManSuitSim3D/GeneratedAssets/
+
 # Jupyter
 .ipynb_checkpoints/
 
