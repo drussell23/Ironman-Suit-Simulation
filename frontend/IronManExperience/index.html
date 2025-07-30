@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man Suit Experience - Stark Industries</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/jarvis.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Boot Sequence -->
+    <div id="bootSequence" class="boot-sequence active">
+        <div class="boot-logo">
+            <div class="arc-reactor">
+                <div class="core"></div>
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+        </div>
+        <div class="boot-text">
+            <h1>STARK INDUSTRIES</h1>
+            <div class="boot-status">INITIALIZING J.A.R.V.I.S.</div>
+            <div class="boot-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+            <div class="boot-log"></div>
+        </div>
+    </div>
+
+    <!-- Main HUD Interface -->
+    <div id="hudInterface" class="hud-interface">
+        <!-- 3D Viewport/Canvas -->
+        <canvas id="viewport" class="viewport"></canvas>
+        
+        <!-- HUD Overlay -->
+        <div class="hud-overlay">
+            <!-- Top Bar -->
+            <div class="hud-top">
+                <div class="compass">
+                    <div class="compass-ring">
+                        <span class="direction n">N</span>
+                        <span class="direction e">E</span>
+                        <span class="direction s">S</span>
+                        <span class="direction w">W</span>
+                    </div>
+                    <div class="heading">000°</div>
+                </div>
+                
+                <div class="altitude-meter">
+                    <div class="label">ALT</div>
+                    <div class="value">0</div>
+                    <div class="unit">m</div>
+                </div>
+                
+                <div class="velocity-meter">
+                    <div class="label">VEL</div>
+                    <div class="value">0</div>
+                    <div class="unit">km/h</div>
+                </div>
+            </div>
+
+            <!-- Left Panel -->
+            <div class="hud-left">
+                <div class="system-status">
+                    <h3>SYSTEM STATUS</h3>
+                    <div class="status-item">
+                        <span class="label">POWER</span>
+                        <div class="status-bar">
+                            <div class="status-fill power-fill" style="width: 98%"></div>
+                        </div>
+                        <span class="value">98%</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">ARMOR</span>
+                        <div class="status-bar">
+                            <div class="status-fill armor-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="value">100%</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">TEMP</span>
+                        <div class="status-bar">
+                            <div class="status-fill temp-fill" style="width: 36%"></div>
+                        </div>
+                        <span class="value">36.5°C</span>
+                    </div>
+                </div>
+
+                <div class="mission-objectives">
+                    <h3>OBJECTIVES</h3>
+                    <div class="objectives-list"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="hud-right">
+                <div class="weapon-status">
+                    <h3>WEAPONS</h3>
+                    <div class="weapon-item active">
+                        <div class="weapon-icon repulsor"></div>
+                        <span>REPULSORS</span>
+                        <div class="ammo">READY</div>
+                    </div>
+                    <div class="weapon-item">
+                        <div class="weapon-icon missile"></div>
+                        <span>MISSILES</span>
+                        <div class="ammo">24</div>
+                    </div>
+                    <div class="weapon-item">
+                        <div class="weapon-icon laser"></div>
+                        <span>LASER</span>
+                        <div class="ammo">CHARGING</div>
+                    </div>
+                </div>
+
+                <div class="target-info">
+                    <h3>TARGET</h3>
+                    <div class="no-target">NO LOCK</div>
+                    <div class="target-details" style="display: none;">
+                        <div class="target-distance"></div>
+                        <div class="target-type"></div>
+                        <div class="target-threat"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Reticle -->
+            <div class="center-hud">
+                <div class="reticle">
+                    <svg viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(0, 168, 255, 0.3)" stroke-width="1"/>
+                        <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(0, 168, 255, 0.5)" stroke-width="1"/>
+                        <path d="M 100 20 L 100 40 M 100 160 L 100 180 M 20 100 L 40 100 M 160 100 L 180 100" 
+                              stroke="rgba(0, 168, 255, 0.8)" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div class="horizon-indicator">
+                    <div class="horizon-line"></div>
+                    <div class="pitch-ladder"></div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="hud-bottom">
+                <div class="alert-panel"></div>
+                <div class="mode-indicator">MODE: STANDARD</div>
+            </div>
+
+            <!-- JARVIS Interface -->
+            <div class="jarvis-interface">
+                <div class="jarvis-avatar">
+                    <div class="waveform">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="jarvis-text"></div>
+                <div class="jarvis-input">
+                    <input type="text" id="voiceCommand" placeholder="Voice command..." />
+                    <button id="commandSubmit">EXECUTE</button>
+                </div>
+            </div>
+
+            <!-- Mission Selection -->
+            <div id="missionSelect" class="mission-select" style="display: none;">
+                <h2>SELECT MISSION</h2>
+                <div class="mission-list">
+                    <div class="mission-item" data-mission="combat">
+                        <h3>HOSTILE TAKEOVER</h3>
+                        <p>Eliminate hostile forces at Stark facility</p>
+                        <div class="difficulty">★★★☆☆</div>
+                    </div>
+                    <div class="mission-item" data-mission="rescue">
+                        <h3>DISASTER RELIEF</h3>
+                        <p>Rescue civilians from earthquake zone</p>
+                        <div class="difficulty">★★☆☆☆</div>
+                    </div>
+                    <div class="mission-item" data-mission="recon">
+                        <h3>STEALTH RECON</h3>
+                        <p>Infiltrate enemy base undetected</p>
+                        <div class="difficulty">★★★★☆</div>
+                    </div>
+                </div>
+                <button class="close-missions">CANCEL</button>
+            </div>
+
+            <!-- Analysis Overlay -->
+            <div id="analysisOverlay" class="analysis-overlay" style="display: none;">
+                <div class="scan-line"></div>
+                <div class="scan-results"></div>
+                <div class="data-points"></div>
+            </div>
+
+            <!-- Emergency Alert -->
+            <div id="emergencyAlert" class="emergency-alert" style="display: none;">
+                <div class="alert-icon">⚠</div>
+                <div class="alert-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bootSound" src="assets/audio/boot-sequence.mp3"></audio>
+    <audio id="hudSound" src="assets/audio/hud-activate.mp3"></audio>
+    <audio id="jarvisSound" src="assets/audio/jarvis-ready.mp3"></audio>
+    <audio id="alertSound" src="assets/audio/alert.mp3"></audio>
+    <audio id="repulsorSound" src="assets/audio/repulsor.mp3"></audio>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/boot-sequence.js"></script>
+    <script src="js/jarvis.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/viewport.js"></script>
+    <script src="js/missions.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
