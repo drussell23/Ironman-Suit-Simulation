@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man 3D Test - Enhanced Features</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/viewport.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .test-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-controls h3 {
+            color: var(--primary-color);
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+        
+        .test-controls button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            background: rgba(0, 168, 255, 0.2);
+            border: 1px solid var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        
+        .test-controls button:hover {
+            background: var(--primary-color);
+            color: black;
+        }
+        
+        .feature-info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            max-width: 400px;
+        }
+        
+        .feature-info h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .feature-info p {
+            color: #ccc;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .controls-help {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 1000;
+            font-size: 12px;
+        }
+        
+        .controls-help h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .controls-help kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-family: monospace;
+            display: inline-block;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Viewport -->
+    <canvas id="viewport" class="viewport"></canvas>
+    
+    <!-- Test Controls -->
+    <div class="test-controls">
+        <h3>3D Feature Tests</h3>
+        <button onclick="testAssemblyAnimation()">Assembly Animation</button>
+        <button onclick="testCombatMode()">Combat Mode</button>
+        <button onclick="testFlightMode()">Flight Mode</button>
+        <button onclick="testRepulsorFire()">Fire Repulsors</button>
+        <button onclick="testDamageEffect()">Damage Effect</button>
+        <button onclick="testEnvironmentScan()">Environment Scan</button>
+        <button onclick="testPowerUp()">Power Up Effect</button>
+        <button onclick="testCameraSwitch()">Switch Camera (C)</button>
+        <button onclick="testAddTargets()">Add Targets</button>
+        <button onclick="testNightMode()">Night/Day Toggle</button>
+    </div>
+    
+    <!-- Controls Help -->
+    <div class="controls-help">
+        <h4>Controls</h4>
+        <p><kbd>W/A/S/D</kbd> - Move</p>
+        <p><kbd>Q/E</kbd> - Up/Down</p>
+        <p><kbd>Mouse</kbd> - Look around</p>
+        <p><kbd>Shift</kbd> - Boost</p>
+        <p><kbd>Space</kbd> - Fire</p>
+        <p><kbd>C</kbd> - Camera mode</p>
+        <p><kbd>R</kbd> - Assemble suit</p>
+        <p><kbd>F</kbd> - Combat mode</p>
+    </div>
+    
+    <!-- Feature Info -->
+    <div class="feature-info">
+        <h4>Enhanced 3D Features</h4>
+        <p>This demo showcases the enhanced Iron Man suit with detailed modeling, advanced lighting, particle effects, and interactive animations. Try the different test buttons to see various features in action!</p>
+    </div>
+    
+    <!-- Effect Overlays -->
+    <div class="damage-overlay"></div>
+    <div class="speed-lines"></div>
+    <div class="cinematic-bars"></div>
+    <div class="environment-scan">
+        <div class="scan-grid"></div>
+        <div class="scan-wave"></div>
+    </div>
+    <div class="power-up-effect">
+        <div class="power-ring"></div>
+        <div class="power-ring"></div>
+        <div class="power-ring"></div>
+    </div>
+    <div class="camera-mode">THIRD PERSON</div>
+    
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/viewport-enhanced.js"></script>
+    
+    <script>
+        // Initialize enhanced viewport
+        let viewport;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            viewport = new EnhancedViewport();
+            
+            // Override some settings for testing
+            viewport.config = { skipBoot: true };
+            
+            // Make viewport globally accessible for testing
+            window.viewport = viewport;
+        });
+        
+        // Test functions
+        function testAssemblyAnimation() {
+            viewport.assemblesuit();
+            showFeatureInfo('Assembly Animation', 'Watch as the Iron Man suit pieces fly in and assemble on the character. This uses Three.js animation system with custom keyframes.');
+        }
+        
+        function testCombatMode() {
+            viewport.toggleCombatMode();
+            showFeatureInfo('Combat Mode', 'The suit enters combat stance with arms positioned for battle. Notice the changed posture and ready position.');
+        }
+        
+        function testFlightMode() {
+            viewport.state.isFlying = !viewport.state.isFlying;
+            document.querySelector('.speed-lines').classList.toggle('active', viewport.state.isFlying);
+            showFeatureInfo('Flight Mode', 'Activates flight mode with speed lines and thruster effects. Use WASD to fly around!');
+        }
+        
+        function testRepulsorFire() {
+            // Simulate repulsor fire
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    viewport.fireRepulsorBeam(viewport.effects.leftRepulsor);
+                    setTimeout(() => {
+                        viewport.fireRepulsorBeam(viewport.effects.rightRepulsor);
+                    }, 100);
+                }, i * 200);
+            }
+            showFeatureInfo('Repulsor Fire', 'Fires energy beams from both hand repulsors. Each beam has particle effects and fades out over distance.');
+        }
+        
+        function testDamageEffect() {
+            const overlay = document.querySelector('.damage-overlay');
+            overlay.classList.add('active');
+            setTimeout(() => overlay.classList.remove('active'), 500);
+            showFeatureInfo('Damage Effect', 'Shows red damage vignette when the suit takes damage. This provides visual feedback during combat.');
+        }
+        
+        function testEnvironmentScan() {
+            const scan = document.querySelector('.environment-scan');
+            scan.classList.add('active');
+            setTimeout(() => scan.classList.remove('active'), 3000);
+            showFeatureInfo('Environment Scan', 'Activates a holographic scan of the environment. Green grid overlay with scanning wave effect.');
+        }
+        
+        function testPowerUp() {
+            const effect = document.querySelector('.power-up-effect');
+            effect.classList.add('active');
+            setTimeout(() => effect.classList.remove('active'), 1000);
+            showFeatureInfo('Power Up', 'Shows expanding energy rings when the arc reactor powers up. Used for special abilities and boost effects.');
+        }
+        
+        function testCameraSwitch() {
+            viewport.switchCameraMode();
+            const modeText = viewport.cameraMode.replace('-', ' ').toUpperCase();
+            document.querySelector('.camera-mode').textContent = modeText;
+            showFeatureInfo('Camera Modes', `Switched to ${modeText} view. Available modes: Third Person, First Person, and Cinematic.`);
+        }
+        
+        function testAddTargets() {
+            // Add random targets
+            for (let i = 0; i < 5; i++) {
+                const position = new THREE.Vector3(
+                    (Math.random() - 0.5) * 1000,
+                    50 + Math.random() * 200,
+                    (Math.random() - 0.5) * 1000
+                );
+                viewport.addTarget(position);
+            }
+            showFeatureInfo('Target System', 'Added 5 hostile targets to the scene. Red octahedrons with rotating animation and target markers.');
+        }
+        
+        function testNightMode() {
+            // Toggle between night and day
+            if (viewport.scene.fog.color.getHex() === 0x000011) {
+                // Switch to day
+                viewport.scene.fog.color.setHex(0x87CEEB);
+                viewport.scene.fog.density = 0.0001;
+                viewport.renderer.setClearColor(0x87CEEB);
+            } else {
+                // Switch to night
+                viewport.scene.fog.color.setHex(0x000011);
+                viewport.scene.fog.density = 0.0002;
+                viewport.renderer.setClearColor(0x000011);
+            }
+            showFeatureInfo('Day/Night Cycle', 'Toggles between day and night lighting conditions. Notice how the fog, sky, and overall ambiance changes.');
+        }
+        
+        function showFeatureInfo(title, description) {
+            const info = document.querySelector('.feature-info');
+            info.innerHTML = `<h4>${title}</h4><p>${description}</p>`;
+            
+            // Highlight effect
+            info.style.borderColor = '#00ff00';
+            setTimeout(() => {
+                info.style.borderColor = 'var(--primary-color)';
+            }, 500);
+        }
+        
+        // Keyboard shortcuts for testing
+        document.addEventListener('keydown', (e) => {
+            switch(e.key.toLowerCase()) {
+                case '1': testAssemblyAnimation(); break;
+                case '2': testCombatMode(); break;
+                case '3': testFlightMode(); break;
+                case '4': testRepulsorFire(); break;
+                case '5': testDamageEffect(); break;
+                case '6': testEnvironmentScan(); break;
+                case '7': testPowerUp(); break;
+                case '8': testAddTargets(); break;
+                case '9': testNightMode(); break;
+            }
+        });
+        
+        // Performance stats toggle
+        let showStats = false;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'p' || e.key === 'P') {
+                showStats = !showStats;
+                if (showStats && !document.querySelector('.performance-monitor')) {
+                    const monitor = document.createElement('div');
+                    monitor.className = 'performance-monitor';
+                    document.body.appendChild(monitor);
+                    
+                    setInterval(() => {
+                        if (!showStats || !viewport.renderer) return;
+                        
+                        const info = viewport.renderer.info;
+                        monitor.innerHTML = `
+                            <div class="stat">
+                                <span class="label">FPS:</span>
+                                <span class="value">${Math.round(1000 / viewport.clock.getDelta())}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Triangles:</span>
+                                <span class="value">${info.render.triangles}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Draw Calls:</span>
+                                <span class="value">${info.render.calls}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Textures:</span>
+                                <span class="value">${info.memory.textures}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Programs:</span>
+                                <span class="value">${info.programs.length}</span>
+                            </div>
+                        `;
+                    }, 100);
+                } else if (!showStats && document.querySelector('.performance-monitor')) {
+                    document.querySelector('.performance-monitor').remove();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

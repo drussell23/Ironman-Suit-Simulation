@@ -38,18 +38,29 @@ app.use((req, res, next) => {
     next();
 });
 
-// Serve static files from the build directory
+// Serve static files from the IronManExperience directory
+const experiencePath = path.join(__dirname, 'IronManExperience');
+app.use(express.static(experiencePath));
+
+// Also check for Unity WebGL build
 const buildPath = path.join(__dirname, 'IronManExperience', 'Build');
-app.use(express.static(buildPath));
+if (fs.existsSync(buildPath)) {
+    app.use('/build', express.static(buildPath));
+}
 
 // Serve the index.html for the root path
 app.get('/', (req, res) => {
-    const indexPath = path.join(buildPath, 'index.html');
+    const webIndexPath = path.join(experiencePath, 'index.html');
+    const buildIndexPath = path.join(buildPath, 'index.html');
     
-    if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
+    // First try to serve the web-based experience
+    if (fs.existsSync(webIndexPath)) {
+        res.sendFile(webIndexPath);
+    } else if (fs.existsSync(buildIndexPath)) {
+        // Fall back to Unity WebGL build if it exists
+        res.sendFile(buildIndexPath);
     } else {
-        // Send a default page if build doesn't exist yet
+        // Send a default page if neither exists
         res.send(`
             <!DOCTYPE html>
             <html>
@@ -89,11 +100,8 @@ app.get('/', (req, res) => {
             <body>
                 <div class="container">
                     <h1>Iron Man Suit Experience</h1>
-                    <p>WebGL build not found!</p>
-                    <p>To build the project:</p>
-                    <code>npm run build</code>
-                    <p>Or build from Unity Editor:</p>
-                    <code>Menu > IronMan > Build > Quick WebGL Build</code>
+                    <p>Experience files not found!</p>
+                    <p>Please check that the IronManExperience directory exists.</p>
                 </div>
             </body>
             </html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man 3D Test - Enhanced Lighting</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/viewport.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .lighting-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .lighting-controls h3 {
+            color: var(--primary-color);
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+        
+        .lighting-controls button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            background: rgba(0, 168, 255, 0.2);
+            border: 1px solid var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        
+        .lighting-controls button:hover {
+            background: var(--primary-color);
+            color: black;
+        }
+        
+        .lighting-controls button.active {
+            background: var(--primary-color);
+            color: black;
+        }
+        
+        .slider-control {
+            margin: 10px 0;
+        }
+        
+        .slider-control label {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        
+        .slider-control input[type="range"] {
+            width: 100%;
+            height: 5px;
+            background: rgba(0, 168, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .slider-control .value {
+            color: #fff;
+            font-size: 11px;
+            text-align: right;
+            margin-top: 2px;
+        }
+        
+        .test-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-controls h3 {
+            color: var(--primary-color);
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+        
+        .test-controls button {
+            display: inline-block;
+            margin: 2px;
+            padding: 8px 15px;
+            background: rgba(0, 168, 255, 0.2);
+            border: 1px solid var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+        
+        .test-controls button:hover {
+            background: var(--primary-color);
+            color: black;
+        }
+        
+        .controls-help {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 1000;
+            font-size: 12px;
+        }
+        
+        .controls-help h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .controls-help kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-family: monospace;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        
+        .startup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 2000;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .startup-message h2 {
+            color: var(--primary-color);
+            margin: 0 0 20px 0;
+        }
+        
+        .startup-message p {
+            color: #ccc;
+            margin: 10px 0;
+        }
+        
+        .startup-message button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--primary-color);
+            border: none;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .startup-message button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Viewport -->
+    <canvas id="viewport" class="viewport"></canvas>
+    
+    <!-- Startup Message -->
+    <div class="startup-message" id="startupMessage">
+        <h2>Iron Man 3D Experience</h2>
+        <p>Enhanced lighting version for better visibility</p>
+        <p>Click START to initialize the suit</p>
+        <button onclick="startExperience()">START EXPERIENCE</button>
+    </div>
+    
+    <!-- Lighting Controls -->
+    <div class="lighting-controls" style="display: none;">
+        <h3>Lighting Presets</h3>
+        <button onclick="setLightingMode('bright')" class="active">Bright Mode</button>
+        <button onclick="setLightingMode('day')">Day Mode</button>
+        <button onclick="setLightingMode('night')">Night Mode</button>
+        <button onclick="setLightingMode('dark')">Dark Mode</button>
+        
+        <div class="slider-control">
+            <label>Brightness</label>
+            <input type="range" id="brightnessSlider" min="0.5" max="3" value="1.5" step="0.1">
+            <div class="value" id="brightnessValue">1.5</div>
+        </div>
+        
+        <div class="slider-control">
+            <label>Ambient Light</label>
+            <input type="range" id="ambientSlider" min="0" max="2" value="1" step="0.1">
+            <div class="value" id="ambientValue">1.0</div>
+        </div>
+        
+        <div class="slider-control">
+            <label>Suit Glow</label>
+            <input type="range" id="glowSlider" min="0" max="5" value="2" step="0.1">
+            <div class="value" id="glowValue">2.0</div>
+        </div>
+    </div>
+    
+    <!-- Test Controls -->
+    <div class="test-controls" style="display: none;">
+        <h3>Quick Tests</h3>
+        <button onclick="testAssembly()">Assembly</button>
+        <button onclick="testFlight()">Flight</button>
+        <button onclick="testCombat()">Combat</button>
+        <button onclick="testRepulsors()">Repulsors</button>
+        <button onclick="testScan()">Scan</button>
+        <button onclick="testTargets()">Targets</button>
+    </div>
+    
+    <!-- Controls Help -->
+    <div class="controls-help" style="display: none;">
+        <h4>Controls</h4>
+        <p><kbd>W/A/S/D</kbd> - Move</p>
+        <p><kbd>Q/E</kbd> - Up/Down</p>
+        <p><kbd>Mouse</kbd> - Look</p>
+        <p><kbd>Shift</kbd> - Boost</p>
+        <p><kbd>Space</kbd> - Fire</p>
+        <p><kbd>C</kbd> - Camera</p>
+        <p><kbd>R</kbd> - Assemble</p>
+    </div>
+    
+    <!-- Effect Overlays -->
+    <div class="damage-overlay"></div>
+    <div class="speed-lines"></div>
+    <div class="environment-scan">
+        <div class="scan-grid"></div>
+        <div class="scan-wave"></div>
+    </div>
+    <div class="camera-mode">THIRD PERSON</div>
+    
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/viewport-enhanced.js"></script>
+    <script src="js/lighting-fix.js"></script>
+    
+    <script>
+        let viewport;
+        let currentLightingMode = 'bright';
+        
+        function startExperience() {
+            // Hide startup message
+            document.getElementById('startupMessage').style.display = 'none';
+            
+            // Show controls
+            document.querySelector('.lighting-controls').style.display = 'block';
+            document.querySelector('.test-controls').style.display = 'block';
+            document.querySelector('.controls-help').style.display = 'block';
+            
+            // Initialize viewport with enhanced lighting
+            viewport = new EnhancedViewport();
+            window.viewport = viewport;
+            
+            // Apply initial bright lighting after a short delay
+            setTimeout(() => {
+                if (window.LightingFix) {
+                    window.LightingFix.apply(viewport);
+                    setLightingMode('bright');
+                }
+                
+                // Auto-assemble suit
+                viewport.assemblesuit();
+            }, 500);
+            
+            // Setup slider controls
+            setupSliders();
+        }
+        
+        function setLightingMode(mode) {
+            currentLightingMode = mode;
+            
+            // Update button states
+            document.querySelectorAll('.lighting-controls button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            switch(mode) {
+                case 'bright':
+                    // Apply bright lighting fix
+                    window.LightingFix.apply(viewport);
+                    document.getElementById('brightnessSlider').value = 1.5;
+                    updateBrightness(1.5);
+                    break;
+                    
+                case 'day':
+                    window.LightingFix.setDayMode(viewport);
+                    document.getElementById('brightnessSlider').value = 1.2;
+                    updateBrightness(1.2);
+                    break;
+                    
+                case 'night':
+                    window.LightingFix.setNightMode(viewport);
+                    document.getElementById('brightnessSlider').value = 1.0;
+                    updateBrightness(1.0);
+                    break;
+                    
+                case 'dark':
+                    // Original dark mode
+                    viewport.scene.fog = new THREE.FogExp2(0x000011, 0.0002);
+                    viewport.renderer.setClearColor(0x000011);
+                    viewport.renderer.toneMappingExposure = 0.8;
+                    document.getElementById('brightnessSlider').value = 0.8;
+                    break;
+            }
+        }
+        
+        function setupSliders() {
+            // Brightness slider
+            const brightnessSlider = document.getElementById('brightnessSlider');
+            brightnessSlider.addEventListener('input', (e) => {
+                const value = parseFloat(e.target.value);
+                updateBrightness(value);
+                document.getElementById('brightnessValue').textContent = value.toFixed(1);
+            });
+            
+            // Ambient light slider
+            const ambientSlider = document.getElementById('ambientSlider');
+            ambientSlider.addEventListener('input', (e) => {
+                const value = parseFloat(e.target.value);
+                updateAmbientLight(value);
+                document.getElementById('ambientValue').textContent = value.toFixed(1);
+            });
+            
+            // Glow slider
+            const glowSlider = document.getElementById('glowSlider');
+            glowSlider.addEventListener('input', (e) => {
+                const value = parseFloat(e.target.value);
+                updateSuitGlow(value);
+                document.getElementById('glowValue').textContent = value.toFixed(1);
+            });
+        }
+        
+        function updateBrightness(value) {
+            if (!viewport || !viewport.renderer) return;
+            viewport.renderer.toneMappingExposure = value;
+        }
+        
+        function updateAmbientLight(value) {
+            if (!viewport || !viewport.scene) return;
+            viewport.scene.traverse((child) => {
+                if (child.type === 'AmbientLight') {
+                    child.intensity = value;
+                }
+            });
+        }
+        
+        function updateSuitGlow(value) {
+            if (!viewport || !viewport.suit) return;
+            
+            // Update arc reactor
+            if (viewport.effects.arcReactor) {
+                viewport.effects.arcReactor.material.emissiveIntensity = value * 2;
+            }
+            
+            // Update repulsors
+            ['leftRepulsor', 'rightRepulsor'].forEach(name => {
+                if (viewport.effects[name]) {
+                    viewport.effects[name].material.emissiveIntensity = value;
+                }
+            });
+            
+            // Update suit emissive materials
+            viewport.suit.traverse((child) => {
+                if (child.isMesh && child.material && child.material.emissive) {
+                    if (child.material.color.getHex() === 0x00ccff || 
+                        child.material.color.getHex() === 0x00a8ff) {
+                        // Arc reactor and energy materials
+                        child.material.emissiveIntensity = value;
+                    } else {
+                        // Regular suit materials
+                        child.material.emissiveIntensity = value * 0.1;
+                    }
+                }
+            });
+        }
+        
+        // Test functions
+        function testAssembly() {
+            viewport.assemblesuit();
+        }
+        
+        function testFlight() {
+            viewport.state.isFlying = !viewport.state.isFlying;
+            document.querySelector('.speed-lines').classList.toggle('active', viewport.state.isFlying);
+        }
+        
+        function testCombat() {
+            viewport.toggleCombatMode();
+        }
+        
+        function testRepulsors() {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    if (viewport.effects.leftRepulsor) {
+                        viewport.fireRepulsorBeam(viewport.effects.leftRepulsor);
+                    }
+                    setTimeout(() => {
+                        if (viewport.effects.rightRepulsor) {
+                            viewport.fireRepulsorBeam(viewport.effects.rightRepulsor);
+                        }
+                    }, 100);
+                }, i * 300);
+            }
+        }
+        
+        function testScan() {
+            const scan = document.querySelector('.environment-scan');
+            scan.classList.add('active');
+            setTimeout(() => scan.classList.remove('active'), 3000);
+        }
+        
+        function testTargets() {
+            for (let i = 0; i < 3; i++) {
+                const position = new THREE.Vector3(
+                    (Math.random() - 0.5) * 500,
+                    50 + Math.random() * 100,
+                    (Math.random() - 0.5) * 500
+                );
+                viewport.addTarget(position);
+            }
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (!viewport) return;
+            
+            switch(e.key.toLowerCase()) {
+                case '1': setLightingMode('bright'); break;
+                case '2': setLightingMode('day'); break;
+                case '3': setLightingMode('night'); break;
+                case '4': setLightingMode('dark'); break;
+                case 't': testTargets(); break;
+                case 'v': testScan(); break;
+            }
+        });
+        
+        // Performance monitor
+        let showStats = false;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'p' || e.key === 'P') {
+                showStats = !showStats;
+                if (showStats && !document.querySelector('.performance-monitor')) {
+                    const monitor = document.createElement('div');
+                    monitor.className = 'performance-monitor';
+                    document.body.appendChild(monitor);
+                    
+                    setInterval(() => {
+                        if (!showStats || !viewport || !viewport.renderer) return;
+                        
+                        const info = viewport.renderer.info;
+                        const fps = Math.round(1000 / (viewport.clock.getDelta() * 1000));
+                        
+                        monitor.innerHTML = `
+                            <div class="stat">
+                                <span class="label">FPS:</span>
+                                <span class="value">${fps}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Triangles:</span>
+                                <span class="value">${info.render.triangles}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Mode:</span>
+                                <span class="value">${currentLightingMode}</span>
+                            </div>
+                        `;
+                    }, 100);
+                } else if (!showStats && document.querySelector('.performance-monitor')) {
+                    document.querySelector('.performance-monitor').remove();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

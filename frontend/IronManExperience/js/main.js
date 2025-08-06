@@ -93,8 +93,18 @@ class IronManExperience {
         this.systems.jarvis = new JARVIS();
         window.JARVIS = this.systems.jarvis; // Global reference
         
-        // 5. 3D Viewport
-        this.systems.viewport = new Viewport();
+        // 5. 3D Viewport - Check if Three.js is loaded
+        if (typeof THREE !== 'undefined') {
+            // Use enhanced version if available
+            if (window.EnhancedViewport) {
+                this.systems.viewport = new EnhancedViewport();
+            } else {
+                this.systems.viewport = new Viewport();
+            }
+        } else {
+            console.warn('Three.js not loaded - using basic viewport');
+            this.systems.viewport = new Viewport(); // Will use 2D fallback
+        }
         window.Viewport = this.systems.viewport; // Global reference
         
         // 6. Mission System is already initialized as window.Missions
