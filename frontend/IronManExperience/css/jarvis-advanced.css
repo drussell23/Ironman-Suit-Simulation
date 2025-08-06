@@ -1,0 +1,828 @@
+/* Advanced JARVIS Interface Styles */
+/* Holographic UI with sophisticated animations */
+
+.jarvis-advanced-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.jarvis-advanced-container > * {
+    pointer-events: auto;
+}
+
+/* Holographic Display */
+.jarvis-hologram {
+    position: absolute;
+    left: -150px;
+    bottom: 100px;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    animation: hologramFloat 4s ease-in-out infinite;
+}
+
+.jarvis-hologram.thinking {
+    animation: hologramFloat 2s ease-in-out infinite, hologramPulse 1s ease-in-out infinite;
+}
+
+.jarvis-hologram.alert {
+    animation: hologramFloat 1s ease-in-out infinite, hologramAlert 0.5s ease-in-out infinite;
+}
+
+/* Hologram Base */
+.hologram-base {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.hologram-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 204, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(0, 204, 255, 0.6),
+        inset 0 0 20px rgba(0, 204, 255, 0.3);
+}
+
+.hologram-ring.ring-1 {
+    transform: rotateX(0deg) scale(1);
+    animation: ringRotate1 8s linear infinite;
+}
+
+.hologram-ring.ring-2 {
+    transform: rotateX(60deg) scale(0.9);
+    animation: ringRotate2 6s linear infinite reverse;
+}
+
+.hologram-ring.ring-3 {
+    transform: rotateX(120deg) scale(0.8);
+    animation: ringRotate3 10s linear infinite;
+}
+
+/* Hologram Core */
+.hologram-core {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    transform-style: preserve-3d;
+    animation: coreRotate 5s linear infinite;
+}
+
+.core-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(0, 255, 255, 0.8), 
+        rgba(0, 204, 255, 0.6), 
+        rgba(0, 168, 255, 0.3));
+    border-radius: 50%;
+    box-shadow: 
+        0 0 50px rgba(0, 204, 255, 0.8),
+        inset 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.energy-field {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, 
+        transparent 30%, 
+        rgba(0, 204, 255, 0.1) 70%, 
+        transparent 100%);
+    border-radius: 50%;
+    animation: energyPulse 2s ease-in-out infinite;
+}
+
+/* Data Streams */
+.data-streams {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.stream {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, 
+        transparent, 
+        rgba(0, 255, 255, 0.8), 
+        transparent);
+    left: 50%;
+    top: 50%;
+    transform-origin: center bottom;
+}
+
+.stream:nth-child(1) {
+    animation: streamFlow 1.5s linear infinite;
+}
+
+.stream:nth-child(2) {
+    animation: streamFlow 1.5s linear infinite 0.5s;
+    transform: rotate(120deg);
+}
+
+.stream:nth-child(3) {
+    animation: streamFlow 1.5s linear infinite 1s;
+    transform: rotate(240deg);
+}
+
+/* Hologram Particles */
+.hologram-particles {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+/* Main Interface Panel */
+.jarvis-interface-panel {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 20, 40, 0.9) 100%);
+    border: 1px solid rgba(0, 204, 255, 0.5);
+    border-radius: 15px;
+    box-shadow: 
+        0 0 50px rgba(0, 204, 255, 0.3),
+        inset 0 0 20px rgba(0, 204, 255, 0.1);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.jarvis-interface-panel.minimized {
+    transform: translateY(calc(100% - 60px));
+}
+
+.jarvis-interface-panel.maximized {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+}
+
+/* Interface Header */
+.interface-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(0, 204, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.status-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.interface-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #00ccff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
+
+.interface-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    color: #00ccff;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
+
+/* Conversation Display */
+.conversation-display {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-history {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 204, 255, 0.3) transparent;
+}
+
+.conversation-history::-webkit-scrollbar {
+    width: 6px;
+}
+
+.conversation-history::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.conversation-history::-webkit-scrollbar-thumb {
+    background: rgba(0, 204, 255, 0.3);
+    border-radius: 3px;
+}
+
+.conversation-entry {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid transparent;
+    animation: fadeIn 0.3s ease;
+}
+
+.conversation-entry.user {
+    border-left-color: #00ff88;
+}
+
+.conversation-entry.jarvis {
+    border-left-color: #00ccff;
+}
+
+.conversation-entry .speaker {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+
+.conversation-entry .message {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.conversation-entry .timestamp {
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: right;
+    margin-top: 5px;
+}
+
+.system-message {
+    padding: 5px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #00ff00;
+    opacity: 0.7;
+}
+
+/* Current Response */
+.current-response {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 204, 255, 0.05);
+    border-top: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.response-avatar {
+    margin-right: 20px;
+}
+
+.waveform-canvas {
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(0, 204, 255, 0.5));
+}
+
+.response-text {
+    flex: 1;
+    font-size: 1.1em;
+    color: #00ccff;
+    text-shadow: 0 0 5px rgba(0, 204, 255, 0.3);
+    min-height: 30px;
+}
+
+/* Input Section */
+.input-section {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.command-input {
+    flex: 1;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.command-input:focus {
+    outline: none;
+    background: rgba(0, 204, 255, 0.1);
+    border-color: #00ccff;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+}
+
+.voice-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 204, 255, 0.2);
+    border: 1px solid rgba(0, 204, 255, 0.5);
+    border-radius: 50%;
+    color: #00ccff;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.voice-btn:hover {
+    background: rgba(0, 204, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+}
+
+.voice-btn.active {
+    background: rgba(255, 0, 0, 0.3);
+    border-color: #ff0000;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* Suggestions */
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.suggestion {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion:hover {
+    background: rgba(0, 204, 255, 0.1);
+    border-color: rgba(0, 204, 255, 0.5);
+}
+
+.suggestion .command {
+    color: #00ccff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.suggestion .description {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px 20px;
+    background: rgba(0, 204, 255, 0.1);
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    border-radius: 5px;
+    color: #00ccff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Overlay System */
+.jarvis-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content {
+    background: rgba(0, 20, 40, 0.95);
+    border: 2px solid #00ccff;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 50px rgba(0, 204, 255, 0.5);
+}
+
+/* Status Display */
+.status-display h3 {
+    color: #00ccff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.status-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.status-item label {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.status-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.status-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #00ccff);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.status-item span {
+    color: #00ccff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.status-item span.active {
+    color: #00ff88;
+}
+
+.status-item span.inactive {
+    color: #ff4444;
+}
+
+/* Scanning Display */
+.scanning-display {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+.scan-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 20px, 
+            rgba(0, 204, 255, 0.1) 20px, 
+            rgba(0, 204, 255, 0.1) 21px),
+        repeating-linear-gradient(90deg, 
+            transparent, 
+            transparent 20px, 
+            rgba(0, 204, 255, 0.1) 20px, 
+            rgba(0, 204, 255, 0.1) 21px);
+    border: 2px solid rgba(0, 204, 255, 0.5);
+    border-radius: 10px;
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #00ff00 20%, 
+        #00ff00 80%, 
+        transparent);
+    box-shadow: 0 0 20px #00ff00;
+    animation: scanLine 3s linear infinite;
+}
+
+.scan-data {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    font-family: monospace;
+    color: #00ff00;
+}
+
+.scan-progress {
+    height: 4px;
+    background: #00ff00;
+    margin-top: 10px;
+    border-radius: 2px;
+    transition: width 0.1s ease;
+}
+
+/* Alert System */
+.jarvis-alerts {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    z-index: 1100;
+}
+
+.jarvis-alert {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: slideIn 0.3s ease;
+    border-left: 4px solid;
+}
+
+.jarvis-alert.info {
+    border-left-color: #00ccff;
+}
+
+.jarvis-alert.warning {
+    border-left-color: #ffaa00;
+}
+
+.jarvis-alert.danger {
+    border-left-color: #ff0044;
+}
+
+.jarvis-alert.success {
+    border-left-color: #00ff88;
+}
+
+.alert-icon {
+    font-size: 1.5em;
+    width: 30px;
+    text-align: center;
+}
+
+.jarvis-alert.info .alert-icon { color: #00ccff; }
+.jarvis-alert.warning .alert-icon { color: #ffaa00; }
+.jarvis-alert.danger .alert-icon { color: #ff0044; }
+.jarvis-alert.success .alert-icon { color: #00ff88; }
+
+.alert-message {
+    flex: 1;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.jarvis-alert.fade-out {
+    animation: fadeOut 0.3s ease;
+    opacity: 0;
+}
+
+/* Animations */
+@keyframes hologramFloat {
+    0%, 100% { transform: translateY(0) rotateY(0); }
+    50% { transform: translateY(-10px) rotateY(180deg); }
+}
+
+@keyframes hologramPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes hologramAlert {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes ringRotate1 {
+    from { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+    to { transform: rotateX(0deg) rotateY(360deg) scale(1); }
+}
+
+@keyframes ringRotate2 {
+    from { transform: rotateX(60deg) rotateZ(0deg) scale(0.9); }
+    to { transform: rotateX(60deg) rotateZ(360deg) scale(0.9); }
+}
+
+@keyframes ringRotate3 {
+    from { transform: rotateX(120deg) rotateY(0deg) rotateZ(0deg) scale(0.8); }
+    to { transform: rotateX(120deg) rotateY(360deg) rotateZ(360deg) scale(0.8); }
+}
+
+@keyframes coreRotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes energyPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.5;
+    }
+    50% { 
+        transform: scale(1.2); 
+        opacity: 0.8;
+    }
+}
+
+@keyframes streamFlow {
+    0% {
+        transform: translateY(0) scaleY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px) scaleY(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-40px) scaleY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes scanLine {
+    from { top: 0; }
+    to { top: 100%; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .jarvis-advanced-container {
+        width: 95%;
+    }
+    
+    .jarvis-hologram {
+        display: none;
+    }
+    
+    .conversation-display {
+        height: 200px;
+    }
+    
+    .quick-actions {
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        min-width: 45%;
+    }
+}
+
+/* State-based styling */
+[data-mode="listening"] .hologram-core {
+    animation: coreRotate 1s linear infinite;
+}
+
+[data-mode="thinking"] .energy-field {
+    animation: energyPulse 0.5s ease-in-out infinite;
+}
+
+[data-mode="alert"] .hologram-ring {
+    border-color: #ff0044;
+    box-shadow: 
+        0 0 20px #ff0044,
+        inset 0 0 20px rgba(255, 0, 68, 0.3);
+}
+
+[data-mode="alert"] .core-sphere {
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 0, 68, 0.8), 
+        rgba(255, 0, 68, 0.6), 
+        rgba(255, 0, 68, 0.3));
+}
