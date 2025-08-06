@@ -440,3 +440,105 @@
         opacity: 0;
     }
 }
+
+/* Arc Reactor Specific Animations */
+@keyframes arcReactorCharge {
+    0% {
+        filter: brightness(0.5) contrast(1.5);
+        transform: scale(0.8);
+    }
+    50% {
+        filter: brightness(1.5) contrast(1.2);
+        transform: scale(1.1);
+    }
+    100% {
+        filter: brightness(1) contrast(1);
+        transform: scale(1);
+    }
+}
+
+/* Holographic Scan Line */
+@keyframes scanLine {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-color) 50%, 
+        transparent 100%);
+    box-shadow: 0 0 20px var(--primary-color);
+    animation: scanLine 3s ease-in-out infinite;
+}
+
+/* Matrix Rain Effect */
+@keyframes matrixRain {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Power Surge */
+@keyframes powerSurge {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+
+/* Interference */
+@keyframes interference {
+    0% {
+        transform: translateX(0) scaleY(1);
+        opacity: 0.5;
+    }
+    20% {
+        transform: translateX(-2px) scaleY(0.8);
+        opacity: 0.8;
+    }
+    40% {
+        transform: translateX(2px) scaleY(1.2);
+        opacity: 0.4;
+    }
+    60% {
+        transform: translateX(-1px) scaleY(0.9);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateX(1px) scaleY(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0) scaleY(1);
+        opacity: 0.5;
+    }
+}

@@ -18,13 +18,42 @@
 <body>
     <!-- Boot Sequence -->
     <div id="bootSequence" class="boot-sequence active">
+        <!-- Scanning lines effect -->
+        <div class="scan-line"></div>
+        <div class="scan-line" style="animation-delay: 1.5s;"></div>
+        
+        <!-- Corner HUD elements -->
+        <div class="boot-corner top-left">
+            <div class="corner-bracket"></div>
+            <div class="corner-text">MARK 85</div>
+        </div>
+        <div class="boot-corner top-right">
+            <div class="corner-bracket"></div>
+            <div class="corner-text">v3.0.1</div>
+        </div>
+        <div class="boot-corner bottom-left">
+            <div class="corner-bracket"></div>
+            <div class="corner-text">SECURE</div>
+        </div>
+        <div class="boot-corner bottom-right">
+            <div class="corner-bracket"></div>
+            <div class="corner-text">ONLINE</div>
+        </div>
+        
         <div class="boot-logo">
             <div class="arc-reactor">
                 <div class="core"></div>
                 <div class="ring ring-1"></div>
                 <div class="ring ring-2"></div>
                 <div class="ring ring-3"></div>
+                <!-- Additional decorative elements -->
+                <div class="energy-beam beam-1"></div>
+                <div class="energy-beam beam-2"></div>
+                <div class="energy-beam beam-3"></div>
+                <div class="energy-beam beam-4"></div>
             </div>
+            <!-- Particle effects container -->
+            <div class="particle-container"></div>
         </div>
         <div class="boot-text">
             <h1>STARK INDUSTRIES</h1>
@@ -37,6 +66,9 @@
             </div>
             <div class="boot-log"></div>
         </div>
+        
+        <!-- Background circuit pattern -->
+        <div class="circuit-pattern"></div>
     </div>
 
     <!-- Main HUD Interface -->
@@ -223,6 +255,7 @@
     <script src="js/three-modules.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/boot-particles.js"></script>
     <script src="js/boot-sequence.js"></script>
     <script src="js/jarvis.js"></script>
     <script src="js/hud.js"></script>
@@ -230,9 +263,9 @@
     <script src="js/suit-simple.js"></script>
     <script src="js/lighting-simple.js"></script>
     <script src="js/post-processing.js"></script>
+    <script src="js/suit-ultra-realistic.js"></script>
     <script src="js/viewport.js"></script>
-    <script src="js/viewport-debug.js"></script>
-    <script src="js/viewport-enhanced.js"></script>
+    <script src="js/viewport-ultra.js"></script>
     <script src="js/missions.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/audio-fix.js"></script>

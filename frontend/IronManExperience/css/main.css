@@ -32,14 +32,14 @@ body {
     -webkit-user-select: none;
 }
 
-/* Boot Sequence */
+/* Boot Sequence - Enhanced Iron Man Style */
 .boot-sequence {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--bg-dark);
+    background: radial-gradient(circle at center, rgba(0, 10, 20, 0.95) 0%, #000000 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +47,37 @@ body {
     z-index: 9999;
     opacity: 0;
     transition: opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.boot-sequence::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 168, 255, 0.03) 2px,
+            rgba(0, 168, 255, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 168, 255, 0.03) 2px,
+            rgba(0, 168, 255, 0.03) 4px
+        );
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
 }
 
 .boot-sequence.active {
@@ -55,13 +86,31 @@ body {
 
 .boot-logo {
     margin-bottom: 50px;
-    animation: pulse 2s ease-in-out infinite;
+    animation: arcReactorBoot 3s ease-out;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes arcReactorBoot {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
 }
 
 .arc-reactor {
     width: 200px;
     height: 200px;
     position: relative;
+    filter: drop-shadow(0 0 30px rgba(0, 168, 255, 0.8));
 }
 
 .arc-reactor .core {
@@ -71,10 +120,32 @@ body {
     transform: translate(-50%, -50%);
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    background: 
+        radial-gradient(circle, #ffffff 0%, var(--primary-color) 30%, transparent 70%),
+        radial-gradient(circle, var(--primary-color) 0%, transparent 50%);
     border-radius: 50%;
-    box-shadow: 0 0 50px var(--primary-color);
-    animation: glow 2s ease-in-out infinite;
+    box-shadow: 
+        0 0 60px var(--primary-color),
+        inset 0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 100px rgba(0, 168, 255, 0.5);
+    animation: corePulse 2s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 
+            0 0 60px var(--primary-color),
+            inset 0 0 20px rgba(255, 255, 255, 0.5),
+            0 0 100px rgba(0, 168, 255, 0.5);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 
+            0 0 80px var(--primary-color),
+            inset 0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 150px rgba(0, 168, 255, 0.8);
+    }
 }
 
 .arc-reactor .ring {
@@ -84,19 +155,101 @@ body {
     transform: translate(-50%, -50%);
     border: 2px solid var(--primary-color);
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.8;
+    box-shadow: 
+        0 0 20px var(--primary-color),
+        inset 0 0 20px rgba(0, 168, 255, 0.3);
 }
 
 .ring-1 {
     width: 100px;
     height: 100px;
-    animation: rotate 3s linear infinite;
+    animation: ringRotate1 3s linear infinite;
+    border-style: dashed;
 }
 
 .ring-2 {
     width: 140px;
     height: 140px;
-    animation: rotate 4s linear infinite reverse;
+    animation: ringRotate2 4s linear infinite reverse;
+    border-width: 3px;
+    border-style: solid;
+    background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        rgba(0, 168, 255, 0.1) 10deg,
+        transparent 20deg
+    );
+}
+
+@keyframes ringRotate1 {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.05); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes ringRotate2 {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.ring-3 {
+    width: 180px;
+    height: 180px;
+    animation: ringRotate3 6s linear infinite;
+    border: 1px solid rgba(0, 168, 255, 0.3);
+    border-style: dotted;
+}
+
+@keyframes ringRotate3 {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.1);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+        opacity: 0.3;
+    }
+    75% { 
+        transform: translate(-50%, -50%) rotate(270deg) scale(0.9);
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Energy particles */
+.arc-reactor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        rgba(0, 168, 255, 0.2) 60deg,
+        transparent 120deg,
+        rgba(0, 168, 255, 0.2) 180deg,
+        transparent 240deg,
+        rgba(0, 168, 255, 0.2) 300deg,
+        transparent 360deg
+    );
+    animation: energySpin 10s linear infinite;
+    filter: blur(10px);
+}
+
+@keyframes energySpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .ring-3 {
@@ -119,54 +272,230 @@ body {
 }
 
 .boot-status {
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: var(--primary-color);
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
+    margin: 20px 0;
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 40px;
+    animation: statusGlow 2s ease-in-out infinite;
+}
+
+@keyframes statusGlow {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+        opacity: 0.8;
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(0, 168, 255, 0.8);
+        opacity: 1;
+    }
+}
+
+.boot-status::before,
+.boot-status::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-color) 100%);
+}
+
+.boot-status::before {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.boot-status::after {
+    right: 0;
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .boot-progress {
-    width: 400px;
-    margin: 0 auto;
+    width: 500px;
+    margin: 30px auto;
+    position: relative;
 }
 
 .progress-bar {
     width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 168, 255, 0.3);
+    border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 168, 255, 0.2);
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 168, 255, 0.1) 10px,
+        rgba(0, 168, 255, 0.1) 20px
+    );
+    animation: progressStripes 1s linear infinite;
+}
+
+@keyframes progressStripes {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    width: 0%;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        #00d4ff 50%, 
+        var(--primary-color) 100%);
+    width: 0;
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px var(--primary-color);
+    position: relative;
+    box-shadow: 
+        0 0 20px var(--primary-color),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: progressPulse 1s ease-in-out infinite;
+}
+
+@keyframes progressPulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.8) 100%);
+    animation: progressShine 2s linear infinite;
+}
+
+@keyframes progressShine {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .progress-text {
-    font-size: 0.9em;
-    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.5em;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(0, 168, 255, 0.8);
+    letter-spacing: 0.1em;
 }
 
 .boot-log {
     margin-top: 30px;
-    font-size: 0.8em;
-    color: var(--text-secondary);
-    font-family: monospace;
-    max-height: 100px;
+    width: 600px;
+    height: 180px;
     overflow-y: auto;
-    text-align: left;
-    width: 500px;
+    overflow-x: hidden;
+    padding: 20px;
+    background: 
+        linear-gradient(180deg, 
+            rgba(0, 20, 40, 0.8) 0%, 
+            rgba(0, 0, 0, 0.9) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 168, 255, 0.05) 2px,
+            rgba(0, 168, 255, 0.05) 4px
+        );
+    border: 1px solid rgba(0, 168, 255, 0.4);
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 168, 255, 0.2);
+    position: relative;
+}
+
+.boot-log::before {
+    content: 'SYSTEM LOG';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--bg-dark);
+    padding: 0 10px;
+    font-size: 0.8em;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    letter-spacing: 0.1em;
+}
+
+.boot-log::-webkit-scrollbar {
+    width: 8px;
+}
+
+.boot-log::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.boot-log::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 .boot-log p {
-    margin: 2px 0;
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
+    margin: 8px 0;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    line-height: 1.4;
+    animation: logEntry 0.3s ease-out;
+    position: relative;
+    padding-left: 20px;
+}
+
+@keyframes logEntry {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.boot-log p::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
 /* HUD Interface */
@@ -239,6 +568,209 @@ body {
     50% {
         box-shadow: 0 0 60px var(--primary-color), 0 0 100px var(--primary-color);
     }
+}
+
+/* Boot Corner Elements */
+.boot-corner {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    animation: cornerFadeIn 1s ease-out forwards;
+}
+
+.boot-corner.top-left {
+    top: 20px;
+    left: 20px;
+    animation-delay: 0.5s;
+}
+
+.boot-corner.top-right {
+    top: 20px;
+    right: 20px;
+    animation-delay: 0.7s;
+}
+
+.boot-corner.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    animation-delay: 0.9s;
+}
+
+.boot-corner.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    animation-delay: 1.1s;
+}
+
+@keyframes cornerFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.corner-bracket {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    opacity: 0.6;
+}
+
+.top-left .corner-bracket {
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right .corner-bracket {
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left .corner-bracket {
+    bottom: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right .corner-bracket {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.corner-text {
+    position: absolute;
+    font-family: var(--font-primary);
+    font-size: 0.8em;
+    color: var(--primary-color);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+}
+
+.top-left .corner-text {
+    top: 10px;
+    left: 50px;
+}
+
+.top-right .corner-text {
+    top: 10px;
+    right: 50px;
+}
+
+.bottom-left .corner-text {
+    bottom: 10px;
+    left: 50px;
+}
+
+.bottom-right .corner-text {
+    bottom: 10px;
+    right: 50px;
+}
+
+/* Energy Beams */
+.energy-beam {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        var(--primary-color) 50%, 
+        transparent 100%);
+    opacity: 0;
+    animation: beamPulse 2s ease-in-out infinite;
+}
+
+.beam-1 {
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.beam-2 {
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.5s;
+}
+
+.beam-3 {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    animation-delay: 1s;
+}
+
+.beam-4 {
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes beamPulse {
+    0%, 100% {
+        opacity: 0;
+        height: 100px;
+    }
+    50% {
+        opacity: 0.8;
+        height: 150px;
+    }
+}
+
+/* Circuit Pattern Background */
+.circuit-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 168, 255, 0.1) 50px,
+            rgba(0, 168, 255, 0.1) 51px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 168, 255, 0.1) 50px,
+            rgba(0, 168, 255, 0.1) 51px
+        );
+    animation: circuitGlow 4s ease-in-out infinite;
+}
+
+@keyframes circuitGlow {
+    0%, 100% {
+        opacity: 0.02;
+    }
+    50% {
+        opacity: 0.08;
+    }
+}
+
+/* Particle Container */
+.particle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 @keyframes rotate {
