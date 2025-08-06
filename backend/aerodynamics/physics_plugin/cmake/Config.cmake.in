@@ -1,7 +1,0 @@
-@PACKAGE_INIT@ 
-
-# Allow downstream consumers to find the version.
-include(CMakeFindDependencyMacro)
-
-# Exported targets from this package 
-include("${CMAKE_CURRENT_LIST_DIR}/aerodynamics_physics_pluginConfigVersion.cmake")
