@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+*.egg-info/
+dist/
+*.egg
+
+# C/C++ build artifacts
+build/
+build*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+compile_commands.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Unity - IronManSuitSim3D specific
+IronManSuitSim3D/[Ll]ibrary/
+IronManSuitSim3D/[Tt]emp/
+IronManSuitSim3D/[Oo]bj/
+IronManSuitSim3D/[Bb]uild/
+IronManSuitSim3D/[Bb]uilds/
+IronManSuitSim3D/[Ll]ogs/
+IronManSuitSim3D/[Uu]ser[Ss]ettings/
+IronManSuitSim3D/*.csproj
+IronManSuitSim3D/*.sln
+IronManSuitSim3D/GeneratedAssets/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+backend/aerodynamics/physics_plugin/build/
+backend/aerodynamics/physics_plugin/build*/
+simulation/unity_simulation_ui/Iron-Man-Suit-Simulation/Library/
+simulation/unity_simulation_ui/Iron-Man-Suit-Simulation/Temp/
+simulation/unity_simulation_ui/Iron-Man-Suit-Simulation/Logs/
+ironman_env/
+
+# Dependencies downloaded during build
+_deps/

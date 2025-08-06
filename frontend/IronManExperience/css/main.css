@@ -1,0 +1,257 @@
+/* Main Styles for Iron Man Experience */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #00a8ff;
+    --secondary-color: #ff6b00;
+    --danger-color: #ff0040;
+    --success-color: #00ff88;
+    --warning-color: #ffcc00;
+    --bg-dark: #000000;
+    --bg-overlay: rgba(0, 0, 0, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --font-primary: 'Orbitron', monospace;
+    --font-secondary: 'Rajdhani', sans-serif;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Boot Sequence */
+.boot-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.boot-sequence.active {
+    opacity: 1;
+}
+
+.boot-logo {
+    margin-bottom: 50px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.arc-reactor {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.arc-reactor .core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px var(--primary-color);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.arc-reactor .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.ring-1 {
+    width: 100px;
+    height: 100px;
+    animation: rotate 3s linear infinite;
+}
+
+.ring-2 {
+    width: 140px;
+    height: 140px;
+    animation: rotate 4s linear infinite reverse;
+}
+
+.ring-3 {
+    width: 180px;
+    height: 180px;
+    animation: rotate 5s linear infinite;
+}
+
+.boot-text {
+    text-align: center;
+}
+
+.boot-text h1 {
+    font-family: var(--font-primary);
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px var(--primary-color);
+}
+
+.boot-status {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.boot-progress {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.progress-text {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.boot-log {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    font-family: monospace;
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: left;
+    width: 500px;
+}
+
+.boot-log p {
+    margin: 2px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* HUD Interface */
+.hud-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hud-interface.active {
+    opacity: 1;
+}
+
+.viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hud-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hud-overlay > * {
+    pointer-events: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .boot-text h1 {
+        font-size: 2em;
+    }
+    
+    .boot-progress {
+        width: 90%;
+    }
+    
+    .boot-log {
+        width: 90%;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 30px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 60px var(--primary-color), 0 0 100px var(--primary-color);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

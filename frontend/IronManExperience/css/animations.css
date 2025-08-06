@@ -1,0 +1,442 @@
+/* Animation Styles for Iron Man Experience */
+
+/* Glitch Effect */
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(90deg);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(180deg);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(270deg);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.glitch {
+    animation: glitch 0.3s ease-in-out;
+}
+
+/* Power Up Effect */
+@keyframes powerUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.power-up {
+    animation: powerUp 1s ease-out;
+}
+
+/* Shield Effect */
+@keyframes shieldPulse {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+.shield-active::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: shieldPulse 2s ease-in-out infinite;
+}
+
+/* Target Lock Animation */
+@keyframes targetLock {
+    0% {
+        transform: scale(1.5) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(90deg);
+        opacity: 1;
+    }
+}
+
+.target-locking {
+    animation: targetLock 0.5s ease-out;
+}
+
+/* Warning Flash */
+@keyframes warningFlash {
+    0%, 100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.3);
+    }
+}
+
+.warning-flash {
+    animation: warningFlash 0.5s ease-in-out 3;
+}
+
+/* System Boot */
+@keyframes systemBoot {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boot-animation {
+    animation: systemBoot 0.5s ease-out forwards;
+}
+
+/* HUD Element Slide In */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+.slide-in-top {
+    animation: slideInTop 0.8s ease-out;
+}
+
+.slide-in-bottom {
+    animation: slideInBottom 0.8s ease-out;
+}
+
+/* Repulsor Charge */
+@keyframes repulsorCharge {
+    0% {
+        box-shadow: 0 0 10px var(--primary-color);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px var(--primary-color), 0 0 60px var(--primary-color);
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 0 50px var(--primary-color), 0 0 100px var(--primary-color);
+        transform: scale(1.2);
+    }
+}
+
+.repulsor-charging {
+    animation: repulsorCharge 0.5s ease-out forwards;
+}
+
+/* Repulsor Fire */
+@keyframes repulsorFire {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.repulsor-fire::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: repulsorFire 0.3s ease-out;
+}
+
+/* Data Stream */
+@keyframes dataStream {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.data-stream {
+    animation: dataStream 3s linear infinite;
+}
+
+/* Hologram Effect */
+@keyframes hologram {
+    0%, 100% {
+        opacity: 0.8;
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        opacity: 0.9;
+        filter: hue-rotate(10deg);
+    }
+    50% {
+        opacity: 0.7;
+        filter: hue-rotate(-10deg);
+    }
+    75% {
+        opacity: 0.85;
+        filter: hue-rotate(5deg);
+    }
+}
+
+.hologram {
+    animation: hologram 4s ease-in-out infinite;
+}
+
+/* Energy Flow */
+@keyframes energyFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.energy-flow {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-color) 25%, 
+        transparent 50%, 
+        var(--primary-color) 75%, 
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: energyFlow 2s linear infinite;
+}
+
+/* Damage Indicator */
+@keyframes damageShake {
+    0%, 100% {
+        transform: translate(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate(-5px, -5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate(5px, 5px);
+    }
+}
+
+.damage-shake {
+    animation: damageShake 0.5s ease-in-out;
+}
+
+/* Mission Complete */
+@keyframes missionComplete {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.mission-complete {
+    animation: missionComplete 0.8s ease-out;
+}
+
+/* Typing Effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end);
+}
+
+/* Radar Sweep */
+@keyframes radarSweep {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.radar-sweep {
+    transform-origin: center;
+    animation: radarSweep 4s linear infinite;
+}
+
+/* Emergency Strobe */
+@keyframes emergencyStrobe {
+    0%, 10%, 20%, 100% {
+        opacity: 0;
+    }
+    5%, 15% {
+        opacity: 1;
+    }
+}
+
+.emergency-strobe {
+    animation: emergencyStrobe 1s ease-in-out infinite;
+}
+
+/* Altitude Warning */
+@keyframes altitudeWarning {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1.5);
+        opacity: 1;
+    }
+}
+
+.altitude-warning {
+    animation: altitudeWarning 1s ease-in-out infinite;
+}
+
+/* System Failure */
+@keyframes systemFailure {
+    0%, 100% {
+        filter: brightness(1) contrast(1);
+    }
+    25% {
+        filter: brightness(0.5) contrast(2);
+    }
+    50% {
+        filter: brightness(1.5) contrast(0.5);
+    }
+    75% {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+.system-failure {
+    animation: systemFailure 0.5s ease-in-out 3;
+}
+
+/* Transition Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
