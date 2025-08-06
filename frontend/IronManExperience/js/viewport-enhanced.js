@@ -18,6 +18,12 @@ class EnhancedViewport {
         this.targets = [];
         this.effects = {};
         
+        // Enhanced systems
+        this.materials = null;
+        this.suitBuilder = null;
+        this.lighting = null;
+        this.postProcessing = null;
+        
         // Animation
         this.clock = new THREE.Clock();
         this.animationMixer = null;
@@ -54,7 +60,7 @@ class EnhancedViewport {
         }
         
         await this.setupScene();
-        this.setupLights();
+        await this.initEnhancedSystems();
         this.createEnvironment();
         await this.createDetailedSuit();
         this.setupControls();
@@ -96,34 +102,16 @@ class EnhancedViewport {
         this.renderer.outputEncoding = THREE.sRGBEncoding;
     }
     
-    setupLights() {
-        // Realistic lighting setup
+    async initEnhancedSystems() {
+        // Initialize PBR materials
+        this.materials = new IronManMaterials();
+        await this.materials.init();
         
-        // Ambient light with color variation
-        const ambientLight = new THREE.AmbientLight(0x404060, 0.4);
-        this.scene.add(ambientLight);
+        // Initialize suit builder
+        this.suitBuilder = new IronManSuitBuilder(this.materials);
         
-        // Main directional light (moon/sun)
-        const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        mainLight.position.set(200, 500, 100);
-        mainLight.castShadow = true;
-        mainLight.shadow.mapSize.width = 4096;
-        mainLight.shadow.mapSize.height = 4096;
-        mainLight.shadow.camera.near = 0.5;
-        mainLight.shadow.camera.far = 2000;
-        mainLight.shadow.camera.left = -500;
-        mainLight.shadow.camera.right = 500;
-        mainLight.shadow.camera.top = 500;
-        mainLight.shadow.camera.bottom = -500;
-        mainLight.shadow.bias = -0.0001;
-        this.scene.add(mainLight);
-        
-        // Hemisphere light for sky/ground color
-        const hemiLight = new THREE.HemisphereLight(0x0040ff, 0x002244, 0.5);
-        this.scene.add(hemiLight);
-        
-        // Dynamic city lights
-        this.createCityLights();
+        // Initialize enhanced lighting
+        this.lighting = new EnhancedLighting(this.scene);
     }
     
     createCityLights() {
@@ -420,35 +408,24 @@ class EnhancedViewport {
     }
     
     async createDetailedSuit() {
-        // Create highly detailed Iron Man suit with separate parts
-        this.suit = new THREE.Group();
-        
-        // Suit parts for articulation
-        this.suitParts = {
-            torso: this.createTorso(),
-            helmet: this.createHelmet(),
-            leftArm: this.createArm('left'),
-            rightArm: this.createArm('right'),
-            leftLeg: this.createLeg('left'),
-            rightLeg: this.createLeg('right'),
-            arcReactor: this.createArcReactor(),
-            thrusters: this.createThrusters()
-        };
-        
-        // Assemble suit
-        Object.values(this.suitParts).forEach(part => {
-            this.suit.add(part);
-        });
+        // Create highly detailed Iron Man suit using the enhanced suit builder
+        this.suit = this.suitBuilder.buildSuit();
         
         // Position suit
-        this.suit.position.set(0, 200, 0);
+        this.suit.position.set(0, 100, 0);
         this.scene.add(this.suit);
+        
+        // Attach lights to suit
+        this.lighting.attachToSuit(this.suit);
         
         // Setup animation mixer
         this.animationMixer = new THREE.AnimationMixer(this.suit);
         
         // Create suit animations
         this.createSuitAnimations();
+        
+        // Store suit parts reference
+        this.suitParts = this.suitBuilder.parts;
     }
     
     createTorso() {
@@ -919,39 +896,11 @@ class EnhancedViewport {
     }
     
     setupPostProcessing() {
-        // Import effect composer
-        if (!THREE.EffectComposer) {
+        // Initialize enhanced post-processing
+        if (window.PostProcessingEffects) {
+            this.postProcessing = new PostProcessingEffects(this.renderer, this.scene, this.camera);
+        } else {
             console.warn('Post-processing not available');
-            return;
-        }
-        
-        this.composer = new THREE.EffectComposer(this.renderer);
-        
-        // Render pass
-        const renderPass = new THREE.RenderPass(this.scene, this.camera);
-        this.composer.addPass(renderPass);
-        
-        // Bloom pass for glowing effects
-        if (THREE.UnrealBloomPass) {
-            const bloomPass = new THREE.UnrealBloomPass(
-                new THREE.Vector2(window.innerWidth, window.innerHeight),
-                1.5, // strength
-                0.4, // radius
-                0.85 // threshold
-            );
-            this.composer.addPass(bloomPass);
-        }
-        
-        // Film grain and vignette
-        if (THREE.FilmPass) {
-            const filmPass = new THREE.FilmPass(
-                0.35, // noise intensity
-                0.025, // scanline intensity
-                648, // scanline count
-                false // grayscale
-            );
-            filmPass.renderToScreen = true;
-            this.composer.addPass(filmPass);
         }
     }
     
@@ -1007,7 +956,9 @@ class EnhancedViewport {
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         
-        if (this.composer) {
+        if (this.postProcessing) {
+            this.postProcessing.setSize(window.innerWidth, window.innerHeight);
+        } else if (this.composer) {
             this.composer.setSize(window.innerWidth, window.innerHeight);
         }
     }
@@ -1173,9 +1124,20 @@ class EnhancedViewport {
             
             this.acceleration.copy(movement);
             this.state.isFlying = true;
+            
+            // Update thruster intensity based on movement
+            if (this.lighting) {
+                const thrusterIntensity = this.controls.movement.boost ? 1.0 : 0.5;
+                this.lighting.setThrusterIntensity(thrusterIntensity);
+            }
         } else {
             this.acceleration.multiplyScalar(0.9);
             this.state.isFlying = false;
+            
+            // Dim thrusters when not moving
+            if (this.lighting) {
+                this.lighting.setThrusterIntensity(0.1);
+            }
         }
         
         // Apply physics
@@ -1372,6 +1334,17 @@ class EnhancedViewport {
         requestAnimationFrame(() => this.animate());
         
         const delta = Math.min(this.clock.getDelta(), 0.1); // Cap delta to prevent large jumps
+        const elapsed = this.clock.getElapsedTime();
+        
+        // Update materials time
+        if (this.materials) {
+            this.materials.updateTime(elapsed);
+        }
+        
+        // Update lighting
+        if (this.lighting) {
+            this.lighting.update(delta);
+        }
         
         // Update animations
         if (this.animationMixer) {
@@ -1386,8 +1359,10 @@ class EnhancedViewport {
             particle.rotation.y += delta * 0.1;
         });
         
-        // Render
-        if (this.composer) {
+        // Render with post-processing
+        if (this.postProcessing) {
+            this.postProcessing.render();
+        } else if (this.composer) {
             this.composer.render();
         } else {
             this.renderer.render(this.scene, this.camera);

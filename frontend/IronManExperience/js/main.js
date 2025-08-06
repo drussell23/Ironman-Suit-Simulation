@@ -72,6 +72,7 @@ class IronManExperience {
         
         // 1. Audio System (initialize first for boot sounds)
         this.systems.audio = new AudioSystem();
+        window.AudioSystem = this.systems.audio; // Global reference for audio controls
         
         // 2. Boot Sequence
         if (!this.config.skipBoot) {

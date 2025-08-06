@@ -40,6 +40,26 @@ app.use((req, res, next) => {
 
 // Serve static files from the IronManExperience directory
 const experiencePath = path.join(__dirname, 'IronManExperience');
+
+// Custom static middleware to handle empty files and range requests
+app.use((req, res, next) => {
+    const filePath = path.join(experiencePath, req.path);
+    
+    // Check if file exists and get stats
+    fs.stat(filePath, (err, stats) => {
+        if (err || !stats.isFile()) {
+            return next();
+        }
+        
+        // If file is empty (0 bytes), send 204 No Content for range requests
+        if (stats.size === 0 && req.headers.range) {
+            return res.status(204).end();
+        }
+        
+        next();
+    });
+});
+
 app.use(express.static(experiencePath));
 
 // Also check for Unity WebGL build
